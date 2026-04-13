@@ -1,0 +1,3352 @@
+[
+    {
+        "player_name": "Matt Olson",
+        "stat_type": "total_bases",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.927468413664015,
+        "true_probability": 0.8218,
+        "expected_value": 0.4546,
+        "insight": "High xwOBA (0.361) confirms elite underlying metrics."
+    },
+    {
+        "player_name": "Byron Buxton",
+        "stat_type": "total_bases",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.31211979410388396,
+        "true_probability": 0.8158,
+        "expected_value": 0.444,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "James Wood",
+        "stat_type": "total_bases",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.8717828731867103,
+        "true_probability": 0.7968,
+        "expected_value": 0.4103,
+        "insight": "High xwOBA (0.364) confirms elite underlying metrics."
+    },
+    {
+        "player_name": "Daylen Lile",
+        "stat_type": "total_bases",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.4230229293401966,
+        "true_probability": 0.7739,
+        "expected_value": 0.3698,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "CJ Abrams",
+        "stat_type": "total_bases",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.7693027608797379,
+        "true_probability": 0.7722,
+        "expected_value": 0.3668,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Geraldo Perdomo",
+        "stat_type": "total_bases",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.15816565278427702,
+        "true_probability": 0.7678,
+        "expected_value": 0.359,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Jeremiah Jackson",
+        "stat_type": "total_bases",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.20729995320542816,
+        "true_probability": 0.7675,
+        "expected_value": 0.3585,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Pete Crow-Armstrong",
+        "stat_type": "total_bases",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.5634066448291998,
+        "true_probability": 0.7606,
+        "expected_value": 0.3463,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Alec Bohm",
+        "stat_type": "total_bases",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.014506317267197004,
+        "true_probability": 0.7576,
+        "expected_value": 0.341,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Ian Happ",
+        "stat_type": "total_bases",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.28919045390734677,
+        "true_probability": 0.752,
+        "expected_value": 0.331,
+        "insight": "High xwOBA (0.353) confirms elite underlying metrics."
+    },
+    {
+        "player_name": "Jorge Polanco",
+        "stat_type": "total_bases",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.1731399157697707,
+        "true_probability": 0.7485,
+        "expected_value": 0.3248,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Miguel Amaya",
+        "stat_type": "total_bases",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.0,
+        "true_probability": 0.7475,
+        "expected_value": 0.3231,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Luke Keaschall",
+        "stat_type": "total_bases",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.3547028544688816,
+        "true_probability": 0.7457,
+        "expected_value": 0.3199,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Francisco Alvarez",
+        "stat_type": "total_bases",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.4398689751988769,
+        "true_probability": 0.7449,
+        "expected_value": 0.3185,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Mark Vientos",
+        "stat_type": "total_bases",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.2980814225549836,
+        "true_probability": 0.7435,
+        "expected_value": 0.316,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Max Muncy",
+        "stat_type": "total_bases",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.6953673373888629,
+        "true_probability": 0.7401,
+        "expected_value": 0.31,
+        "insight": "High xwOBA (0.385) confirms elite underlying metrics."
+    },
+    {
+        "player_name": "Matt Wallner",
+        "stat_type": "total_bases",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.9092185306504446,
+        "true_probability": 0.7337,
+        "expected_value": 0.2986,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Ceddanne Rafaela",
+        "stat_type": "total_bases",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.6317267197005147,
+        "true_probability": 0.7337,
+        "expected_value": 0.2986,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Jazz Chisholm",
+        "stat_type": "total_bases",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.6167524567150211,
+        "true_probability": 0.7335,
+        "expected_value": 0.2983,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Josh Bell",
+        "stat_type": "total_bases",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.19232569021993448,
+        "true_probability": 0.7288,
+        "expected_value": 0.29,
+        "insight": "High xwOBA (0.361) confirms elite underlying metrics."
+    },
+    {
+        "player_name": "Ryan Jeffers",
+        "stat_type": "total_bases",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.010294805802526908,
+        "true_probability": 0.728,
+        "expected_value": 0.2886,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Rhys Hoskins",
+        "stat_type": "total_bases",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.047262517547964435,
+        "true_probability": 0.7275,
+        "expected_value": 0.2877,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Michael Harris",
+        "stat_type": "total_bases",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.03462798315395414,
+        "true_probability": 0.7246,
+        "expected_value": 0.2825,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Jorge Soler",
+        "stat_type": "total_bases",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.3434721572297613,
+        "true_probability": 0.7195,
+        "expected_value": 0.2735,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Nolan Schanuel",
+        "stat_type": "total_bases",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.0,
+        "true_probability": 0.7169,
+        "expected_value": 0.2689,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Nolan Arenado",
+        "stat_type": "total_bases",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.2817033224145999,
+        "true_probability": 0.7161,
+        "expected_value": 0.2675,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Carlos Narv\u00e1ez",
+        "stat_type": "total_bases",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.0,
+        "true_probability": 0.7131,
+        "expected_value": 0.2622,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Luis Garc\u00eda",
+        "stat_type": "total_bases",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.1670566214319139,
+        "true_probability": 0.7126,
+        "expected_value": 0.2613,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Brady House",
+        "stat_type": "total_bases",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.02199344875994385,
+        "true_probability": 0.7088,
+        "expected_value": 0.2546,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Connor Norby",
+        "stat_type": "total_bases",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.19981282171268133,
+        "true_probability": 0.7031,
+        "expected_value": 0.2445,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Austin Wells",
+        "stat_type": "total_bases",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.3589143659335517,
+        "true_probability": 0.7019,
+        "expected_value": 0.2424,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Jordan Walker",
+        "stat_type": "total_bases",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.785212915301825,
+        "true_probability": 0.7017,
+        "expected_value": 0.242,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Brooks Lee",
+        "stat_type": "total_bases",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.48713149274684137,
+        "true_probability": 0.7012,
+        "expected_value": 0.2411,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Dominic Smith",
+        "stat_type": "total_bases",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.4660739354234909,
+        "true_probability": 0.7004,
+        "expected_value": 0.2397,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Bo Bichette",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.9363593823116518,
+        "true_probability": 0.7003,
+        "expected_value": 0.2395,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Dansby Swanson",
+        "stat_type": "total_bases",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.1834347215722976,
+        "true_probability": 0.6995,
+        "expected_value": 0.2381,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Masyn Winn",
+        "stat_type": "total_bases",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.0,
+        "true_probability": 0.6983,
+        "expected_value": 0.236,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Brandon Marsh",
+        "stat_type": "total_bases",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.1956013102480112,
+        "true_probability": 0.6982,
+        "expected_value": 0.2358,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Spencer Horwitz",
+        "stat_type": "total_bases",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.24379971923256905,
+        "true_probability": 0.6964,
+        "expected_value": 0.2326,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Marcus Semien",
+        "stat_type": "total_bases",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.0014038371548900329,
+        "true_probability": 0.6946,
+        "expected_value": 0.2294,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Ozzie Albies",
+        "stat_type": "total_bases",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.5811885821244736,
+        "true_probability": 0.6937,
+        "expected_value": 0.2278,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Mauricio Dub\u00f3n",
+        "stat_type": "total_bases",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.5292466073935423,
+        "true_probability": 0.6919,
+        "expected_value": 0.2247,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Josh Lowe",
+        "stat_type": "total_bases",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.048198408984557795,
+        "true_probability": 0.6915,
+        "expected_value": 0.224,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Carson Kelly",
+        "stat_type": "total_bases",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.4333177351427234,
+        "true_probability": 0.6906,
+        "expected_value": 0.2224,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Mike Yastrzemski",
+        "stat_type": "total_bases",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.21993448759943848,
+        "true_probability": 0.6835,
+        "expected_value": 0.2098,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Victor Caratini",
+        "stat_type": "total_bases",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.1109031352363126,
+        "true_probability": 0.6814,
+        "expected_value": 0.2061,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Marcell Ozuna",
+        "stat_type": "total_bases",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.8160973327094057,
+        "true_probability": 0.6737,
+        "expected_value": 0.1924,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Yo\u00e1n Moncada",
+        "stat_type": "total_bases",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.0,
+        "true_probability": 0.6734,
+        "expected_value": 0.1919,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Chase DeLauter",
+        "stat_type": "total_bases",
+        "line": 1.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.5905474964904072,
+        "true_probability": 0.6724,
+        "expected_value": 0.1901,
+        "insight": "High xwOBA (0.421) confirms elite underlying metrics."
+    },
+    {
+        "player_name": "Blaze Alexander",
+        "stat_type": "total_bases",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.0,
+        "true_probability": 0.6716,
+        "expected_value": 0.1887,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Jacob Wilson",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.6027140851661207,
+        "true_probability": 0.666,
+        "expected_value": 0.1788,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Colton Cowser",
+        "stat_type": "total_bases",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.0070191857744501636,
+        "true_probability": 0.6657,
+        "expected_value": 0.1783,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Bryson Stott",
+        "stat_type": "total_bases",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.1357042583060365,
+        "true_probability": 0.6637,
+        "expected_value": 0.1747,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Aaron Judge",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.9466541881141788,
+        "true_probability": 0.6616,
+        "expected_value": 0.171,
+        "insight": "High xwOBA (0.452) confirms elite underlying metrics."
+    },
+    {
+        "player_name": "Austin Martin",
+        "stat_type": "total_bases",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.0,
+        "true_probability": 0.6615,
+        "expected_value": 0.1709,
+        "insight": "High xwOBA (0.355) confirms elite underlying metrics."
+    },
+    {
+        "player_name": "Chase DeLauter",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.741693963500234,
+        "true_probability": 0.6608,
+        "expected_value": 0.1696,
+        "insight": "High xwOBA (0.421) confirms elite underlying metrics."
+    },
+    {
+        "player_name": "Shohei Ohtani",
+        "stat_type": "total_bases",
+        "line": 1.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.9349555451567618,
+        "true_probability": 0.6577,
+        "expected_value": 0.1641,
+        "insight": "High xwOBA (0.426) confirms elite underlying metrics."
+    },
+    {
+        "player_name": "Carlos Cortes",
+        "stat_type": "total_bases",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.09358914365933552,
+        "true_probability": 0.6561,
+        "expected_value": 0.1613,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Matt Shaw",
+        "stat_type": "total_bases",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.15489003275620028,
+        "true_probability": 0.6557,
+        "expected_value": 0.1606,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Aaron Judge",
+        "stat_type": "total_bases",
+        "line": 1.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.8947122133832476,
+        "true_probability": 0.6548,
+        "expected_value": 0.159,
+        "insight": "High xwOBA (0.452) confirms elite underlying metrics."
+    },
+    {
+        "player_name": "Pedro Pag\u00e9s",
+        "stat_type": "total_bases",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.0,
+        "true_probability": 0.6544,
+        "expected_value": 0.1583,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Danny Jansen",
+        "stat_type": "total_bases",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.16144127281235376,
+        "true_probability": 0.6489,
+        "expected_value": 0.1486,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Heriberto Hern\u00e1ndez",
+        "stat_type": "total_bases",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.1169864295741694,
+        "true_probability": 0.6489,
+        "expected_value": 0.1486,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Dylan Beavers",
+        "stat_type": "total_bases",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.2119794103883949,
+        "true_probability": 0.6486,
+        "expected_value": 0.148,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Logan O'Hoppe",
+        "stat_type": "total_bases",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.2798315395414132,
+        "true_probability": 0.6478,
+        "expected_value": 0.1466,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Josh Smith",
+        "stat_type": "total_bases",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.11605053813757604,
+        "true_probability": 0.6457,
+        "expected_value": 0.1429,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Shea Langeliers",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.8320074871314928,
+        "true_probability": 0.6412,
+        "expected_value": 0.1349,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Freddie Freeman",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.9560131024801124,
+        "true_probability": 0.6406,
+        "expected_value": 0.1339,
+        "insight": "High xwOBA (0.359) confirms elite underlying metrics."
+    },
+    {
+        "player_name": "Alec Bohm",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.5938231165184839,
+        "true_probability": 0.6398,
+        "expected_value": 0.1324,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Thomas Saggese",
+        "stat_type": "total_bases",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.016846045858680395,
+        "true_probability": 0.6396,
+        "expected_value": 0.1321,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Matt Olson",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.9705194197473092,
+        "true_probability": 0.6353,
+        "expected_value": 0.1245,
+        "insight": "High xwOBA (0.361) confirms elite underlying metrics."
+    },
+    {
+        "player_name": "Miguel Rojas",
+        "stat_type": "total_bases",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.45203556387459054,
+        "true_probability": 0.6331,
+        "expected_value": 0.1206,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Alec Burleson",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.3537669630322883,
+        "true_probability": 0.6322,
+        "expected_value": 0.119,
+        "insight": "High xwOBA (0.362) confirms elite underlying metrics."
+    },
+    {
+        "player_name": "Adrian Del Castillo",
+        "stat_type": "total_bases",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.07627515208235845,
+        "true_probability": 0.6307,
+        "expected_value": 0.1163,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Pete Alonso",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.8399625643425362,
+        "true_probability": 0.6298,
+        "expected_value": 0.1147,
+        "insight": "High xwOBA (0.37) confirms elite underlying metrics."
+    },
+    {
+        "player_name": "Alex Bregman",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.6387459054749649,
+        "true_probability": 0.627,
+        "expected_value": 0.1098,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Shohei Ohtani",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.9990641085634068,
+        "true_probability": 0.6257,
+        "expected_value": 0.1075,
+        "insight": "High xwOBA (0.426) confirms elite underlying metrics."
+    },
+    {
+        "player_name": "Daylen Lile",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.7510528778661675,
+        "true_probability": 0.6247,
+        "expected_value": 0.1057,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Coby Mayo",
+        "stat_type": "total_bases",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.37950397753860554,
+        "true_probability": 0.6247,
+        "expected_value": 0.1057,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Adam Frazier",
+        "stat_type": "total_bases",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.0,
+        "true_probability": 0.6224,
+        "expected_value": 0.1016,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Ketel Marte",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.8928404305100608,
+        "true_probability": 0.621,
+        "expected_value": 0.0992,
+        "insight": "High xwOBA (0.383) confirms elite underlying metrics."
+    },
+    {
+        "player_name": "Luke Keaschall",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.4932147870846982,
+        "true_probability": 0.6194,
+        "expected_value": 0.0963,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Francisco Lindor",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.8591483387927,
+        "true_probability": 0.6169,
+        "expected_value": 0.0919,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Ivan Herrera",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.39588207767898925,
+        "true_probability": 0.6168,
+        "expected_value": 0.0917,
+        "insight": "High xwOBA (0.365) confirms elite underlying metrics."
+    },
+    {
+        "player_name": "Jos\u00e9 Tena",
+        "stat_type": "total_bases",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.15114646700982687,
+        "true_probability": 0.6167,
+        "expected_value": 0.0916,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "CJ Abrams",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.970987365465606,
+        "true_probability": 0.6165,
+        "expected_value": 0.0912,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Geraldo Perdomo",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.5470285446888161,
+        "true_probability": 0.6152,
+        "expected_value": 0.0889,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Corey Seager",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.8848853532990173,
+        "true_probability": 0.614,
+        "expected_value": 0.0868,
+        "insight": "High xwOBA (0.399) confirms elite underlying metrics."
+    },
+    {
+        "player_name": "Gunnar Henderson",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.9663079082826392,
+        "true_probability": 0.6134,
+        "expected_value": 0.0857,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Jeremiah Jackson",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.18015910154422088,
+        "true_probability": 0.6132,
+        "expected_value": 0.0854,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Alex Freeland",
+        "stat_type": "total_bases",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.0,
+        "true_probability": 0.6118,
+        "expected_value": 0.0829,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Andy Pages",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.9700514740290126,
+        "true_probability": 0.6112,
+        "expected_value": 0.0818,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Austin Riley",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.5638745905474964,
+        "true_probability": 0.6106,
+        "expected_value": 0.0808,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Shea Langeliers",
+        "stat_type": "total_bases",
+        "line": 1.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.7126813289658399,
+        "true_probability": 0.6102,
+        "expected_value": 0.0801,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Alek Thomas",
+        "stat_type": "total_bases",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.0,
+        "true_probability": 0.61,
+        "expected_value": 0.0797,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Nolan Gorman",
+        "stat_type": "total_bases",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.10388394946186244,
+        "true_probability": 0.6091,
+        "expected_value": 0.0781,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Marcelo Mayer",
+        "stat_type": "total_bases",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.16331305568554047,
+        "true_probability": 0.6087,
+        "expected_value": 0.0774,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Tyler Soderstrom",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.5376696303228825,
+        "true_probability": 0.6081,
+        "expected_value": 0.0763,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Dalton Rushing",
+        "stat_type": "total_bases",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.14880673841834346,
+        "true_probability": 0.6078,
+        "expected_value": 0.0758,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Willson Contreras",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.9457182966775854,
+        "true_probability": 0.6054,
+        "expected_value": 0.0716,
+        "insight": "High xwOBA (0.381) confirms elite underlying metrics."
+    },
+    {
+        "player_name": "Liam Hicks",
+        "stat_type": "total_bases",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.0,
+        "true_probability": 0.6041,
+        "expected_value": 0.0693,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Trevor Story",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.683668694431446,
+        "true_probability": 0.6036,
+        "expected_value": 0.0684,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Cody Bellinger",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.7669630322882546,
+        "true_probability": 0.6008,
+        "expected_value": 0.0634,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Ronald Acu\u00f1a",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.989705194197473,
+        "true_probability": 0.6005,
+        "expected_value": 0.0629,
+        "insight": "High xwOBA (0.399) confirms elite underlying metrics."
+    },
+    {
+        "player_name": "James Wood",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.9794103883949462,
+        "true_probability": 0.5995,
+        "expected_value": 0.0611,
+        "insight": "High xwOBA (0.364) confirms elite underlying metrics."
+    },
+    {
+        "player_name": "Drake Baldwin",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.9204492278895648,
+        "true_probability": 0.5992,
+        "expected_value": 0.0606,
+        "insight": "High xwOBA (0.362) confirms elite underlying metrics."
+    },
+    {
+        "player_name": "Will Smith",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.8610201216658867,
+        "true_probability": 0.5976,
+        "expected_value": 0.0578,
+        "insight": "High xwOBA (0.376) confirms elite underlying metrics."
+    },
+    {
+        "player_name": "Teoscar Hern\u00e1ndez",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.7538605521759476,
+        "true_probability": 0.5964,
+        "expected_value": 0.0556,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Owen Caissie",
+        "stat_type": "total_bases",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.2686008423022929,
+        "true_probability": 0.5962,
+        "expected_value": 0.0553,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Jorge Barrosa",
+        "stat_type": "total_bases",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.39354234908750585,
+        "true_probability": 0.5947,
+        "expected_value": 0.0526,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Brayan Rocchio",
+        "stat_type": "total_bases",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.0,
+        "true_probability": 0.5943,
+        "expected_value": 0.0519,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Bo Bichette",
+        "stat_type": "total_bases",
+        "line": 1.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.4043051006083294,
+        "true_probability": 0.5943,
+        "expected_value": 0.0519,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Bryce Harper",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.9826860084230228,
+        "true_probability": 0.5936,
+        "expected_value": 0.0507,
+        "insight": "High xwOBA (0.371) confirms elite underlying metrics."
+    },
+    {
+        "player_name": "Keibert Ruiz",
+        "stat_type": "total_bases",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.31773514272344405,
+        "true_probability": 0.5931,
+        "expected_value": 0.0498,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Ryan Jeffers",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.2840430510060833,
+        "true_probability": 0.5931,
+        "expected_value": 0.0498,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Corbin Carroll",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.8568086102012167,
+        "true_probability": 0.593,
+        "expected_value": 0.0496,
+        "insight": "High xwOBA (0.367) confirms elite underlying metrics."
+    },
+    {
+        "player_name": "Bryan Reynolds",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.7735142723444081,
+        "true_probability": 0.5913,
+        "expected_value": 0.0466,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Nolan Schanuel",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.33785680861020123,
+        "true_probability": 0.5888,
+        "expected_value": 0.0422,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Roman Anthony",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.6434253626579317,
+        "true_probability": 0.5878,
+        "expected_value": 0.0404,
+        "insight": "High xwOBA (0.362) confirms elite underlying metrics."
+    },
+    {
+        "player_name": "Brady House",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.48993916705662144,
+        "true_probability": 0.5873,
+        "expected_value": 0.0395,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Austin Martin",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.4553111839026673,
+        "true_probability": 0.587,
+        "expected_value": 0.039,
+        "insight": "High xwOBA (0.355) confirms elite underlying metrics."
+    },
+    {
+        "player_name": "Jakob Marsee",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.3341132428638278,
+        "true_probability": 0.5856,
+        "expected_value": 0.0365,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Byron Buxton",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.6247075339260646,
+        "true_probability": 0.5841,
+        "expected_value": 0.0339,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Nick Kurtz",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.7323350491343005,
+        "true_probability": 0.5836,
+        "expected_value": 0.033,
+        "insight": "High xwOBA (0.372) confirms elite underlying metrics."
+    },
+    {
+        "player_name": "Otto Lopez",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.7941038839494619,
+        "true_probability": 0.5831,
+        "expected_value": 0.0321,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Tim Tawa",
+        "stat_type": "total_bases",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.23724847917641553,
+        "true_probability": 0.5826,
+        "expected_value": 0.0312,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Jake Mangum",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.3191389798783341,
+        "true_probability": 0.5817,
+        "expected_value": 0.0296,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Masyn Winn",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.0,
+        "true_probability": 0.5813,
+        "expected_value": 0.0289,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Zach Neto",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.9494618624239588,
+        "true_probability": 0.5806,
+        "expected_value": 0.0277,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Agust\u00edn Ram\u00edrez",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.33130556855404775,
+        "true_probability": 0.5804,
+        "expected_value": 0.0273,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Pete Alonso",
+        "stat_type": "total_bases",
+        "line": 1.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.7992512868507253,
+        "true_probability": 0.5782,
+        "expected_value": 0.0234,
+        "insight": "High xwOBA (0.37) confirms elite underlying metrics."
+    },
+    {
+        "player_name": "Ryan O'Hearn",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.7519887693027609,
+        "true_probability": 0.5781,
+        "expected_value": 0.0232,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Jarren Duran",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.6920917173607861,
+        "true_probability": 0.578,
+        "expected_value": 0.0231,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Corbin Carroll",
+        "stat_type": "total_bases",
+        "line": 1.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.7346747777257838,
+        "true_probability": 0.5762,
+        "expected_value": 0.0199,
+        "insight": "High xwOBA (0.367) confirms elite underlying metrics."
+    },
+    {
+        "player_name": "Seiya Suzuki",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.9124941506785212,
+        "true_probability": 0.5732,
+        "expected_value": 0.0146,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Brandon Lowe",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.6462330369677117,
+        "true_probability": 0.5731,
+        "expected_value": 0.0144,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Tyrone Taylor",
+        "stat_type": "total_bases",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.4590547496490407,
+        "true_probability": 0.5728,
+        "expected_value": 0.0139,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Ceddanne Rafaela",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.731399157697707,
+        "true_probability": 0.5712,
+        "expected_value": 0.011,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Ozzie Albies",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.8404305100608329,
+        "true_probability": 0.5691,
+        "expected_value": 0.0073,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Michael Harris",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.0,
+        "true_probability": 0.5691,
+        "expected_value": 0.0073,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Leody Taveras",
+        "stat_type": "total_bases",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.0,
+        "true_probability": 0.5688,
+        "expected_value": 0.0068,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Ildemaro Vargas",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.7253158633598502,
+        "true_probability": 0.5688,
+        "expected_value": 0.0068,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Dominic Smith",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.30744033692091716,
+        "true_probability": 0.5666,
+        "expected_value": 0.0029,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Santiago Espinal",
+        "stat_type": "total_bases",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.0,
+        "true_probability": 0.5663,
+        "expected_value": 0.0024,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Kyle Tucker",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.8235844642021526,
+        "true_probability": 0.5658,
+        "expected_value": 0.0015,
+        "insight": "High xwOBA (0.352) confirms elite underlying metrics."
+    },
+    {
+        "player_name": "Yandy D\u00edaz",
+        "stat_type": "total_bases",
+        "line": 1.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.0,
+        "true_probability": 0.5657,
+        "expected_value": 0.0013,
+        "insight": "High xwOBA (0.364) confirms elite underlying metrics."
+    },
+    {
+        "player_name": "Kyle Schwarber",
+        "stat_type": "total_bases",
+        "line": 1.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.7791296209639682,
+        "true_probability": 0.5649,
+        "expected_value": -0.0001,
+        "insight": "High xwOBA (0.394) confirms elite underlying metrics."
+    },
+    {
+        "player_name": "Taylor Ward",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.8582124473561067,
+        "true_probability": 0.5642,
+        "expected_value": -0.0014,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Josh Jung",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.7332709405708938,
+        "true_probability": 0.5627,
+        "expected_value": -0.004,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Nolan Arenado",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.4557791296209639,
+        "true_probability": 0.5626,
+        "expected_value": -0.0042,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Mauricio Dub\u00f3n",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.6134768366869443,
+        "true_probability": 0.562,
+        "expected_value": -0.0053,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Jacob Young",
+        "stat_type": "total_bases",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.8820776789892373,
+        "true_probability": 0.5616,
+        "expected_value": -0.006,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Giancarlo Stanton",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.8053345811885821,
+        "true_probability": 0.5615,
+        "expected_value": -0.0061,
+        "insight": "High xwOBA (0.352) confirms elite underlying metrics."
+    },
+    {
+        "player_name": "Nick Kurtz",
+        "stat_type": "total_bases",
+        "line": 1.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.4712213383247543,
+        "true_probability": 0.5604,
+        "expected_value": -0.0081,
+        "insight": "High xwOBA (0.372) confirms elite underlying metrics."
+    },
+    {
+        "player_name": "Joc Pederson",
+        "stat_type": "total_bases",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.14038371548900327,
+        "true_probability": 0.5598,
+        "expected_value": -0.0092,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Jake Burger",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.6186242395882078,
+        "true_probability": 0.5587,
+        "expected_value": -0.0111,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Luis Garc\u00eda",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.4347215722976135,
+        "true_probability": 0.5581,
+        "expected_value": -0.0122,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Adolis Garc\u00eda",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.5474964904071128,
+        "true_probability": 0.5573,
+        "expected_value": -0.0136,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Jo Adell",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.7884885353299017,
+        "true_probability": 0.5572,
+        "expected_value": -0.0138,
+        "insight": "High xwOBA (0.357) confirms elite underlying metrics."
+    },
+    {
+        "player_name": "Ketel Marte",
+        "stat_type": "total_bases",
+        "line": 1.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.4510996724379972,
+        "true_probability": 0.557,
+        "expected_value": -0.0141,
+        "insight": "High xwOBA (0.383) confirms elite underlying metrics."
+    },
+    {
+        "player_name": "Nasim Nu\u00f1ez",
+        "stat_type": "total_bases",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.2550304164716893,
+        "true_probability": 0.5562,
+        "expected_value": -0.0155,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Francisco Alvarez",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.5535797847449696,
+        "true_probability": 0.5553,
+        "expected_value": -0.0171,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Graham Pauley",
+        "stat_type": "total_bases",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.11137108095460926,
+        "true_probability": 0.5553,
+        "expected_value": -0.0171,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Denzel Clarke",
+        "stat_type": "total_bases",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.2854468881609733,
+        "true_probability": 0.5547,
+        "expected_value": -0.0182,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Mark Vientos",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.4824520355638746,
+        "true_probability": 0.5545,
+        "expected_value": -0.0185,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Brooks Lee",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.6724379971923257,
+        "true_probability": 0.5544,
+        "expected_value": -0.0187,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Connor Norby",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.7075339260645765,
+        "true_probability": 0.5544,
+        "expected_value": -0.0187,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Paul Goldschmidt",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.4188114178755265,
+        "true_probability": 0.5543,
+        "expected_value": -0.0189,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Brandon Marsh",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.8797379503977538,
+        "true_probability": 0.554,
+        "expected_value": -0.0194,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Luis Robert",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.7491810949929808,
+        "true_probability": 0.5526,
+        "expected_value": -0.0219,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Pete Crow-Armstrong",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.7103416003743566,
+        "true_probability": 0.5508,
+        "expected_value": -0.0251,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Ian Happ",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.6532522227421619,
+        "true_probability": 0.55,
+        "expected_value": -0.0265,
+        "insight": "High xwOBA (0.353) confirms elite underlying metrics."
+    },
+    {
+        "player_name": "Jorge Polanco",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.25035095928872253,
+        "true_probability": 0.5495,
+        "expected_value": -0.0274,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Amed Rosario",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.3752924660739354,
+        "true_probability": 0.5493,
+        "expected_value": -0.0277,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Spencer Horwitz",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.5722976134768367,
+        "true_probability": 0.5492,
+        "expected_value": -0.0279,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Randal Grichuk",
+        "stat_type": "total_bases",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.3167992512868507,
+        "true_probability": 0.5492,
+        "expected_value": -0.0279,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Freddie Freeman",
+        "stat_type": "total_bases",
+        "line": 1.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.6860084230229293,
+        "true_probability": 0.5478,
+        "expected_value": -0.0304,
+        "insight": "High xwOBA (0.359) confirms elite underlying metrics."
+    },
+    {
+        "player_name": "Corey Seager",
+        "stat_type": "total_bases",
+        "line": 1.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.798315395414132,
+        "true_probability": 0.5477,
+        "expected_value": -0.0306,
+        "insight": "High xwOBA (0.399) confirms elite underlying metrics."
+    },
+    {
+        "player_name": "Marcus Semien",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.2419279363593823,
+        "true_probability": 0.5475,
+        "expected_value": -0.0309,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Thomas Saggese",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.6499766027140852,
+        "true_probability": 0.5462,
+        "expected_value": -0.0332,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Lawrence Butler",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.3322414599906411,
+        "true_probability": 0.5462,
+        "expected_value": -0.0332,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Josh Bell",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.24801123069723913,
+        "true_probability": 0.5428,
+        "expected_value": -0.0392,
+        "insight": "High xwOBA (0.361) confirms elite underlying metrics."
+    },
+    {
+        "player_name": "Caleb Durbin",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.4244267664950866,
+        "true_probability": 0.5411,
+        "expected_value": -0.0423,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Alex Bregman",
+        "stat_type": "total_bases",
+        "line": 1.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.14272344408048665,
+        "true_probability": 0.5406,
+        "expected_value": -0.0431,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Kyle Schwarber",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.9064108563406644,
+        "true_probability": 0.5401,
+        "expected_value": -0.044,
+        "insight": "High xwOBA (0.394) confirms elite underlying metrics."
+    },
+    {
+        "player_name": "Carson Kelly",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.8029948525970987,
+        "true_probability": 0.54,
+        "expected_value": -0.0442,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Carlos Narv\u00e1ez",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.17501169864295743,
+        "true_probability": 0.54,
+        "expected_value": -0.0442,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Bryson Stott",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.4272344408048666,
+        "true_probability": 0.539,
+        "expected_value": -0.046,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Dansby Swanson",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.5947590079550772,
+        "true_probability": 0.538,
+        "expected_value": -0.0477,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Jordan Walker",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.9368273280299484,
+        "true_probability": 0.5378,
+        "expected_value": -0.0481,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Henry Davis",
+        "stat_type": "total_bases",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.0669162377164249,
+        "true_probability": 0.5378,
+        "expected_value": -0.0481,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Trea Turner",
+        "stat_type": "total_bases",
+        "line": 1.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.4599906410856341,
+        "true_probability": 0.5378,
+        "expected_value": -0.0481,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Wilyer Abreu",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.7435657463734207,
+        "true_probability": 0.5371,
+        "expected_value": -0.0493,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Victor Caratini",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.24099204492278897,
+        "true_probability": 0.5359,
+        "expected_value": -0.0515,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Josh Smith",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.44922788956481047,
+        "true_probability": 0.5348,
+        "expected_value": -0.0534,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Jazz Chisholm",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.6827328029948526,
+        "true_probability": 0.5306,
+        "expected_value": -0.0608,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Seiya Suzuki",
+        "stat_type": "total_bases",
+        "line": 1.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.3664014974262986,
+        "true_probability": 0.5297,
+        "expected_value": -0.0624,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Bryce Harper",
+        "stat_type": "total_bases",
+        "line": 1.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.8792700046794572,
+        "true_probability": 0.5295,
+        "expected_value": -0.0628,
+        "insight": "High xwOBA (0.371) confirms elite underlying metrics."
+    },
+    {
+        "player_name": "Miguel Amaya",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.600842302292934,
+        "true_probability": 0.5293,
+        "expected_value": -0.0631,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Jos\u00e9 Caballero",
+        "stat_type": "total_bases",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.11043518951801592,
+        "true_probability": 0.5282,
+        "expected_value": -0.0651,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Mike Trout",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.8315395414131961,
+        "true_probability": 0.5281,
+        "expected_value": -0.0653,
+        "insight": "High xwOBA (0.362) confirms elite underlying metrics."
+    },
+    {
+        "player_name": "Nick Yorke",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.6630790828263922,
+        "true_probability": 0.5278,
+        "expected_value": -0.0658,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Adam Frazier",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.05053813757604118,
+        "true_probability": 0.5274,
+        "expected_value": -0.0665,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Teoscar Hern\u00e1ndez",
+        "stat_type": "total_bases",
+        "line": 1.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.4885353299017314,
+        "true_probability": 0.5269,
+        "expected_value": -0.0674,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Blaze Alexander",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.0,
+        "true_probability": 0.5247,
+        "expected_value": -0.0713,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Jos\u00e9 Ram\u00edrez",
+        "stat_type": "total_bases",
+        "line": 1.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.8675713617220402,
+        "true_probability": 0.5246,
+        "expected_value": -0.0715,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Jeff McNeil",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.7370145063172672,
+        "true_probability": 0.5238,
+        "expected_value": -0.0729,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Francisco Lindor",
+        "stat_type": "total_bases",
+        "line": 1.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.5091249415067852,
+        "true_probability": 0.5231,
+        "expected_value": -0.0741,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Rhys Hoskins",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.3528310715956949,
+        "true_probability": 0.5229,
+        "expected_value": -0.0745,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Taylor Ward",
+        "stat_type": "total_bases",
+        "line": 1.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.8656995788488535,
+        "true_probability": 0.5195,
+        "expected_value": -0.0805,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Max Muncy",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.9096864763687412,
+        "true_probability": 0.519,
+        "expected_value": -0.0814,
+        "insight": "High xwOBA (0.385) confirms elite underlying metrics."
+    },
+    {
+        "player_name": "Victor Scott",
+        "stat_type": "total_bases",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.1483387927000468,
+        "true_probability": 0.5169,
+        "expected_value": -0.0851,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Josh Lowe",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.31024801123069723,
+        "true_probability": 0.5162,
+        "expected_value": -0.0863,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Willson Contreras",
+        "stat_type": "total_bases",
+        "line": 1.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.6579316799251287,
+        "true_probability": 0.5158,
+        "expected_value": -0.087,
+        "insight": "High xwOBA (0.381) confirms elite underlying metrics."
+    },
+    {
+        "player_name": "Keibert Ruiz",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.36172204024333177,
+        "true_probability": 0.5146,
+        "expected_value": -0.0892,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Brandon Lowe",
+        "stat_type": "total_bases",
+        "line": 1.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.39494618624239586,
+        "true_probability": 0.5119,
+        "expected_value": -0.0939,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Zach Neto",
+        "stat_type": "total_bases",
+        "line": 1.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.7360786148806738,
+        "true_probability": 0.5119,
+        "expected_value": -0.0939,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Giancarlo Stanton",
+        "stat_type": "total_bases",
+        "line": 1.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.6275152082358446,
+        "true_probability": 0.5112,
+        "expected_value": -0.0952,
+        "insight": "High xwOBA (0.352) confirms elite underlying metrics."
+    },
+    {
+        "player_name": "Ronald Acu\u00f1a",
+        "stat_type": "total_bases",
+        "line": 1.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.9199812821712682,
+        "true_probability": 0.5111,
+        "expected_value": -0.0954,
+        "insight": "High xwOBA (0.399) confirms elite underlying metrics."
+    },
+    {
+        "player_name": "Alec Burleson",
+        "stat_type": "total_bases",
+        "line": 1.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.270004679457183,
+        "true_probability": 0.5109,
+        "expected_value": -0.0957,
+        "insight": "High xwOBA (0.362) confirms elite underlying metrics."
+    },
+    {
+        "player_name": "Tyler Soderstrom",
+        "stat_type": "total_bases",
+        "line": 1.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.4033692091717361,
+        "true_probability": 0.5106,
+        "expected_value": -0.0962,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Jorge Soler",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.670566214319139,
+        "true_probability": 0.5098,
+        "expected_value": -0.0977,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Oneil Cruz",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.9906410856340664,
+        "true_probability": 0.5096,
+        "expected_value": -0.098,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Gunnar Henderson",
+        "stat_type": "total_bases",
+        "line": 1.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.8769302760879738,
+        "true_probability": 0.5096,
+        "expected_value": -0.098,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Drake Baldwin",
+        "stat_type": "total_bases",
+        "line": 1.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.7211043518951802,
+        "true_probability": 0.5095,
+        "expected_value": -0.0982,
+        "insight": "High xwOBA (0.362) confirms elite underlying metrics."
+    },
+    {
+        "player_name": "Jos\u00e9 Tena",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.33692091717360784,
+        "true_probability": 0.5094,
+        "expected_value": -0.0984,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "David Fry",
+        "stat_type": "total_bases",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.0795507721104352,
+        "true_probability": 0.508,
+        "expected_value": -0.1008,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Cody Bellinger",
+        "stat_type": "total_bases",
+        "line": 1.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.34955545156761814,
+        "true_probability": 0.5072,
+        "expected_value": -0.1023,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Pedro Pag\u00e9s",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.06644829199812821,
+        "true_probability": 0.5049,
+        "expected_value": -0.1063,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Marcell Ozuna",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.6682264857276556,
+        "true_probability": 0.5039,
+        "expected_value": -0.1081,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Mike Yastrzemski",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.4258306036499766,
+        "true_probability": 0.5026,
+        "expected_value": -0.1104,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Jacob Wilson",
+        "stat_type": "total_bases",
+        "line": 1.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.1230697239120262,
+        "true_probability": 0.5004,
+        "expected_value": -0.1143,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Miguel Rojas",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.6289190453907346,
+        "true_probability": 0.5,
+        "expected_value": -0.115,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Angel Mart\u00ednez",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.6265793167992513,
+        "true_probability": 0.4986,
+        "expected_value": -0.1175,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Heriberto Hern\u00e1ndez",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.16237716424894713,
+        "true_probability": 0.4981,
+        "expected_value": -0.1184,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Andy Pages",
+        "stat_type": "total_bases",
+        "line": 1.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.7342068320074872,
+        "true_probability": 0.4971,
+        "expected_value": -0.1201,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Austin Riley",
+        "stat_type": "total_bases",
+        "line": 1.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.3481516144127281,
+        "true_probability": 0.4966,
+        "expected_value": -0.121,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Santiago Espinal",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.4988301357042583,
+        "true_probability": 0.4947,
+        "expected_value": -0.1244,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Jo Adell",
+        "stat_type": "total_bases",
+        "line": 1.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.5456247075339261,
+        "true_probability": 0.4946,
+        "expected_value": -0.1246,
+        "insight": "High xwOBA (0.357) confirms elite underlying metrics."
+    },
+    {
+        "player_name": "Austin Wells",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.3827795975666823,
+        "true_probability": 0.4937,
+        "expected_value": -0.1262,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Adrian Del Castillo",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.3888628919045391,
+        "true_probability": 0.4928,
+        "expected_value": -0.1277,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Logan O'Hoppe",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.024333177351427236,
+        "true_probability": 0.4902,
+        "expected_value": -0.1323,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Austin Hedges",
+        "stat_type": "total_bases",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.6523163313055685,
+        "true_probability": 0.4885,
+        "expected_value": -0.1354,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Agust\u00edn Ram\u00edrez",
+        "stat_type": "total_bases",
+        "line": 1.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.0,
+        "true_probability": 0.4883,
+        "expected_value": -0.1357,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Oswald Peraza",
+        "stat_type": "total_bases",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.0,
+        "true_probability": 0.4865,
+        "expected_value": -0.1389,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Joey Ortiz",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.21010762751520823,
+        "true_probability": 0.4864,
+        "expected_value": -0.1391,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Ivan Herrera",
+        "stat_type": "total_bases",
+        "line": 1.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.612540945250351,
+        "true_probability": 0.4863,
+        "expected_value": -0.1392,
+        "insight": "High xwOBA (0.365) confirms elite underlying metrics."
+    },
+    {
+        "player_name": "Trevor Story",
+        "stat_type": "total_bases",
+        "line": 1.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.8511932615816565,
+        "true_probability": 0.4862,
+        "expected_value": -0.1394,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Evan Carter",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.48525970987365463,
+        "true_probability": 0.4855,
+        "expected_value": -0.1407,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Jacob Young",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.7636874122601778,
+        "true_probability": 0.485,
+        "expected_value": -0.1416,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Brandon Nimmo",
+        "stat_type": "total_bases",
+        "line": 1.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.8437061300889097,
+        "true_probability": 0.4837,
+        "expected_value": -0.1439,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Dylan Beavers",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.4506317267197006,
+        "true_probability": 0.4836,
+        "expected_value": -0.144,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Will Smith",
+        "stat_type": "total_bases",
+        "line": 1.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.3079082826392138,
+        "true_probability": 0.483,
+        "expected_value": -0.1451,
+        "insight": "High xwOBA (0.376) confirms elite underlying metrics."
+    },
+    {
+        "player_name": "Alek Thomas",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.19372952737482452,
+        "true_probability": 0.4829,
+        "expected_value": -0.1453,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Liam Hicks",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.30837622835751055,
+        "true_probability": 0.4821,
+        "expected_value": -0.1467,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Matt Shaw",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.35002339728591486,
+        "true_probability": 0.4776,
+        "expected_value": -0.1546,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Carlos Cortes",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.4833879270004679,
+        "true_probability": 0.4765,
+        "expected_value": -0.1566,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Taylor Walls",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.0,
+        "true_probability": 0.4757,
+        "expected_value": -0.158,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Matt Wallner",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.9592887225081892,
+        "true_probability": 0.4712,
+        "expected_value": -0.166,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Jarren Duran",
+        "stat_type": "total_bases",
+        "line": 1.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.7070659803462799,
+        "true_probability": 0.4685,
+        "expected_value": -0.1708,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Yo\u00e1n Moncada",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.4145999064108564,
+        "true_probability": 0.4671,
+        "expected_value": -0.1732,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Bryan Reynolds",
+        "stat_type": "total_bases",
+        "line": 1.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.34534394010294805,
+        "true_probability": 0.466,
+        "expected_value": -0.1752,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Wilyer Abreu",
+        "stat_type": "total_bases",
+        "line": 1.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.40196537201684607,
+        "true_probability": 0.4643,
+        "expected_value": -0.1782,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Brayan Rocchio",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.3781001403837155,
+        "true_probability": 0.464,
+        "expected_value": -0.1787,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Nico Hoerner",
+        "stat_type": "total_bases",
+        "line": 1.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.6106691623771643,
+        "true_probability": 0.4629,
+        "expected_value": -0.1807,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Samuel Basallo",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.2232101076275152,
+        "true_probability": 0.4622,
+        "expected_value": -0.1819,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Colton Cowser",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.32522227421619093,
+        "true_probability": 0.4612,
+        "expected_value": -0.1837,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Nathan Church",
+        "stat_type": "total_bases",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.0,
+        "true_probability": 0.4592,
+        "expected_value": -0.1872,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Danny Jansen",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.21806270472625175,
+        "true_probability": 0.4586,
+        "expected_value": -0.1883,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Jakob Marsee",
+        "stat_type": "total_bases",
+        "line": 1.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.2826392138511933,
+        "true_probability": 0.4586,
+        "expected_value": -0.1883,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Jake Burger",
+        "stat_type": "total_bases",
+        "line": 1.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.6036499766027141,
+        "true_probability": 0.4558,
+        "expected_value": -0.1932,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Ezequiel Duran",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.5460926532522228,
+        "true_probability": 0.4557,
+        "expected_value": -0.1934,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Tyrone Taylor",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.3607861488067384,
+        "true_probability": 0.4522,
+        "expected_value": -0.1996,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Adolis Garc\u00eda",
+        "stat_type": "total_bases",
+        "line": 1.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.513804398689752,
+        "true_probability": 0.452,
+        "expected_value": -0.2,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Cedric Mullins",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.0,
+        "true_probability": 0.4482,
+        "expected_value": -0.2067,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Coby Mayo",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.271408516612073,
+        "true_probability": 0.4466,
+        "expected_value": -0.2095,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Alex Freeland",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.4459522695367337,
+        "true_probability": 0.4454,
+        "expected_value": -0.2116,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Marcelo Mayer",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.5063172671970051,
+        "true_probability": 0.4406,
+        "expected_value": -0.2201,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Lawrence Butler",
+        "stat_type": "total_bases",
+        "line": 1.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.35797847449695835,
+        "true_probability": 0.4395,
+        "expected_value": -0.2221,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Victor Scott",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.19138979878334111,
+        "true_probability": 0.4389,
+        "expected_value": -0.2231,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Kyle Tucker",
+        "stat_type": "total_bases",
+        "line": 1.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.7201684604585868,
+        "true_probability": 0.4379,
+        "expected_value": -0.2249,
+        "insight": "High xwOBA (0.352) confirms elite underlying metrics."
+    },
+    {
+        "player_name": "Roman Anthony",
+        "stat_type": "total_bases",
+        "line": 1.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.5320542817033224,
+        "true_probability": 0.437,
+        "expected_value": -0.2265,
+        "insight": "High xwOBA (0.362) confirms elite underlying metrics."
+    },
+    {
+        "player_name": "Nolan Gorman",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.48572765559195136,
+        "true_probability": 0.4354,
+        "expected_value": -0.2293,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Nasim Nu\u00f1ez",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.30135704258306034,
+        "true_probability": 0.4354,
+        "expected_value": -0.2293,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Leody Taveras",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.0687880205896116,
+        "true_probability": 0.4354,
+        "expected_value": -0.2293,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Travis d'Arnaud",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.4562470753392606,
+        "true_probability": 0.4354,
+        "expected_value": -0.2293,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "David Hamilton",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.0,
+        "true_probability": 0.4333,
+        "expected_value": -0.2331,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Ryan O'Hearn",
+        "stat_type": "total_bases",
+        "line": 1.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.22087037903603185,
+        "true_probability": 0.4317,
+        "expected_value": -0.2359,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Jos\u00e9 Caballero",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.727187646233037,
+        "true_probability": 0.4301,
+        "expected_value": -0.2387,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Denzel Clarke",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.4080486663547028,
+        "true_probability": 0.428,
+        "expected_value": -0.2424,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Oneil Cruz",
+        "stat_type": "total_bases",
+        "line": 1.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.9003275620028077,
+        "true_probability": 0.4279,
+        "expected_value": -0.2426,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Dalton Rushing",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.3696771174543753,
+        "true_probability": 0.4277,
+        "expected_value": -0.243,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Tim Tawa",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.4422087037903603,
+        "true_probability": 0.4276,
+        "expected_value": -0.2431,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Xavier Edwards",
+        "stat_type": "total_bases",
+        "line": 1.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.4220870379036032,
+        "true_probability": 0.4275,
+        "expected_value": -0.2433,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Mike Trout",
+        "stat_type": "total_bases",
+        "line": 1.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.6448291998128217,
+        "true_probability": 0.4237,
+        "expected_value": -0.2501,
+        "insight": "High xwOBA (0.362) confirms elite underlying metrics."
+    },
+    {
+        "player_name": "Otto Lopez",
+        "stat_type": "total_bases",
+        "line": 1.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.4389330837622836,
+        "true_probability": 0.4232,
+        "expected_value": -0.2509,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Jake Bauers",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.07299953205428171,
+        "true_probability": 0.421,
+        "expected_value": -0.2548,
+        "insight": "High xwOBA (0.359) confirms elite underlying metrics."
+    },
+    {
+        "player_name": "Tristan Gray",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.41647168928404305,
+        "true_probability": 0.4205,
+        "expected_value": -0.2557,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Derek Hill",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.0,
+        "true_probability": 0.4205,
+        "expected_value": -0.2557,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Amed Rosario",
+        "stat_type": "total_bases",
+        "line": 1.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.4089845577912962,
+        "true_probability": 0.4143,
+        "expected_value": -0.2667,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Luis Robert",
+        "stat_type": "total_bases",
+        "line": 1.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.23303696771174545,
+        "true_probability": 0.4131,
+        "expected_value": -0.2688,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Owen Caissie",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.4763687412260178,
+        "true_probability": 0.4127,
+        "expected_value": -0.2695,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Ildemaro Vargas",
+        "stat_type": "total_bases",
+        "line": 1.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.14693495554515676,
+        "true_probability": 0.4124,
+        "expected_value": -0.2701,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Josh Jung",
+        "stat_type": "total_bases",
+        "line": 1.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.5357978474496958,
+        "true_probability": 0.4075,
+        "expected_value": -0.2787,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Samuel Basallo",
+        "stat_type": "total_bases",
+        "line": 1.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.796911558259242,
+        "true_probability": 0.4075,
+        "expected_value": -0.2787,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Steven Kwan",
+        "stat_type": "total_bases",
+        "line": 1.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.2442676649508657,
+        "true_probability": 0.4045,
+        "expected_value": -0.284,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Jorge Barrosa",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.7810014038371549,
+        "true_probability": 0.4022,
+        "expected_value": -0.2881,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Graham Pauley",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.5264389330837623,
+        "true_probability": 0.3987,
+        "expected_value": -0.2943,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Jos\u00e9 Ferm\u00edn",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.10107627515208235,
+        "true_probability": 0.3913,
+        "expected_value": -0.3074,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Henry Davis",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.4613944782405241,
+        "true_probability": 0.3913,
+        "expected_value": -0.3074,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Paul Goldschmidt",
+        "stat_type": "total_bases",
+        "line": 1.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.1792232101076275,
+        "true_probability": 0.3873,
+        "expected_value": -0.3145,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Jorbit Vivas",
+        "stat_type": "total_bases",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.0,
+        "true_probability": 0.3867,
+        "expected_value": -0.3155,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Jeff McNeil",
+        "stat_type": "total_bases",
+        "line": 1.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.4487599438465138,
+        "true_probability": 0.3855,
+        "expected_value": -0.3177,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Randal Grichuk",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.6181562938699111,
+        "true_probability": 0.3806,
+        "expected_value": -0.3263,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Joc Pederson",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.3144595226953673,
+        "true_probability": 0.3784,
+        "expected_value": -0.3302,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Jahmai Jones",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.028076743097800658,
+        "true_probability": 0.3776,
+        "expected_value": -0.3316,
+        "insight": "High xwOBA (0.389) confirms elite underlying metrics."
+    },
+    {
+        "player_name": "Caleb Durbin",
+        "stat_type": "total_bases",
+        "line": 1.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.5105287786616752,
+        "true_probability": 0.3735,
+        "expected_value": -0.3389,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Austin Hedges",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.8221806270472625,
+        "true_probability": 0.3704,
+        "expected_value": -0.3444,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Oswald Peraza",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.2835751052877866,
+        "true_probability": 0.3698,
+        "expected_value": -0.3455,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Garrett Mitchell",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.0,
+        "true_probability": 0.367,
+        "expected_value": -0.3504,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Trea Turner",
+        "stat_type": "hits",
+        "line": 1.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.6715021057557323,
+        "true_probability": 0.3617,
+        "expected_value": -0.3598,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Nathan Church",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.09686476368741226,
+        "true_probability": 0.3566,
+        "expected_value": -0.3688,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Angel Mart\u00ednez",
+        "stat_type": "total_bases",
+        "line": 1.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.258306036499766,
+        "true_probability": 0.3565,
+        "expected_value": -0.369,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Jake Mangum",
+        "stat_type": "total_bases",
+        "line": 1.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.11558259241927936,
+        "true_probability": 0.3443,
+        "expected_value": -0.3906,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Evan Carter",
+        "stat_type": "total_bases",
+        "line": 1.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.12494150678521292,
+        "true_probability": 0.3438,
+        "expected_value": -0.3915,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Nico Hoerner",
+        "stat_type": "hits",
+        "line": 1.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.9480580252690688,
+        "true_probability": 0.3333,
+        "expected_value": -0.4101,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Nick Yorke",
+        "stat_type": "total_bases",
+        "line": 1.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.1272812353766963,
+        "true_probability": 0.3255,
+        "expected_value": -0.4239,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Xavier Edwards",
+        "stat_type": "hits",
+        "line": 1.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.8755264389330838,
+        "true_probability": 0.3254,
+        "expected_value": -0.424,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Jorbit Vivas",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.0,
+        "true_probability": 0.3228,
+        "expected_value": -0.4286,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "David Fry",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.4674777725783809,
+        "true_probability": 0.3137,
+        "expected_value": -0.4448,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Jos\u00e9 Ram\u00edrez",
+        "stat_type": "hits",
+        "line": 1.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.5198876930276088,
+        "true_probability": 0.2935,
+        "expected_value": -0.4805,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Brandon Nimmo",
+        "stat_type": "hits",
+        "line": 1.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.6785212915301825,
+        "true_probability": 0.2912,
+        "expected_value": -0.4846,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Ryan Kreidler",
+        "stat_type": "total_bases",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.0,
+        "true_probability": 0.2825,
+        "expected_value": -0.5,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Steven Kwan",
+        "stat_type": "hits",
+        "line": 1.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.6424894712213384,
+        "true_probability": 0.2807,
+        "expected_value": -0.5032,
+        "insight": "Standard variance play based on recent volume."
+    },
+    {
+        "player_name": "Ryan Kreidler",
+        "stat_type": "hits",
+        "line": 0.5,
+        "sportsbook_multiplier": 1.77,
+        "market_popularity": 0.7262517547964437,
+        "true_probability": 0.2486,
+        "expected_value": -0.56,
+        "insight": "Standard variance play based on recent volume."
+    }
+]

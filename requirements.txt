@@ -1,0 +1,10 @@
+pandas
+numpy
+pybaseball
+duckdb
+lightgbm
+scipy
+apify-client
+requests
+scikit-learn
+
