@@ -2,8 +2,8 @@ name: MLB Prop Daily Runner
 
 on:
   schedule:
-    - cron: '0 14 * * *' # Runs at 14:00 UTC (10:00 AM EST) daily
-  workflow_dispatch: # Allows manual trigger from GitHub UI
+    - cron: '0 14 * * *'
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -30,15 +30,12 @@ jobs:
         run: python -m src.main
 
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: '18'
 
       - name: Build Web App
-        working-directory:./web
-        run: |
-          npm install
-          npm run build
+        run: cd web && npm install && npm run build
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
