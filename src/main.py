@@ -79,14 +79,13 @@ def run_pipeline():
                     true_prob = calculate_nbinom_prob(mean_tb, float(model_data.get('var_tb', 0.0)), line)
                 
                 if true_prob > 0:
-                    multiplier = market.get('multiplier')
+                    raw_mult = market.get('multiplier')
                     
-                    # FIX: If fillna(0) turned the multiplier into 0, apply the standard 1.77x Sleeper baseline
-                    if pd.isna(multiplier) or multiplier == 0 or multiplier == 0.0:
-                        multiplier = 1.77
-                    else:
-                        multiplier = float(multiplier)
+                    # Remove the 1.77x fallback; skip the prop if Sleeper pulled the multiplier
+                    if pd.isna(raw_mult) or float(raw_mult) == 0.0:
+                        continue 
                         
+                    multiplier = float(raw_mult)
                     ev = calculate_ev(true_prob, multiplier)
                     
                     insight_text = "Standard variance play based on recent volume."
