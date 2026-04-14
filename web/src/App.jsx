@@ -19,7 +19,8 @@ export default function App() {
   const setShowInfo = showInfoState.at(1);
 
   useEffect(() => {
-    fetch('./predictions.json')
+    // The timestamp forces the browser to fetch the newest file, bypassing the cache
+    fetch('./predictions.json?t=' + new Date().getTime())
    .then((res) => res.json())
    .then((data) => {
         setProps(data);
@@ -42,6 +43,9 @@ export default function App() {
           <div>
             <h1 className="text-3xl font-bold text-emerald-400">MLB Prop Prediction Engine</h1>
             <p className="text-gray-400">Automated Expected Value against Sleeper Picks API</p>
+            <p className="text-sm text-emerald-500 font-semibold mt-2">
+              Data for: {new Date().toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' })}
+            </p>
           </div>
           <button
             onClick={() => setShowInfo(!showInfo)}
