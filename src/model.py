@@ -15,20 +15,18 @@ def calculate_nbinom_prob(mean, variance, line):
     return round(float(prob_over), 4)
 
 def generate_predictions(features_df):
-    """Simulates expected means and checks for NaN values to prevent math crashes."""
     predictions = list()
-    
     for _, row in features_df.iterrows():
         mean_hits = float(row['hits_per_game']) if pd.notnull(row['hits_per_game']) else 0.0
         mean_tb = float(row['tb_per_game']) if pd.notnull(row['tb_per_game']) else 0.0
         
         predictions.append(dict(
             player_name=row['player_name'],
+            split_arm=row['split_arm'], # ADD THIS: Keep track of which arm this stat belongs to
             mean_hits=mean_hits,
             var_hits=mean_hits * 1.35,
             mean_tb=mean_tb,
             var_tb=mean_tb * 1.55,
             xwoba=round(float(row['xwoba']), 3) if pd.notnull(row['xwoba']) else 0.300
         ))
-        
     return pd.DataFrame(predictions)

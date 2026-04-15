@@ -5,7 +5,7 @@ import statsapi
 import pandas as pd
 from datetime import datetime
 from src.ingestion import fetch_recent_statcast
-from src.features import engineer_features
+from src.features import engineer_batter_splits, engineer_pitcher_profiles # UPDATED IMPORTS
 from src.model import generate_predictions, calculate_nbinom_prob
 from src.scraper import scrape_sleeper_lines
 from src.config import OUTPUT_JSON, BALLDONTLIE_KEY
@@ -68,8 +68,7 @@ def fetch_probable_pitchers():
         
         dates = schedule.get('dates', list())
         if len(dates) > 0:
-            # PROPER BUG FIX: Actually indexing into the list to retrieve the 'games' dictionary
-            games = dates.get('games', list()) 
+            games = dates[0].get('games', list()) 
             for game in games:
                 teams = game.get('teams', dict())
                 home = teams.get('home', dict())
@@ -128,11 +127,17 @@ def run_pipeline():
     print("1. Ingesting Data...")
     statcast_df = fetch_recent_statcast(days=365)
     
-    print("2. Engineering Features...")
-    features_df = engineer_features(statcast_df)
+    print("2. Engineering Matchup Features (Splits & Expected Metrics)...")
+    batter_df = engineer_batter_splits(statcast_df)
+    pitcher_df = engineer_pitcher_profiles(statcast_df)
+    
+    if not pitcher_df.empty:
+        pitcher_df.insert(0, 'join_name', pitcher_df.get('player_name').apply(normalize_name))
     
     print("3. Generating Probability Distributions...")
-    preds_df = generate_predictions(features_df)
+    preds_df = generate_predictions(batter_df)
+    if not preds_df.empty:
+        preds_df.insert(0, 'join_name', preds_df.get('player_name').apply(normalize_name))
     
     print("4. Scraping Sleeper Market Lines...")
     sleeper_df = scrape_sleeper_lines()
@@ -140,59 +145,54 @@ def run_pipeline():
     sleeper_df = sleeper_df.fillna(0)
     preds_df = preds_df.fillna(0)
     
-    print("5. Applying Phase 2 Matchups & Lineup Volume...")
+    print("5. Applying Matchups & Lineup Volume...")
     probable_pitchers = fetch_probable_pitchers()
     batting_orders, player_teams = fetch_batting_orders()
     
-    try:
-        from pybaseball import pitching_stats
-        pitcher_df = pitching_stats(2026)
-        if pitcher_df.empty:
-            pitcher_df = pitching_stats(2025)
-        pitcher_df.insert(0, 'join_name', pitcher_df.get('Name').apply(normalize_name))
-    except Exception:
-        pitcher_df = pd.DataFrame()
-        
     final_opportunities = list()
     matched_count = 0
     
     if not sleeper_df.empty and not preds_df.empty:
-        preds_df.insert(0, 'join_name', preds_df.get('player_name').apply(normalize_name))
-        
         for _, market in sleeper_df.iterrows():
             market_player = normalize_name(market.get('player_name'))
             
-            model_data = None
-            for _, row in preds_df.iterrows():
-                if row.get('join_name') == market_player:
-                    model_data = row.to_dict()
-                    break
+            # --- 1. Identify Team & Opposing Pitcher ---
+            scraped_team = str(market.get('team', '')).strip().upper()
+            if scraped_team == 'NONE': 
+                scraped_team = ''
+                
+            team_abbr = player_teams.get(market_player, scraped_team).upper()
+            team_name = FULL_TEAM_MAP.get(team_abbr, "unknown")
+            opponent_pitcher = probable_pitchers.get(team_name, "unknown")
             
+            # Default Pitcher Profile (League Average RHP)
+            pitcher_arm = 'R'
+            pitcher_hit_allowed = LEAGUE_AVG_HIT_RATE
+            pitcher_tb_allowed = LEAGUE_AVG_SLG_RATE
+            
+            # Match Pitcher & Get Expected Metrics
+            if not pitcher_df.empty and opponent_pitcher != "unknown":
+                p_match_df = pitcher_df[pitcher_df['join_name'] == opponent_pitcher]
+                if not p_match_df.empty:
+                    p_match = p_match_df.iloc[0].to_dict()
+                    pitcher_arm = p_match.get('throw_arm', 'R')
+                    pitcher_hit_allowed = float(p_match.get('p_xba', LEAGUE_AVG_HIT_RATE))
+                    pitcher_tb_allowed = float(p_match.get('p_xslg', LEAGUE_AVG_SLG_RATE))
+
+            # --- 2. Match Batter against Specific Arm Split ---
+            model_data = None
+            player_splits = preds_df[(preds_df['join_name'] == market_player) & (preds_df['split_arm'] == pitcher_arm)]
+            
+            if not player_splits.empty:
+                model_data = player_splits.iloc[0].to_dict()
+            elif not preds_df[preds_df['join_name'] == market_player].empty:
+                # Fallback: If they lack a specific split, grab whatever data they have
+                model_data = preds_df[preds_df['join_name'] == market_player].iloc[0].to_dict()
+
+            # --- 3. Process the Data if Match Found ---
             if model_data is not None:
                 matched_count += 1
                 
-                scraped_team = str(market.get('team', '')).strip().upper()
-                if scraped_team == 'NONE': 
-                    scraped_team = ''
-                    
-                team_abbr = player_teams.get(market_player, scraped_team).upper()
-                team_name = FULL_TEAM_MAP.get(team_abbr, "unknown")
-                opponent_pitcher = probable_pitchers.get(team_name, "unknown")
-                
-                pitcher_hit_allowed = LEAGUE_AVG_HIT_RATE
-                pitcher_tb_allowed = LEAGUE_AVG_SLG_RATE
-                
-                if not pitcher_df.empty and opponent_pitcher!= "unknown":
-                    p_match = None
-                    for _, prow in pitcher_df.iterrows():
-                        if prow.get('join_name') == opponent_pitcher:
-                            p_match = prow.to_dict()
-                            break
-                    
-                    if p_match is not None:
-                        pitcher_hit_allowed = float(p_match.get('AVG', LEAGUE_AVG_HIT_RATE))
-                        pitcher_tb_allowed = float(p_match.get('SLG', LEAGUE_AVG_SLG_RATE))
-
                 hit_adj = calculate_log5_adjustment(pitcher_hit_allowed, LEAGUE_AVG_HIT_RATE)
                 tb_adj = calculate_log5_adjustment(pitcher_tb_allowed, LEAGUE_AVG_SLG_RATE)
                 
@@ -225,16 +225,16 @@ def run_pipeline():
                     ev = calculate_ev(true_prob, multiplier)
                     
                     insight_text = "Projects for " + str(round(expected_pa, 2)) + " PA based on batting " + str(lineup_spot) + "th. "
-                    if opponent_pitcher!= "unknown":
-                        insight_text = "Log5 adjusted vs " + str(opponent_pitcher).title() + ". " + insight_text
+                    if opponent_pitcher != "unknown":
+                        insight_text = "Log5 adjusted vs " + str(pitcher_arm) + "HP " + str(opponent_pitcher).title() + ". " + insight_text
                         
                     if float(model_data.get('xwoba', 0)) > 0.350:
-                        insight_text = "Elite xwOBA (" + str(model_data.get('xwoba')) + ") + " + insight_text
+                        insight_text = "Elite xwOBA (" + str(model_data.get('xwoba')) + ") vs " + str(pitcher_arm) + "HP + " + insight_text
                         
                     final_opportunities.append(dict(
                         player_name=market.get('player_name'),
                         team=team_abbr,
-                        opposing_pitcher=str(opponent_pitcher).title() if opponent_pitcher!= "unknown" else "TBD",
+                        opposing_pitcher=str(opponent_pitcher).title() if opponent_pitcher != "unknown" else "TBD",
                         stat_type=raw_stat,
                         line=line,
                         sportsbook_multiplier=multiplier,

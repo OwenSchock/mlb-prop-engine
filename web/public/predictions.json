@@ -1,6 +1,8 @@
 [
     {
         "player_name": "Debug Report",
+        "team": "MLB",
+        "opposing_pitcher": "N/A",
         "stat_type": "system_status",
         "line": 0.0,
         "sportsbook_multiplier": 1.0,

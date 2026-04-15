@@ -2,29 +2,28 @@ import React from 'react';
 import { TrendingUp, Info, Swords } from 'lucide-react';
 
 const getTeamLogo = (teamAbbr) => {
-  if (!teamAbbr) return '';
+  if (!teamAbbr || teamAbbr.toUpperCase() === 'MLB' || teamAbbr.toUpperCase() === 'NONE') return '';
   const upper = String(teamAbbr).toUpperCase();
-  if (upper === 'MLB') return '';
-  if (upper === 'NONE') return '';
-  if (upper === '') return '';
   
-  const teamMap = new Map();
-  teamMap.set('ARI', 'ari'); teamMap.set('ATL', 'atl'); teamMap.set('BAL', 'bal');
-  teamMap.set('BOS', 'bos'); teamMap.set('CHC', 'chc'); teamMap.set('CWS', 'chw');
-  teamMap.set('CHW', 'chw'); teamMap.set('CIN', 'cin'); teamMap.set('CLE', 'cle');
-  teamMap.set('COL', 'col'); teamMap.set('DET', 'det'); teamMap.set('HOU', 'hou');
-  teamMap.set('KC', 'kc');   teamMap.set('KCR', 'kc');  teamMap.set('LAA', 'laa');
-  teamMap.set('LAD', 'lad'); teamMap.set('MIA', 'mia'); teamMap.set('MIL', 'mil');
-  teamMap.set('MIN', 'min'); teamMap.set('NYM', 'nym'); teamMap.set('NYY', 'nyy');
-  teamMap.set('OAK', 'oak'); teamMap.set('ATH', 'oak'); teamMap.set('PHI', 'phi');
-  teamMap.set('PIT', 'pit'); teamMap.set('SD', 'sd');   teamMap.set('SDP', 'sd');
-  teamMap.set('SF', 'sf');   teamMap.set('SFG', 'sf');  teamMap.set('SEA', 'sea');
-  teamMap.set('STL', 'stl'); teamMap.set('TB', 'tb');   teamMap.set('TBR', 'tb');
-  teamMap.set('TEX', 'tex'); teamMap.set('TOR', 'tor'); teamMap.set('WSH', 'wsh');
-  teamMap.set('WAS', 'wsh');
+  // Official MLB Static CDN uses team IDs for high-res SVGs
+  const teamIds = {
+    'ARI': 109, 'ATL': 144, 'BAL': 110, 'BOS': 111, 'CHC': 112, 
+    'CHW': 145, 'CWS': 145, 'CIN': 113, 'CLE': 114, 'COL': 115, 
+    'DET': 116, 'HOU': 117, 'KC': 118, 'KCR': 118, 'LAA': 108, 
+    'LAD': 119, 'MIA': 146, 'MIL': 158, 'MIN': 142, 'NYM': 121, 
+    'NYY': 147, 'OAK': 133, 'ATH': 133, 'PHI': 143, 'PIT': 134, 
+    'SD': 135, 'SDP': 135, 'SF': 137, 'SFG': 137, 'SEA': 136, 
+    'STL': 138, 'TB': 139, 'TBR': 139, 'TEX': 140, 'TOR': 141, 
+    'WSH': 120, 'WAS': 120
+  };
 
-  const queryAbbr = teamMap.has(upper)? teamMap.get(upper) : upper.toLowerCase();
-  return 'https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/' + queryAbbr + '.png';
+  const id = teamIds[upper];
+  if (id) {
+    return `https://www.mlbstatic.com/team-logos/team-cap-on-light/${id}.svg`;
+  }
+  
+  // Fallback to ESPN if the abbreviation somehow isn't in the dictionary
+  return `https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/${upper.toLowerCase()}.png`;
 };
 
 export default function PropCard({ data }) {
