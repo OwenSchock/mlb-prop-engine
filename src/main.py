@@ -8,7 +8,6 @@ from src.model import generate_predictions, calculate_nbinom_prob
 from src.scraper import scrape_sleeper_lines
 from src.config import OUTPUT_JSON
 
-# Standard 2026 League Baselines for Log5 calculations
 LEAGUE_AVG_HIT_RATE = 0.240
 LEAGUE_AVG_SLG_RATE = 0.400
 
@@ -20,7 +19,7 @@ def calculate_ev(true_prob, multiplier):
     return round(ev, 4)
 
 def normalize_name(name):
-    """Removes all punctuation and suffixes so MLB names and Sleeper names lock together."""
+    """Removes all punctuation and suffixes for bulletproof matching."""
     if pd.isnull(name) or not name: 
         return "unknown"
     name = str(name).replace(".", "").replace("-", " ").replace("'", "").strip().lower()
@@ -43,21 +42,42 @@ def fetch_probable_pitchers():
         for game in schedule:
             home_team = normalize_name(game.get('home_name', ''))
             away_team = normalize_name(game.get('away_name', ''))
-            
-            # The batter on the home team faces the away pitcher
             pitchers[home_team] = normalize_name(game.get('away_probable_pitcher', ''))
-            # The batter on the away team faces the home pitcher
             pitchers[away_team] = normalize_name(game.get('home_probable_pitcher', ''))
         return pitchers
     except Exception as e:
         print("Notice: Probable pitcher fetch failed - " + str(e))
         return dict()
 
+def fetch_batting_orders():
+    """Uses MLB-StatsAPI to fetch today's confirmed batting orders."""
+    print("Fetching daily lineups from MLB StatsAPI...")
+    lineups = dict()
+    try:
+        schedule = statsapi.schedule()
+        for game in schedule:
+            game_id = game.get('game_id')
+            if not game_id: continue
+            
+            box = statsapi.get('game_boxscore', dict(gamePk=game_id))
+            for team_side in list(('away', 'home')):
+                team_data = box.get('teams', dict()).get(team_side, dict())
+                batting_order = team_data.get('battingOrder', list())
+                players = team_data.get('players', dict())
+                
+                for i, p_id in enumerate(batting_order):
+                    player_info = players.get('ID' + str(p_id), dict())
+                    name = normalize_name(player_info.get('person', dict()).get('fullName', ''))
+                    if name:
+                        lineups[name] = i + 1  # Records their 1-9 lineup spot
+    except Exception as e:
+        print("Notice: Lineup fetch failed (games may be too far out) - " + str(e))
+    return lineups
+
 def calculate_log5_adjustment(pitcher_rate, league_rate):
-    """Calculates a multiplier based on the Log5 ratio of the opposing pitcher.[1]"""
+    """Calculates a multiplier based on the Log5 ratio of the opposing pitcher."""
     if league_rate <= 0 or pitcher_rate <= 0:
         return 1.0
-    # Proportional adjustment: How much better/worse is this pitcher than average?
     return float(pitcher_rate) / float(league_rate)
 
 def run_pipeline():
@@ -76,10 +96,10 @@ def run_pipeline():
     sleeper_df = sleeper_df.fillna(0)
     preds_df = preds_df.fillna(0)
     
-    print("5. Applying Phase 2 Log5 Pitcher Context...")
+    print("5. Applying Phase 2 Matchups & Lineup Volume...")
     probable_pitchers = fetch_probable_pitchers()
+    batting_orders = fetch_batting_orders()
     
-    # Try to fetch current year pitcher stats for the Log5 formula
     try:
         from pybaseball import pitching_stats
         pitcher_df = pitching_stats(2026)
@@ -105,11 +125,9 @@ def run_pipeline():
             if model_data is not None:
                 matched_count += 1
                 
-                # Fetch Player Context and Matchup
                 team_name = normalize_name(market.get('team', ''))
                 opponent_pitcher = probable_pitchers.get(team_name, "unknown")
                 
-                # Default to league average if pitcher data isn't found
                 pitcher_hit_allowed = LEAGUE_AVG_HIT_RATE
                 pitcher_tb_allowed = LEAGUE_AVG_SLG_RATE
                 
@@ -121,16 +139,19 @@ def run_pipeline():
                             break
                     
                     if p_match is not None:
-                        # Use actual Batting Average Against (AVG) and Slugging Against (SLG)
                         pitcher_hit_allowed = float(p_match.get('AVG', LEAGUE_AVG_HIT_RATE))
                         pitcher_tb_allowed = float(p_match.get('SLG', LEAGUE_AVG_SLG_RATE))
 
-                # Apply Log5 Adjustments to the Batter's Baseline Expectation
                 hit_adj = calculate_log5_adjustment(pitcher_hit_allowed, LEAGUE_AVG_HIT_RATE)
                 tb_adj = calculate_log5_adjustment(pitcher_tb_allowed, LEAGUE_AVG_SLG_RATE)
                 
-                adj_mean_hits = float(model_data.get('mean_hits', 0.0)) * hit_adj
-                adj_mean_tb = float(model_data.get('mean_tb', 0.0)) * tb_adj
+                # Dynamic Lineup Volume Adjuster (Leadoff = +10% PA, 9th = -11% PA)
+                lineup_spot = batting_orders.get(market_player, 5)
+                expected_pa = 4.63 - ((lineup_spot - 1) * 0.11)
+                volume_multiplier = expected_pa / 4.20
+                
+                adj_mean_hits = float(model_data.get('mean_hits', 0.0)) * hit_adj * volume_multiplier
+                adj_mean_tb = float(model_data.get('mean_tb', 0.0)) * tb_adj * volume_multiplier
                 
                 true_prob = 0.0
                 raw_stat = str(market.get('stat_type', '')).lower().replace(" ", "_")
@@ -153,16 +174,13 @@ def run_pipeline():
                     multiplier = float(raw_mult)
                     ev = calculate_ev(true_prob, multiplier)
                     
-                    # Update insight text to reflect the exact pitcher matchup
-                    insight_text = "Baseline projection."
+                    insight_text = "Projects for " + str(round(expected_pa, 1)) + " PA based on batting " + str(lineup_spot) + "th."
                     if opponent_pitcher!= "unknown":
-                        insight_text = "Log5 adjusted for matchup vs " + str(opponent_pitcher).title() + "."
-                        
-                    if float(model_data.get('xwoba', 0)) > 0.350:
-                        insight_text = "Elite xwOBA (" + str(model_data.get('xwoba')) + ") + " + insight_text
+                        insight_text = "Log5 adjusted vs " + str(opponent_pitcher).title() + ". " + insight_text
                         
                     final_opportunities.append(dict(
                         player_name=market.get('player_name'),
+                        opposing_pitcher=str(opponent_pitcher).title() if opponent_pitcher!= "unknown" else "TBD",
                         stat_type=raw_stat,
                         line=line,
                         sportsbook_multiplier=multiplier,
@@ -174,7 +192,7 @@ def run_pipeline():
     
     if len(final_opportunities) == 0:
         final_opportunities.append(dict(
-            player_name="Debug Report", stat_type="system_status", line=0.0,
+            player_name="Debug Report", opposing_pitcher="N/A", stat_type="system_status", line=0.0,
             sportsbook_multiplier=1.0, market_popularity=0.0, true_probability=0.0, 
             expected_value=0.0, insight="Matches found: " + str(matched_count)
         ))

@@ -1,5 +1,5 @@
 import React from 'react';
-import { TrendingUp, Info } from 'lucide-react';
+import { TrendingUp, Info, Swords } from 'lucide-react';
 
 export default function PropCard({ data }) {
   const evPercentage = (data.expected_value * 100).toFixed(2);
@@ -7,7 +7,7 @@ export default function PropCard({ data }) {
 
   return (
     <div className="bg-gray-800 rounded-xl p-5 shadow-lg border border-gray-700 transition hover:border-emerald-500">
-      <div className="flex justify-between items-start mb-4">
+      <div className="flex justify-between items-start mb-3">
         <div>
           <h2 className="text-xl font-bold text-white">{data.player_name}</h2>
           <p className="text-sm text-gray-400 capitalize">{data.stat_type.replace('_', ' ')} • Line: {data.line}</p>
@@ -16,6 +16,12 @@ export default function PropCard({ data }) {
           <TrendingUp size={16} />
           {evPercentage}% EV
         </div>
+      </div>
+
+      {/* Visual Matchup Cue */}
+      <div className="flex items-center gap-2 mb-4 text-xs font-semibold bg-gray-900/50 w-max px-2 py-1 rounded border border-gray-700 text-indigo-300">
+        <Swords size={14} />
+        <span>vs. {data.opposing_pitcher}</span>
       </div>
 
       <div className="grid grid-cols-2 gap-4 mb-4">
