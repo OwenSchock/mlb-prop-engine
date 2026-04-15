@@ -8,3 +8,4 @@ apify-client
 requests
 scikit-learn
 MLB-StatsAPI
+python-dotenv
