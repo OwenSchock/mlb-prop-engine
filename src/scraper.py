@@ -4,7 +4,7 @@ import pandas as pd
 import time
 
 def scrape_sleeper_lines():
-    """Scrapes the Sleeper Picks board using the Apify GraphQL Actor with retries and memory overrides."""
+    """Scrapes the Sleeper Picks board using the Apify GraphQL Actor with retries."""
     if not APIFY_TOKEN:
         print("Warning: APIFY_TOKEN missing. Returning empty dataframe.")
         return pd.DataFrame()
@@ -20,7 +20,6 @@ def scrape_sleeper_lines():
     run = None
     for attempt in range(3):
         try:
-            # Force 4GB of memory and a 3-minute timeout to prevent cloud crashes
             run = client.actor("zen-studio/sleeper-player-props").call(
                 run_input=run_input,
                 memory_mbytes=4096,
@@ -28,16 +27,14 @@ def scrape_sleeper_lines():
             )
             if run and run.get('status') == 'SUCCEEDED':
                 break
-            print("Apify Actor failed (Status: " + str(run.get('status') if run else 'None') + "). Retrying " + str(attempt+1) + "/3...")
+            print("Apify Actor failed. Retrying " + str(attempt+1) + "/3...")
             time.sleep(3)
         except Exception as e:
             print("Apify Error: " + str(e) + ". Retrying " + str(attempt+1) + "/3...")
             time.sleep(3)
             
-    if not run or run.get('status')!= 'SUCCEEDED':
-        print("Warning: Apify failed to complete cleanly. Attempting to rescue partial data...")
-        if not run or not run.get('defaultDatasetId'):
-            return pd.DataFrame()
+    if not run or not run.get('defaultDatasetId'):
+        return pd.DataFrame()
 
     dataset_id = run.get('defaultDatasetId')
     try:
@@ -49,6 +46,7 @@ def scrape_sleeper_lines():
     for item in items:
         lines.append(dict(
             player_name=item.get('player_name', item.get('player')),
+            team=item.get('team'),
             stat_type=item.get('stat_type', item.get('stat')),
             line=item.get('line', item.get('prop_line')),
             multiplier=item.get('payout_multiplier_over', item.get('over_multiplier', item.get('multiplier', 0))),
