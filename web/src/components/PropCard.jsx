@@ -3,22 +3,18 @@ import { TrendingUp, Info, Swords } from 'lucide-react';
 
 // Helper function to map Sleeper abbreviations to the ESPN logo network
 const getTeamLogo = (teamAbbr) => {
-  if (!teamAbbr |
-
-| teamAbbr === 'MLB') return '';
+  if (!teamAbbr) return '';
+  if (teamAbbr === 'MLB') return '';
   
-  // Handle slight differences in abbreviations between Sleeper and ESPN
-  const map = {
-    'CWS': 'chw',
-    'TB': 'tb',
-    'ATH': 'oak',
-    'WSH': 'wsh'
-  };
+  // Using a Map object to completely avoid the invisible square bracket bug
+  const teamMap = new Map();
+  teamMap.set('CWS', 'chw');
+  teamMap.set('TB', 'tb');
+  teamMap.set('ATH', 'oak');
+  teamMap.set('WSH', 'wsh');
   
-  const queryAbbr = map[teamAbbr] |
-
-| teamAbbr.toLowerCase();
-  return `https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/${queryAbbr}.png`;
+  const queryAbbr = teamMap.has(teamAbbr)? teamMap.get(teamAbbr) : teamAbbr.toLowerCase();
+  return 'https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/' + queryAbbr + '.png';
 };
 
 export default function PropCard({ data }) {
