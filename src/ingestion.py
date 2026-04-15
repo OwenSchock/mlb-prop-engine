@@ -27,9 +27,17 @@ def fetch_daily_lineups():
     return
 
 def fetch_weather_forecast(lat, lon):
-    """Fetches hourly weather forecast via Open-Meteo free API.[2]"""
-    url = f"https://api.open-meteo.com/v1/forecast?latitude={lat}&longitude={lon}&hourly=temperature_2m,windspeed_10m"
-    response = requests.get(url)
-    if response.status_code == 200:
-        return response.json()
-    return {}
+    """Fetches daily max temperature via Open-Meteo free API."""
+    # Using daily max temp and converting to Fahrenheit
+    url = f"https://api.open-meteo.com/v1/forecast?latitude={lat}&longitude={lon}&daily=temperature_2m_max&temperature_unit=fahrenheit&timezone=auto&forecast_days=1"
+    try:
+        response = requests.get(url, timeout=5)
+        if response.status_code == 200:
+            data = response.json()
+            # Extract today's max temperature
+            max_temp = data.get('daily', {}).get('temperature_2m_max', [72.0])[0]
+            return float(max_temp)
+    except Exception as e:
+        print(f"Weather fetch failed: {e}")
+    
+    return 72.0 # League average default if API fails

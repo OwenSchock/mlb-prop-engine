@@ -1,10 +1,11 @@
 import os
+from dotenv import load_dotenv
 
-# API Keys loaded from GitHub Secrets
-APIFY_TOKEN = os.environ.get("APIFY_TOKEN", "")
-BALLDONTLIE_KEY = os.environ.get("BALLDONTLIE_KEY", "")
+# This automatically finds the .env file and loads the variables into the system
+load_dotenv()
 
-# File paths
-DATA_DIR = "data"
-DB_PATH = f"{DATA_DIR}/mlb_props.duckdb"
-OUTPUT_JSON = "web/public/predictions.json" # Saved directly to React public folder
+APIFY_TOKEN = os.getenv("APIFY_TOKEN")
+BALLDONTLIE_KEY = os.getenv("BALLDONTLIE_KEY")
+
+# Set a default path for the JSON output so it always drops in your web folder
+OUTPUT_JSON = os.getenv("OUTPUT_JSON", os.path.join("web", "public", "predictions.json"))
