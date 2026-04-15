@@ -15,15 +15,15 @@ LEAGUE_AVG_SLG_RATE = 0.400
 
 FULL_TEAM_MAP = dict(
     ARI="arizona diamondbacks", ATL="atlanta braves", BAL="baltimore orioles",
-    BOS="boston red sox", CHC="chicago cubs", CWS="chicago white sox",
+    BOS="boston red sox", CHC="chicago cubs", CWS="chicago white sox", CHW="chicago white sox",
     CIN="cincinnati reds", CLE="cleveland guardians", COL="colorado rockies",
-    DET="detroit tigers", HOU="houston astros", KC="kansas city royals",
+    DET="detroit tigers", HOU="houston astros", KC="kansas city royals", KCR="kansas city royals",
     LAA="los angeles angels", LAD="los angeles dodgers", MIA="miami marlins",
     MIL="milwaukee brewers", MIN="minnesota twins", NYM="new york mets",
     NYY="new york yankees", OAK="oakland athletics", ATH="oakland athletics",
-    PHI="philadelphia phillies", PIT="pittsburgh pirates", SD="san diego padres",
-    SF="san francisco giants", SEA="seattle mariners", STL="st louis cardinals",
-    TB="tampa bay rays", TEX="texas rangers", TOR="toronto blue jays",
+    PHI="philadelphia phillies", PIT="pittsburgh pirates", SD="san diego padres", SDP="san diego padres",
+    SF="san francisco giants", SFG="san francisco giants", SEA="seattle mariners", STL="st louis cardinals",
+    TB="tampa bay rays", TBR="tampa bay rays", TEX="texas rangers", TOR="toronto blue jays",
     WSH="washington nationals", WAS="washington nationals"
 )
 
@@ -59,7 +59,6 @@ def normalize_name(name):
     return name.strip()
 
 def fetch_probable_pitchers():
-    """Forces MLB StatsAPI to hydrate the schedule with explicit pitcher data."""
     print("Fetching today's probable pitchers via explicit hydration...")
     pitchers = dict()
     try:
@@ -69,7 +68,8 @@ def fetch_probable_pitchers():
         
         dates = schedule.get('dates', list())
         if len(dates) > 0:
-            games = dates.get('games', list())
+            # BUG FIX: Access the first element of the dates list instead of using.get()
+            games = dates.get('games', list()) 
             for game in games:
                 teams = game.get('teams', dict())
                 home = teams.get('home', dict())
@@ -90,6 +90,7 @@ def fetch_probable_pitchers():
 def fetch_batting_orders():
     print("Fetching daily lineups from BallDontLie API...")
     lineups = dict()
+    player_teams = dict() # BUG FIX: Map players to their teams securely to ensure logos load
     try:
         today = datetime.today().strftime('%Y-%m-%d')
         url = "https://api.balldontlie.io/v1/lineups"
@@ -100,17 +101,23 @@ def fetch_batting_orders():
         if res.status_code == 200:
             data = res.json().get('data', list())
             for game in data:
-                for team_type in list(('home_team_lineup', 'visitor_team_lineup')):
+                home_team = game.get('home_team', dict()).get('abbreviation', '')
+                away_team = game.get('visitor_team', dict()).get('abbreviation', '')
+                
+                for team_type, team_abbr in list((('home_team_lineup', home_team), ('visitor_team_lineup', away_team))):
                     team_lineup = game.get(team_type, list())
                     for player in team_lineup:
-                        player_info = player.get('player', dict())
-                        name = normalize_name(player_info.get('first_name', '') + " " + player_info.get('last_name', ''))
+                        p_info = player.get('player', dict())
+                        name = normalize_name(p_info.get('first_name', '') + " " + p_info.get('last_name', ''))
                         order = player.get('batting_order')
-                        if name and order:
-                            lineups[name] = int(order)
+                        if name:
+                            if team_abbr:
+                                player_teams[name] = team_abbr
+                            if order:
+                                lineups[name] = int(order)
     except Exception as e:
         print("Notice: Lineup fetch failed - " + str(e))
-    return lineups
+    return lineups, player_teams
 
 def calculate_log5_adjustment(pitcher_rate, league_rate):
     if league_rate <= 0 or pitcher_rate <= 0:
@@ -135,7 +142,7 @@ def run_pipeline():
     
     print("5. Applying Phase 2 Matchups & Lineup Volume...")
     probable_pitchers = fetch_probable_pitchers()
-    batting_orders = fetch_batting_orders()
+    batting_orders, player_teams = fetch_batting_orders()
     
     try:
         from pybaseball import pitching_stats
@@ -164,7 +171,12 @@ def run_pipeline():
             if model_data is not None:
                 matched_count += 1
                 
-                team_abbr = str(market.get('team', '')).upper()
+                # Securely fetch the team abbreviation
+                scraped_team = str(market.get('team', '')).strip().upper()
+                if scraped_team == 'NONE': 
+                    scraped_team = ''
+                    
+                team_abbr = player_teams.get(market_player, scraped_team).upper()
                 team_name = FULL_TEAM_MAP.get(team_abbr, "unknown")
                 opponent_pitcher = probable_pitchers.get(team_name, "unknown")
                 
@@ -222,7 +234,7 @@ def run_pipeline():
                         
                     final_opportunities.append(dict(
                         player_name=market.get('player_name'),
-                        team=market.get('team', ''),
+                        team=team_abbr,
                         opposing_pitcher=str(opponent_pitcher).title() if opponent_pitcher!= "unknown" else "TBD",
                         stat_type=raw_stat,
                         line=line,

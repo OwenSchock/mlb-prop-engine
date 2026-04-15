@@ -3,22 +3,27 @@ import { TrendingUp, Info, Swords } from 'lucide-react';
 
 const getTeamLogo = (teamAbbr) => {
   if (!teamAbbr) return '';
-  if (teamAbbr === 'MLB') return '';
+  const upper = String(teamAbbr).toUpperCase();
+  if (upper === 'MLB') return '';
+  if (upper === 'NONE') return '';
+  if (upper === '') return '';
   
   const teamMap = new Map();
   teamMap.set('ARI', 109); teamMap.set('ATL', 144); teamMap.set('BAL', 110);
   teamMap.set('BOS', 111); teamMap.set('CHC', 112); teamMap.set('CWS', 145);
-  teamMap.set('CIN', 113); teamMap.set('CLE', 114); teamMap.set('COL', 115);
-  teamMap.set('DET', 116); teamMap.set('HOU', 117); teamMap.set('KC', 118);
-  teamMap.set('LAA', 108); teamMap.set('LAD', 119); teamMap.set('MIA', 146);
-  teamMap.set('MIL', 158); teamMap.set('MIN', 142); teamMap.set('NYM', 121);
-  teamMap.set('NYY', 147); teamMap.set('OAK', 133); teamMap.set('ATH', 133);
-  teamMap.set('PHI', 143); teamMap.set('PIT', 134); teamMap.set('SD', 135);
-  teamMap.set('SF', 137);  teamMap.set('SEA', 136); teamMap.set('STL', 138);
-  teamMap.set('TB', 139);  teamMap.set('TEX', 140); teamMap.set('TOR', 141);
-  teamMap.set('WSH', 120); teamMap.set('WAS', 120);
+  teamMap.set('CHW', 145); teamMap.set('CIN', 113); teamMap.set('CLE', 114);
+  teamMap.set('COL', 115); teamMap.set('DET', 116); teamMap.set('HOU', 117);
+  teamMap.set('KC', 118);  teamMap.set('KCR', 118); teamMap.set('LAA', 108);
+  teamMap.set('LAD', 119); teamMap.set('MIA', 146); teamMap.set('MIL', 158);
+  teamMap.set('MIN', 142); teamMap.set('NYM', 121); teamMap.set('NYY', 147);
+  teamMap.set('OAK', 133); teamMap.set('ATH', 133); teamMap.set('PHI', 143);
+  teamMap.set('PIT', 134); teamMap.set('SD', 135);  teamMap.set('SDP', 135);
+  teamMap.set('SF', 137);  teamMap.set('SFG', 137); teamMap.set('SEA', 136);
+  teamMap.set('STL', 138); teamMap.set('TB', 139);  teamMap.set('TBR', 139);
+  teamMap.set('TEX', 140); teamMap.set('TOR', 141); teamMap.set('WSH', 120);
+  teamMap.set('WAS', 120);
 
-  const teamId = teamMap.get(teamAbbr);
+  const teamId = teamMap.get(upper);
   if (!teamId) return '';
   
   return 'https://www.mlbstatic.com/team-logos/' + teamId + '.svg';
@@ -33,11 +38,9 @@ export default function PropCard({ data }) {
 
   let logoElement = null;
   if (data.team) {
-      if (data.team!== 'MLB') {
-          const logoUrl = getTeamLogo(data.team);
-          if (logoUrl!== '') {
-              logoElement = <img src={logoUrl} alt={data.team} className="w-9 h-9 object-contain drop-shadow-md" />;
-          }
+      const logoUrl = getTeamLogo(data.team);
+      if (logoUrl!== '') {
+          logoElement = <img src={logoUrl} alt={data.team} className="w-9 h-9 object-contain drop-shadow-md" />;
       }
   }
 
