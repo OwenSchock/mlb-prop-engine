@@ -1,12 +1,10 @@
 import React from 'react';
 import { TrendingUp, Info, Swords } from 'lucide-react';
 
-// Helper function to map Sleeper abbreviations to the ESPN logo network
 const getTeamLogo = (teamAbbr) => {
   if (!teamAbbr) return '';
   if (teamAbbr === 'MLB') return '';
   
-  // Using a Map object to completely avoid the invisible square bracket bug
   const teamMap = new Map();
   teamMap.set('CWS', 'chw');
   teamMap.set('TB', 'tb');
@@ -39,10 +37,13 @@ export default function PropCard({ data }) {
         </div>
       </div>
 
-      <div className="flex items-center gap-2 mb-4 text-xs font-semibold bg-gray-900/50 w-max px-2 py-1 rounded border border-gray-700 text-indigo-300">
-        <Swords size={14} />
-        <span>vs. {data.opposing_pitcher}</span>
-      </div>
+      {/* Visual Matchup Cue */}
+      {data.opposing_pitcher && data.opposing_pitcher!== 'N/A' && data.opposing_pitcher!== 'TBD'? (
+        <div className="flex items-center gap-2 mb-4 text-xs font-semibold bg-gray-900/50 w-max px-2 py-1 rounded border border-gray-700 text-indigo-300">
+          <Swords size={14} />
+          <span>vs. {data.opposing_pitcher}</span>
+        </div>
+      ) : null}
 
       <div className="grid grid-cols-2 gap-4 mb-4">
         <div className="bg-gray-900 rounded-lg p-3">
