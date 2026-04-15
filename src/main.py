@@ -1,17 +1,18 @@
 import os
 import json
+import requests
 import statsapi
 import pandas as pd
+from datetime import datetime
 from src.ingestion import fetch_recent_statcast
 from src.features import engineer_features
 from src.model import generate_predictions, calculate_nbinom_prob
 from src.scraper import scrape_sleeper_lines
-from src.config import OUTPUT_JSON
+from src.config import OUTPUT_JSON, BALLDONTLIE_KEY
 
 LEAGUE_AVG_HIT_RATE = 0.240
 LEAGUE_AVG_SLG_RATE = 0.400
 
-# Updated to use full names to perfectly match the MLB Stats API
 FULL_TEAM_MAP = dict(
     ARI="arizona diamondbacks", ATL="atlanta braves", BAL="baltimore orioles",
     BOS="boston red sox", CHC="chicago cubs", CWS="chicago white sox",
@@ -23,18 +24,27 @@ FULL_TEAM_MAP = dict(
     PHI="philadelphia phillies", PIT="pittsburgh pirates", SD="san diego padres",
     SF="san francisco giants", SEA="seattle mariners", STL="st louis cardinals",
     TB="tampa bay rays", TEX="texas rangers", TOR="toronto blue jays",
-    WSH="washington nationals"
+    WSH="washington nationals", WAS="washington nationals"
 )
 
+PA_EXPECTATIONS = dict()
+PA_EXPECTATIONS[1] = 4.63
+PA_EXPECTATIONS[2] = 4.52
+PA_EXPECTATIONS[3] = 4.42
+PA_EXPECTATIONS[4] = 4.32
+PA_EXPECTATIONS[5] = 4.22
+PA_EXPECTATIONS[6] = 4.11
+PA_EXPECTATIONS[7] = 3.99
+PA_EXPECTATIONS[8] = 3.88
+PA_EXPECTATIONS[9] = 3.75
+
 def calculate_ev(true_prob, multiplier):
-    """Calculates expected value based on Sleeper's dynamic multipliers."""
     if multiplier is None:
         multiplier = 1.0
     ev = (float(true_prob) * float(multiplier)) - 1
     return round(ev, 4)
 
 def normalize_name(name):
-    """Removes all punctuation and suffixes for bulletproof matching."""
     if pd.isnull(name) or not name: 
         return "unknown"
     name = str(name).replace(".", "").replace("-", " ").replace("'", "").strip().lower()
@@ -49,42 +59,55 @@ def normalize_name(name):
     return name.strip()
 
 def fetch_probable_pitchers():
-    """Uses MLB-StatsAPI to dynamically fetch today's probable starting pitchers."""
-    print("Fetching today's probable pitchers from MLB StatsAPI...")
+    """Forces MLB StatsAPI to hydrate the schedule with explicit pitcher data."""
+    print("Fetching today's probable pitchers via explicit hydration...")
     pitchers = dict()
     try:
-        schedule = statsapi.schedule() 
-        for game in schedule:
-            home_team = normalize_name(game.get('home_name', ''))
-            away_team = normalize_name(game.get('away_name', ''))
-            pitchers[home_team] = normalize_name(game.get('away_probable_pitcher', ''))
-            pitchers[away_team] = normalize_name(game.get('home_probable_pitcher', ''))
-        return pitchers
+        today = datetime.today().strftime('%Y-%m-%d')
+        params = dict(sportId=1, date=today, hydrate='probablePitcher')
+        schedule = statsapi.get('schedule', params)
+        
+        dates = schedule.get('dates', list())
+        if len(dates) > 0:
+            games = dates.get('games', list())
+            for game in games:
+                teams = game.get('teams', dict())
+                home = teams.get('home', dict())
+                away = teams.get('away', dict())
+                
+                home_team = normalize_name(home.get('team', dict()).get('name', ''))
+                away_team = normalize_name(away.get('team', dict()).get('name', ''))
+                
+                hp = normalize_name(home.get('probablePitcher', dict()).get('fullName', 'unknown'))
+                ap = normalize_name(away.get('probablePitcher', dict()).get('fullName', 'unknown'))
+                
+                pitchers[home_team] = ap
+                pitchers[away_team] = hp
     except Exception as e:
         print("Notice: Probable pitcher fetch failed - " + str(e))
-        return dict()
+    return pitchers
 
 def fetch_batting_orders():
-    """Uses MLB-StatsAPI to fetch today's confirmed batting orders."""
-    print("Fetching daily lineups from MLB StatsAPI...")
+    print("Fetching daily lineups from BallDontLie API...")
     lineups = dict()
     try:
-        schedule = statsapi.schedule()
-        for game in schedule:
-            game_id = game.get('game_id')
-            if not game_id: continue
-            
-            box = statsapi.get('game_boxscore', dict(gamePk=game_id))
-            for team_side in list(('away', 'home')):
-                team_data = box.get('teams', dict()).get(team_side, dict())
-                batting_order = team_data.get('battingOrder', list())
-                players = team_data.get('players', dict())
-                
-                for i, p_id in enumerate(batting_order):
-                    player_info = players.get('ID' + str(p_id), dict())
-                    name = normalize_name(player_info.get('person', dict()).get('fullName', ''))
-                    if name:
-                        lineups[name] = i + 1 
+        today = datetime.today().strftime('%Y-%m-%d')
+        url = "https://api.balldontlie.io/v1/lineups"
+        headers = dict(Authorization=BALLDONTLIE_KEY)
+        params = dict(dates=today)
+        
+        res = requests.get(url, headers=headers, params=params)
+        if res.status_code == 200:
+            data = res.json().get('data', list())
+            for game in data:
+                for team_type in list(('home_team_lineup', 'visitor_team_lineup')):
+                    team_lineup = game.get(team_type, list())
+                    for player in team_lineup:
+                        player_info = player.get('player', dict())
+                        name = normalize_name(player_info.get('first_name', '') + " " + player_info.get('last_name', ''))
+                        order = player.get('batting_order')
+                        if name and order:
+                            lineups[name] = int(order)
     except Exception as e:
         print("Notice: Lineup fetch failed - " + str(e))
     return lineups
@@ -117,6 +140,8 @@ def run_pipeline():
     try:
         from pybaseball import pitching_stats
         pitcher_df = pitching_stats(2026)
+        if pitcher_df.empty:
+            pitcher_df = pitching_stats(2025)
         pitcher_df.insert(0, 'join_name', pitcher_df.get('Name').apply(normalize_name))
     except Exception:
         pitcher_df = pd.DataFrame()
@@ -161,8 +186,8 @@ def run_pipeline():
                 tb_adj = calculate_log5_adjustment(pitcher_tb_allowed, LEAGUE_AVG_SLG_RATE)
                 
                 lineup_spot = batting_orders.get(market_player, 5)
-                expected_pa = 4.63 - ((lineup_spot - 1) * 0.11)
-                volume_multiplier = expected_pa / 4.20
+                expected_pa = PA_EXPECTATIONS.get(lineup_spot, 4.22)
+                volume_multiplier = expected_pa / 4.22 
                 
                 adj_mean_hits = float(model_data.get('mean_hits', 0.0)) * hit_adj * volume_multiplier
                 adj_mean_tb = float(model_data.get('mean_tb', 0.0)) * tb_adj * volume_multiplier
@@ -188,13 +213,16 @@ def run_pipeline():
                     multiplier = float(raw_mult)
                     ev = calculate_ev(true_prob, multiplier)
                     
-                    insight_text = "Projects for " + str(round(expected_pa, 1)) + " PA based on batting " + str(lineup_spot) + "th."
+                    insight_text = "Projects for " + str(round(expected_pa, 2)) + " PA based on batting " + str(lineup_spot) + "th. "
                     if opponent_pitcher!= "unknown":
                         insight_text = "Log5 adjusted vs " + str(opponent_pitcher).title() + ". " + insight_text
                         
+                    if float(model_data.get('xwoba', 0)) > 0.350:
+                        insight_text = "Elite xwOBA (" + str(model_data.get('xwoba')) + ") + " + insight_text
+                        
                     final_opportunities.append(dict(
                         player_name=market.get('player_name'),
-                        team=team_abbr, # New data field for the frontend
+                        team=market.get('team', ''),
                         opposing_pitcher=str(opponent_pitcher).title() if opponent_pitcher!= "unknown" else "TBD",
                         stat_type=raw_stat,
                         line=line,
