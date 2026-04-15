@@ -34,6 +34,14 @@ jobs:
       - name: Install Python Dependencies
         run: pip install -r requirements.txt
 
+      - name: Cache Pybaseball Data
+        uses: actions/cache@v4
+        with:
+          path: ~/.pybaseball
+          key: pybaseball-${{ runner.os }}-${{ github.run_id }}
+          restore-keys: |
+            pybaseball-${{ runner.os }}-
+
       - name: Run Inference & Scraper Engine
         env:
           APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}

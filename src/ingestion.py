@@ -1,8 +1,12 @@
 import pandas as pd
 import requests
+import pybaseball
 from pybaseball import statcast_batter, playerid_lookup
 from datetime import datetime, timedelta
 from src.config import BALLDONTLIE_KEY
+
+# Enable pybaseball cache to prevent server timeout crashes
+pybaseball.cache.enable()
 
 def fetch_recent_statcast(days=14):
     """Fetches pitch-by-pitch data for baseline calculations."""
