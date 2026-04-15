@@ -11,6 +11,21 @@ from src.config import OUTPUT_JSON
 LEAGUE_AVG_HIT_RATE = 0.240
 LEAGUE_AVG_SLG_RATE = 0.400
 
+# Updated to use full names to perfectly match the MLB Stats API
+FULL_TEAM_MAP = dict(
+    ARI="arizona diamondbacks", ATL="atlanta braves", BAL="baltimore orioles",
+    BOS="boston red sox", CHC="chicago cubs", CWS="chicago white sox",
+    CIN="cincinnati reds", CLE="cleveland guardians", COL="colorado rockies",
+    DET="detroit tigers", HOU="houston astros", KC="kansas city royals",
+    LAA="los angeles angels", LAD="los angeles dodgers", MIA="miami marlins",
+    MIL="milwaukee brewers", MIN="minnesota twins", NYM="new york mets",
+    NYY="new york yankees", OAK="oakland athletics", ATH="oakland athletics",
+    PHI="philadelphia phillies", PIT="pittsburgh pirates", SD="san diego padres",
+    SF="san francisco giants", SEA="seattle mariners", STL="st louis cardinals",
+    TB="tampa bay rays", TEX="texas rangers", TOR="toronto blue jays",
+    WSH="washington nationals"
+)
+
 def calculate_ev(true_prob, multiplier):
     """Calculates expected value based on Sleeper's dynamic multipliers."""
     if multiplier is None:
@@ -69,13 +84,12 @@ def fetch_batting_orders():
                     player_info = players.get('ID' + str(p_id), dict())
                     name = normalize_name(player_info.get('person', dict()).get('fullName', ''))
                     if name:
-                        lineups[name] = i + 1  # Records their 1-9 lineup spot
+                        lineups[name] = i + 1 
     except Exception as e:
-        print("Notice: Lineup fetch failed (games may be too far out) - " + str(e))
+        print("Notice: Lineup fetch failed - " + str(e))
     return lineups
 
 def calculate_log5_adjustment(pitcher_rate, league_rate):
-    """Calculates a multiplier based on the Log5 ratio of the opposing pitcher."""
     if league_rate <= 0 or pitcher_rate <= 0:
         return 1.0
     return float(pitcher_rate) / float(league_rate)
@@ -125,7 +139,8 @@ def run_pipeline():
             if model_data is not None:
                 matched_count += 1
                 
-                team_name = normalize_name(market.get('team', ''))
+                team_abbr = str(market.get('team', '')).upper()
+                team_name = FULL_TEAM_MAP.get(team_abbr, "unknown")
                 opponent_pitcher = probable_pitchers.get(team_name, "unknown")
                 
                 pitcher_hit_allowed = LEAGUE_AVG_HIT_RATE
@@ -145,7 +160,6 @@ def run_pipeline():
                 hit_adj = calculate_log5_adjustment(pitcher_hit_allowed, LEAGUE_AVG_HIT_RATE)
                 tb_adj = calculate_log5_adjustment(pitcher_tb_allowed, LEAGUE_AVG_SLG_RATE)
                 
-                # Dynamic Lineup Volume Adjuster (Leadoff = +10% PA, 9th = -11% PA)
                 lineup_spot = batting_orders.get(market_player, 5)
                 expected_pa = 4.63 - ((lineup_spot - 1) * 0.11)
                 volume_multiplier = expected_pa / 4.20
@@ -180,6 +194,7 @@ def run_pipeline():
                         
                     final_opportunities.append(dict(
                         player_name=market.get('player_name'),
+                        team=team_abbr, # New data field for the frontend
                         opposing_pitcher=str(opponent_pitcher).title() if opponent_pitcher!= "unknown" else "TBD",
                         stat_type=raw_stat,
                         line=line,
@@ -192,7 +207,7 @@ def run_pipeline():
     
     if len(final_opportunities) == 0:
         final_opportunities.append(dict(
-            player_name="Debug Report", opposing_pitcher="N/A", stat_type="system_status", line=0.0,
+            player_name="Debug Report", team="MLB", opposing_pitcher="N/A", stat_type="system_status", line=0.0,
             sportsbook_multiplier=1.0, market_popularity=0.0, true_probability=0.0, 
             expected_value=0.0, insight="Matches found: " + str(matched_count)
         ))
