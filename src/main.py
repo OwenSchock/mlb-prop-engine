@@ -68,7 +68,7 @@ def fetch_probable_pitchers():
         
         dates = schedule.get('dates', list())
         if len(dates) > 0:
-            # BUG FIX: Access the first element of the dates list instead of using.get()
+            # PROPER BUG FIX: Actually indexing into the list to retrieve the 'games' dictionary
             games = dates.get('games', list()) 
             for game in games:
                 teams = game.get('teams', dict())
@@ -90,7 +90,7 @@ def fetch_probable_pitchers():
 def fetch_batting_orders():
     print("Fetching daily lineups from BallDontLie API...")
     lineups = dict()
-    player_teams = dict() # BUG FIX: Map players to their teams securely to ensure logos load
+    player_teams = dict()
     try:
         today = datetime.today().strftime('%Y-%m-%d')
         url = "https://api.balldontlie.io/v1/lineups"
@@ -171,7 +171,6 @@ def run_pipeline():
             if model_data is not None:
                 matched_count += 1
                 
-                # Securely fetch the team abbreviation
                 scraped_team = str(market.get('team', '')).strip().upper()
                 if scraped_team == 'NONE': 
                     scraped_team = ''

@@ -9,24 +9,22 @@ const getTeamLogo = (teamAbbr) => {
   if (upper === '') return '';
   
   const teamMap = new Map();
-  teamMap.set('ARI', 109); teamMap.set('ATL', 144); teamMap.set('BAL', 110);
-  teamMap.set('BOS', 111); teamMap.set('CHC', 112); teamMap.set('CWS', 145);
-  teamMap.set('CHW', 145); teamMap.set('CIN', 113); teamMap.set('CLE', 114);
-  teamMap.set('COL', 115); teamMap.set('DET', 116); teamMap.set('HOU', 117);
-  teamMap.set('KC', 118);  teamMap.set('KCR', 118); teamMap.set('LAA', 108);
-  teamMap.set('LAD', 119); teamMap.set('MIA', 146); teamMap.set('MIL', 158);
-  teamMap.set('MIN', 142); teamMap.set('NYM', 121); teamMap.set('NYY', 147);
-  teamMap.set('OAK', 133); teamMap.set('ATH', 133); teamMap.set('PHI', 143);
-  teamMap.set('PIT', 134); teamMap.set('SD', 135);  teamMap.set('SDP', 135);
-  teamMap.set('SF', 137);  teamMap.set('SFG', 137); teamMap.set('SEA', 136);
-  teamMap.set('STL', 138); teamMap.set('TB', 139);  teamMap.set('TBR', 139);
-  teamMap.set('TEX', 140); teamMap.set('TOR', 141); teamMap.set('WSH', 120);
-  teamMap.set('WAS', 120);
+  teamMap.set('ARI', 'ari'); teamMap.set('ATL', 'atl'); teamMap.set('BAL', 'bal');
+  teamMap.set('BOS', 'bos'); teamMap.set('CHC', 'chc'); teamMap.set('CWS', 'chw');
+  teamMap.set('CHW', 'chw'); teamMap.set('CIN', 'cin'); teamMap.set('CLE', 'cle');
+  teamMap.set('COL', 'col'); teamMap.set('DET', 'det'); teamMap.set('HOU', 'hou');
+  teamMap.set('KC', 'kc');   teamMap.set('KCR', 'kc');  teamMap.set('LAA', 'laa');
+  teamMap.set('LAD', 'lad'); teamMap.set('MIA', 'mia'); teamMap.set('MIL', 'mil');
+  teamMap.set('MIN', 'min'); teamMap.set('NYM', 'nym'); teamMap.set('NYY', 'nyy');
+  teamMap.set('OAK', 'oak'); teamMap.set('ATH', 'oak'); teamMap.set('PHI', 'phi');
+  teamMap.set('PIT', 'pit'); teamMap.set('SD', 'sd');   teamMap.set('SDP', 'sd');
+  teamMap.set('SF', 'sf');   teamMap.set('SFG', 'sf');  teamMap.set('SEA', 'sea');
+  teamMap.set('STL', 'stl'); teamMap.set('TB', 'tb');   teamMap.set('TBR', 'tb');
+  teamMap.set('TEX', 'tex'); teamMap.set('TOR', 'tor'); teamMap.set('WSH', 'wsh');
+  teamMap.set('WAS', 'wsh');
 
-  const teamId = teamMap.get(upper);
-  if (!teamId) return '';
-  
-  return 'https://www.mlbstatic.com/team-logos/' + teamId + '.svg';
+  const queryAbbr = teamMap.has(upper)? teamMap.get(upper) : upper.toLowerCase();
+  return 'https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/' + queryAbbr + '.png';
 };
 
 export default function PropCard({ data }) {
