@@ -1,97 +1,192 @@
 import { useState, useEffect } from 'react';
 import PropCard from './components/PropCard';
-import { Info } from 'lucide-react';
-
-// Defining this outside the component prevents the infinite loop!
-const EMPTY_ARRAY = new Array();
+import ParlayCard from './components/ParlayCard';
+import { Info, BarChart3, Target } from 'lucide-react';
 
 export default function App() {
-  const propsState = useState(new Array());
-  const props = propsState.at(0);
-  const setProps = propsState.at(1);
-
-  const loadingState = useState(true);
-  const loading = loadingState.at(0);
-  const setLoading = loadingState.at(1);
-
-  const showInfoState = useState(false);
-  const showInfo = showInfoState.at(0);
-  const setShowInfo = showInfoState.at(1);
+  const [data, setData] = useState({ single_props: [], parlays: [] });
+  const [history, setHistory] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [showInfo, setShowInfo] = useState(false);
+  const [activeTab, setActiveTab] = useState('picks'); // 'picks' or 'tracking'
 
   useEffect(() => {
-    // The timestamp forces the browser to fetch the newest file, bypassing the cache
+    // Fetch Today's Picks
     fetch('./predictions.json?t=' + new Date().getTime())
-   .then((res) => res.json())
-   .then((data) => {
-        setProps(data);
-        setLoading(false);
-      })
-   .catch((err) => {
-        console.error("Failed to load predictions", err);
+      .then((res) => res.json())
+      .then((fetchedData) => {
+        setData(fetchedData);
         setLoading(false);
       });
-  }, EMPTY_ARRAY);
 
-  // Slice the array to get only the top 5 and bottom 5 props
-  const topProps = props.slice(0, 5);
-  const bottomProps = props.length > 5? props.slice(-5) : new Array();
+    // Fetch Historical Data
+    fetch('./history.json?t=' + new Date().getTime())
+      .then((res) => res.json())
+      .then((historyData) => setHistory(historyData))
+      .catch(() => console.log("No history data found yet."));
+  }, []);
+
+  const topProps = data.single_props ? data.single_props.slice(0, 5) : [];
+  const bottomProps = data.single_props && data.single_props.length > 5 ? data.single_props.slice(-5) : [];
+  const parlays = data.parlays || [];
+  const freePicks = data.single_props ? data.single_props.filter(prop => prop.is_free_pick) : [];
+
+  // Calculate Win Rates from History
+  const calculateWinRate = (category) => {
+    const validPicks = history.filter(p => p.category === category && p.result !== 'Void');
+    if (validPicks.length === 0) return { rate: 0, w: 0, l: 0 };
+    const wins = validPicks.filter(p => p.result === 'Win').length;
+    const losses = validPicks.length - wins;
+    return { rate: ((wins / validPicks.length) * 100).toFixed(1), w: wins, l: losses };
+  };
+
+  const topStats = calculateWinRate('Top 5 (Target)');
+  const bottomStats = calculateWinRate('Bottom 5 (Avoid)');
 
   return (
     <div className="min-h-screen bg-gray-900 p-6">
-      <header className="mb-8 border-b border-gray-700 pb-4">
-        <div className="flex justify-between items-center mb-4">
+      <header className="mb-6 border-b border-gray-700 pb-4">
+        <div className="flex justify-between items-center mb-6">
           <div>
             <h1 className="text-3xl font-bold text-emerald-400">MLB Prop Prediction Engine</h1>
             <p className="text-gray-400">Automated Expected Value against Sleeper Picks API</p>
-            <p className="text-sm text-emerald-500 font-semibold mt-2">
-              Data for: {new Date().toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' })}
-            </p>
           </div>
-          <button
-            onClick={() => setShowInfo(!showInfo)}
-            className="flex items-center gap-2 bg-gray-800 hover:bg-gray-700 text-blue-400 px-4 py-2 rounded-lg border border-gray-600 transition"
-          >
-            <Info size={20} />
-            <span>Strategy Guide</span>
+          <button onClick={() => setShowInfo(!showInfo)} className="flex items-center gap-2 bg-gray-800 hover:bg-gray-700 text-blue-400 px-4 py-2 rounded-lg border border-gray-600 transition">
+            <Info size={20} /><span>Strategy Guide</span>
           </button>
         </div>
 
-        {showInfo? (
-          <div className="p-4 bg-blue-900/30 border border-blue-800 rounded-xl text-blue-200 text-sm mb-4">
-            <h3 className="font-bold text-blue-400 mb-2 text-base">How to Spot Value</h3>
-            <ul className="list-disc pl-5 space-y-2">
-              <li><strong>What is EV?</strong> Expected Value (EV) represents your average mathematical profit per bet over time. It identifies situations where the true probability is better than the sportsbook's payout odds.</li>
-              <li><strong>The Target (+EV):</strong> You should target the Top 5 props on the dashboard, ideally looking for anything above <strong>+3.00% EV</strong>. These provide enough of a mathematical edge to overcome variance.</li>
-              <li><strong>The Avoid List (-EV):</strong> The Bottom 5 props represent the worst mathematical bets on the board. Avoid including these in any parlay or entry, as the sportsbook holds a massive edge over you.</li>
-              <li><strong>Sleeper Multipliers:</strong> Because Sleeper requires multiple picks, pair 2 or 3 of the highest +EV props together to geometrically maximize your long-term returns.</li>
-            </ul>
-          </div>
-        ) : null}
+        {/* TAB NAVIGATION */}
+        <div className="flex gap-4">
+          <button 
+            onClick={() => setActiveTab('picks')}
+            className={`flex items-center gap-2 px-6 py-2 rounded-t-lg font-bold transition-all ${activeTab === 'picks' ? 'bg-gray-800 text-emerald-400 border-t border-x border-emerald-500/50' : 'text-gray-500 hover:text-gray-300'}`}
+          >
+            <Target size={18} /> Today's Board
+          </button>
+          <button 
+            onClick={() => setActiveTab('tracking')}
+            className={`flex items-center gap-2 px-6 py-2 rounded-t-lg font-bold transition-all ${activeTab === 'tracking' ? 'bg-gray-800 text-blue-400 border-t border-x border-blue-500/50' : 'text-gray-500 hover:text-gray-300'}`}
+          >
+            <BarChart3 size={18} /> Performance Tracking
+          </button>
+        </div>
       </header>
 
-      {loading? (
-        <p className="text-gray-400">Running Monte Carlo Simulations...</p>
-      ) : (
-        <div className="space-y-10">
-          <section>
-            <h2 className="text-2xl font-bold text-white mb-4 border-l-4 border-emerald-500 pl-3">Top 5 Value Bets (Target)</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {topProps.map((prop, index) => (
-                <PropCard key={'top-'+index} data={prop} />
-              ))}
-            </div>
-          </section>
-
-          {bottomProps.length > 0? (
-            <section>
-              <h2 className="text-2xl font-bold text-white mb-4 border-l-4 border-red-500 pl-3">Bottom 5 Plays (Avoid)</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 opacity-75">
-                {bottomProps.map((prop, index) => (
-                  <PropCard key={'bottom-'+index} data={prop} />
+      {/* RENDER PICKS TAB */}
+      {activeTab === 'picks' && (
+        <div className="animate-in fade-in duration-300">
+          {freePicks.length > 0 && (
+            <div className="mb-8 bg-gradient-to-r from-yellow-500/20 to-orange-500/20 border border-yellow-500/50 rounded-xl p-4 shadow-[0_0_15px_rgba(234,179,8,0.2)]">
+              <div className="flex items-center gap-3 mb-2">
+                <span className="relative flex h-3 w-3"><span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-yellow-400 opacity-75"></span><span className="relative inline-flex rounded-full h-3 w-3 bg-yellow-500"></span></span>
+                <h2 className="text-xl font-bold text-yellow-400 uppercase tracking-wider">Discount Line Detected</h2>
+              </div>
+              <div className="space-y-2">
+                {freePicks.map((pick, index) => (
+                  <div key={index} className="flex justify-between items-center bg-gray-900/50 p-3 rounded-lg border border-yellow-500/30">
+                    <div><span className="text-lg font-bold text-white mr-2">{pick.player_name}</span><span className="text-sm text-gray-300 capitalize">Over {pick.line} {pick.stat_type.replace('_', ' ')}</span></div>
+                    <div className="bg-yellow-500/20 text-yellow-300 px-3 py-1 rounded font-bold">Autoclick / Must Play</div>
+                  </div>
                 ))}
               </div>
-            </section>
-          ) : null}
+            </div>
+          )}
+
+          {loading ? (
+            <p className="text-gray-400">Running Monte Carlo Simulations...</p>
+          ) : (
+            <div className="space-y-10">
+              <section>
+                <h2 className="text-2xl font-bold text-white mb-4 border-l-4 border-emerald-500 pl-3">Top 5 Value Bets (Target)</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                  {topProps.map((prop, index) => <PropCard key={'top-'+index} data={prop} />)}
+                </div>
+              </section>
+
+              {parlays.length > 0 && (
+                <section>
+                  <h2 className="text-2xl font-bold text-white mb-4 border-l-4 border-purple-500 pl-3">Top +EV Parlay Suggestions</h2>
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {parlays.map((parlay, index) => <ParlayCard key={'parlay-'+index} data={parlay} />)}
+                  </div>
+                </section>
+              )}
+
+              {bottomProps.length > 0 && (
+                <section>
+                  <h2 className="text-2xl font-bold text-white mb-4 border-l-4 border-red-500 pl-3">Bottom 5 Plays (Avoid)</h2>
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 opacity-75">
+                    {bottomProps.map((prop, index) => <PropCard key={'bottom-'+index} data={prop} />)}
+                  </div>
+                </section>
+              )}
+            </div>
+          )}
+        </div>
+      )}
+
+      {/* RENDER TRACKING TAB */}
+      {activeTab === 'tracking' && (
+        <div className="animate-in fade-in duration-300 space-y-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            
+            {/* Top 5 Win Rate Card */}
+            <div className="bg-gray-800 rounded-xl p-6 border border-emerald-500/30 text-center">
+              <h3 className="text-gray-400 font-bold uppercase tracking-wider mb-2">Model "Target" Accuracy</h3>
+              <p className="text-5xl font-black text-emerald-400 mb-2">{topStats.rate}%</p>
+              <p className="text-gray-500 font-mono text-sm">Record: {topStats.w}W - {topStats.l}L</p>
+              <p className="text-xs text-gray-500 mt-4">(Win = Player hit the OVER)</p>
+            </div>
+
+            {/* Bottom 5 Win Rate Card */}
+            <div className="bg-gray-800 rounded-xl p-6 border border-red-500/30 text-center">
+              <h3 className="text-gray-400 font-bold uppercase tracking-wider mb-2">Model "Avoid" Accuracy</h3>
+              <p className="text-5xl font-black text-red-400 mb-2">{bottomStats.rate}%</p>
+              <p className="text-gray-500 font-mono text-sm">Record: {bottomStats.w}W - {bottomStats.l}L</p>
+              <p className="text-xs text-gray-500 mt-4">(Win = Player hit the UNDER as predicted)</p>
+            </div>
+          </div>
+
+          {/* Historical Log */}
+          <div className="bg-gray-800 rounded-xl border border-gray-700 overflow-hidden">
+            <div className="bg-gray-900/50 p-4 border-b border-gray-700">
+              <h3 className="text-white font-bold">Recent Graded Props</h3>
+            </div>
+            <div className="p-4 overflow-x-auto">
+              <table className="w-full text-left text-sm text-gray-300">
+                <thead>
+                  <tr className="border-b border-gray-700 text-gray-500">
+                    <th className="pb-3 font-medium">Date</th>
+                    <th className="pb-3 font-medium">Player</th>
+                    <th className="pb-3 font-medium">Prop</th>
+                    <th className="pb-3 font-medium">Line</th>
+                    <th className="pb-3 font-medium text-center">Actual</th>
+                    <th className="pb-3 font-medium text-right">Result</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {history.slice().reverse().slice(0, 15).map((log, i) => (
+                    <tr key={i} className="border-b border-gray-700/50 hover:bg-gray-700/20">
+                      <td className="py-3 font-mono">{log.date}</td>
+                      <td className="py-3 font-bold text-white">{log.player_name}</td>
+                      <td className="py-3 capitalize">{log.stat_type.replace('_', ' ')}</td>
+                      <td className="py-3">{log.line}</td>
+                      <td className="py-3 text-center font-mono text-blue-400">{log.actual}</td>
+                      <td className="py-3 text-right">
+                        <span className={`px-2 py-1 rounded text-xs font-bold ${log.result === 'Win' ? 'bg-emerald-500/20 text-emerald-400' : log.result === 'Loss' ? 'bg-red-500/20 text-red-400' : 'bg-gray-600 text-gray-300'}`}>
+                          {log.result}
+                        </span>
+                      </td>
+                    </tr>
+                  ))}
+                  {history.length === 0 && (
+                    <tr><td colSpan="6" className="py-8 text-center text-gray-500">No historical data recorded yet. Run the pipeline again tomorrow!</td></tr>
+                  )}
+                </tbody>
+              </table>
+            </div>
+          </div>
         </div>
       )}
     </div>

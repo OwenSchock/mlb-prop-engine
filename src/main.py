@@ -9,6 +9,7 @@ from src.features import engineer_batter_splits, engineer_pitcher_profiles # UPD
 from src.model import generate_predictions, calculate_nbinom_prob
 from src.scraper import scrape_sleeper_lines
 from src.config import OUTPUT_JSON, BALLDONTLIE_KEY
+from src.grader import grade_previous_day
 
 LEAGUE_AVG_HIT_RATE = 0.240
 LEAGUE_AVG_SLG_RATE = 0.400
@@ -227,6 +228,9 @@ def get_weather_multiplier(venue_abbr):
     return round(multiplier, 3), temp_f
 
 def run_pipeline():
+
+    grade_previous_day()
+
     print("1. Ingesting Data...")
     statcast_df = fetch_recent_statcast(days=365)
     
@@ -385,7 +389,8 @@ def run_pipeline():
                         market_popularity=market.get('pick_popularity'),
                         true_probability=true_prob,
                         expected_value=ev,
-                        insight=insight_text
+                        insight=insight_text,
+                        is_free_pick=bool(market.get('is_free_pick', False))
                     ))
     
     if len(final_opportunities) == 0:
@@ -397,10 +402,53 @@ def run_pipeline():
     
     final_opportunities = sorted(final_opportunities, key=lambda x: x.get('expected_value', 0), reverse=True)
     
+    # ==========================================
+    # FEATURE 3: PARLAY GENERATOR
+    # ==========================================
+    import itertools
+    
+    parlay_suggestions = list()
+    top_picks = final_opportunities[:7] # Grab top 7 to ensure we have enough valid combos
+    
+    # Generate all possible 2-leg combinations
+    for leg1, leg2 in itertools.combinations(top_picks, 2):
+        
+        # Rule 1: Exclude same team
+        if leg1['team'] == leg2['team']:
+            continue
+            
+        # Rule 2: Exclude same game (proxy check: are they facing the same pitcher?)
+        if leg1['opposing_pitcher'] == leg2['opposing_pitcher'] and leg1['opposing_pitcher'] != "TBD":
+            continue
+            
+        # Calculate Combined Metrics (Assuming independent events since we filtered same game)
+        combined_prob = leg1['true_probability'] * leg2['true_probability']
+        combined_multiplier = leg1['sportsbook_multiplier'] * leg2['sportsbook_multiplier']
+        combined_ev = calculate_ev(combined_prob, combined_multiplier)
+        
+        parlay_suggestions.append(dict(
+            legs=[leg1['player_name'], leg2['player_name']],
+            teams=[leg1['team'], leg2['team']],
+            combined_true_prob=round(combined_prob, 4),
+            combined_multiplier=round(combined_multiplier, 2),
+            expected_value=combined_ev
+        ))
+
+    # Sort parlays by EV and grab the Top 3
+    parlay_suggestions = sorted(parlay_suggestions, key=lambda x: x['expected_value'], reverse=True)[:3]
+    
+    # Bundle everything into a final payload
+    final_payload = {
+        "single_props": final_opportunities,
+        "parlays": parlay_suggestions
+    }
+
+    # Export to JSON (This is the ONLY export)
     os.makedirs(os.path.dirname(OUTPUT_JSON), exist_ok=True)
     with open(OUTPUT_JSON, 'w') as f:
-        json.dump(final_opportunities, f, indent=4)
-    print("Pipeline complete. Exported " + str(len(final_opportunities)) + " props to " + str(OUTPUT_JSON))
+        json.dump(final_payload, f, indent=4)
+        
+    print("Pipeline complete. Exported props and parlays to " + str(OUTPUT_JSON))
     
 if __name__ == "__main__":
     run_pipeline()

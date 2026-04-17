@@ -50,7 +50,8 @@ def scrape_sleeper_lines():
             stat_type=item.get('stat_type', item.get('stat')),
             line=item.get('line', item.get('prop_line')),
             multiplier=item.get('payout_multiplier_over', item.get('over_multiplier', item.get('multiplier', 0))),
-            pick_popularity=item.get('pick_popularity', 0)
+            pick_popularity=item.get('pick_popularity', 0),
+            is_free_pick=item.get('is_discount', item.get('is_promotional', False))
         ))
         
     return pd.DataFrame(lines)
