@@ -93,6 +93,12 @@ def grade_previous_day():
 
     actual_stats, game_date = fetch_yesterdays_stats()
     
+    # NEW SAFETY CHECK: If the MLB API failed or returned nothing, abort the grading
+    # to prevent accidentally voiding the entire slate.
+    if not actual_stats:
+        print("MLB Box scores unavailable. Aborting grader to prevent false voids.")
+        return
+
     # Load existing history
     history = []
     if os.path.exists(HISTORY_JSON):

@@ -8,10 +8,9 @@ export default function App() {
   const [history, setHistory] = useState([]);
   const [loading, setLoading] = useState(true);
   const [showInfo, setShowInfo] = useState(false);
-  const [activeTab, setActiveTab] = useState('picks'); // 'picks' or 'tracking'
+  const [activeTab, setActiveTab] = useState('picks');
 
   useEffect(() => {
-    // Fetch Today's Picks
     fetch('./predictions.json?t=' + new Date().getTime())
       .then((res) => res.json())
       .then((fetchedData) => {
@@ -19,11 +18,10 @@ export default function App() {
         setLoading(false);
       });
 
-    // Fetch Historical Data
     fetch('./history.json?t=' + new Date().getTime())
       .then((res) => res.json())
       .then((historyData) => setHistory(historyData))
-      .catch(() => console.log("No history data found yet."));
+      .catch(() => console.log("No history data found."));
   }, []);
 
   const topProps = data.single_props ? data.single_props.slice(0, 5) : [];
@@ -31,7 +29,6 @@ export default function App() {
   const parlays = data.parlays || [];
   const freePicks = data.single_props ? data.single_props.filter(prop => prop.is_free_pick) : [];
 
-  // Calculate Win Rates from History
   const calculateWinRate = (category) => {
     const validPicks = history.filter(p => p.category === category && p.result !== 'Void');
     if (validPicks.length === 0) return { rate: 0, w: 0, l: 0 };
@@ -51,7 +48,10 @@ export default function App() {
             <h1 className="text-3xl font-bold text-emerald-400">MLB Prop Prediction Engine</h1>
             <p className="text-gray-400">Automated Expected Value against Sleeper Picks API</p>
           </div>
-          <button onClick={() => setShowInfo(!showInfo)} className="flex items-center gap-2 bg-gray-800 hover:bg-gray-700 text-blue-400 px-4 py-2 rounded-lg border border-gray-600 transition">
+          <button 
+            onClick={() => setShowInfo(!showInfo)} 
+            className="flex items-center gap-2 bg-gray-800 hover:bg-gray-700 text-blue-400 px-4 py-2 rounded-lg border border-gray-600 transition"
+          >
             <Info size={20} /><span>Strategy Guide</span>
           </button>
         </div>
@@ -73,22 +73,22 @@ export default function App() {
         </div>
       </header>
 
-      {/* MISSING STRATEGY GUIDE BLOCK */}
+      {/* STRATEGY GUIDE BLOCK */}
       {showInfo && (
-        <div className="p-4 bg-blue-900/30 border border-blue-800 rounded-xl text-blue-200 text-sm mb-6 animate-in fade-in duration-200">
+        <div className="p-4 bg-blue-900/30 border border-blue-800 rounded-xl text-blue-200 text-sm mb-6 transition-all">
           <h3 className="font-bold text-blue-400 mb-2 text-base">How to Spot Value</h3>
           <ul className="list-disc pl-5 space-y-2">
-            <li><strong>What is EV?</strong> Expected Value (EV) represents your average mathematical profit per bet over time. It identifies situations where the true probability is better than the sportsbook's payout odds.</li>
-            <li><strong>The Target (+EV):</strong> You should target the Top 5 props on the dashboard, ideally looking for anything above <strong>+3.00% EV</strong>. These provide enough of a mathematical edge to overcome variance.</li>
-            <li><strong>The Parlays:</strong> The algorithm automatically combines the highest +EV props into 2-leg pairs, filtering out players from the same game to ensure independent probabilities.</li>
-            <li><strong>The Avoid List (-EV):</strong> The Bottom 5 props represent the worst mathematical bets on the board. Avoid including these in any parlay or entry.</li>
+            <li><strong>What is EV?</strong> Expected Value (EV) represents your average mathematical profit per bet over time.</li>
+            <li><strong>The Target (+EV):</strong> You should target the Top 5 props on the dashboard, ideally looking for anything above <strong>+3.00% EV</strong>.</li>
+            <li><strong>The Parlays:</strong> The algorithm automatically combines the highest +EV props into 2-leg pairs, filtering out players from the same game.</li>
+            <li><strong>The Avoid List (-EV):</strong> The Bottom 5 props represent the worst mathematical bets on the board. Avoid these.</li>
           </ul>
         </div>
       )}
 
       {/* RENDER PICKS TAB */}
       {activeTab === 'picks' && (
-        <div className="animate-in fade-in duration-300">
+        <div>
           {freePicks.length > 0 && (
             <div className="mb-8 bg-gradient-to-r from-yellow-500/20 to-orange-500/20 border border-yellow-500/50 rounded-xl p-4 shadow-[0_0_15px_rgba(234,179,8,0.2)]">
               <div className="flex items-center gap-3 mb-2">
@@ -141,33 +141,24 @@ export default function App() {
 
       {/* RENDER TRACKING TAB */}
       {activeTab === 'tracking' && (
-        <div className="animate-in fade-in duration-300 space-y-8">
+        <div className="space-y-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            
-            {/* Top 5 Win Rate Card */}
             <div className="bg-gray-800 rounded-xl p-6 border border-emerald-500/30 text-center">
               <h3 className="text-gray-400 font-bold uppercase tracking-wider mb-2">Model "Target" Accuracy</h3>
               <p className="text-5xl font-black text-emerald-400 mb-2">{topStats.rate}%</p>
               <p className="text-gray-500 font-mono text-sm">Record: {topStats.w}W - {topStats.l}L</p>
-              <p className="text-xs text-gray-500 mt-4">(Win = Player hit the OVER)</p>
             </div>
-
-            {/* Bottom 5 Win Rate Card */}
             <div className="bg-gray-800 rounded-xl p-6 border border-red-500/30 text-center">
               <h3 className="text-gray-400 font-bold uppercase tracking-wider mb-2">Model "Avoid" Accuracy</h3>
               <p className="text-5xl font-black text-red-400 mb-2">{bottomStats.rate}%</p>
               <p className="text-gray-500 font-mono text-sm">Record: {bottomStats.w}W - {bottomStats.l}L</p>
-              <p className="text-xs text-gray-500 mt-4">(Win = Player hit the UNDER as predicted)</p>
             </div>
           </div>
 
-          {/* Historical Log */}
           <div className="bg-gray-800 rounded-xl border border-gray-700 overflow-hidden">
             <div className="bg-gray-900/50 p-4 border-b border-gray-700">
               <h3 className="text-white font-bold">Recent Graded Props</h3>
             </div>
-            
-            {/* FIX 1: Add max-h-96 and overflow-y-auto here to create a scrolling window */}
             <div className="p-4 overflow-x-auto max-h-96 overflow-y-auto custom-scrollbar">
               <table className="w-full text-left text-sm text-gray-300">
                 <thead>
@@ -181,7 +172,6 @@ export default function App() {
                   </tr>
                 </thead>
                 <tbody>
-                  {/* FIX 2: Removed .slice(0, 15) so it maps all history */}
                   {history.slice().reverse().map((log, i) => (
                     <tr key={i} className="border-b border-gray-700/50 hover:bg-gray-700/20">
                       <td className="py-3 font-mono">{log.date}</td>
@@ -196,9 +186,6 @@ export default function App() {
                       </td>
                     </tr>
                   ))}
-                  {history.length === 0 && (
-                    <tr><td colSpan="6" className="py-8 text-center text-gray-500">No historical data recorded yet. Run the pipeline again tomorrow!</td></tr>
-                  )}
                 </tbody>
               </table>
             </div>
