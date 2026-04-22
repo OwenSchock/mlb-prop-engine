@@ -73,12 +73,18 @@ def grade_previous_day():
             return
 
     single_props = prev_data.get('single_props', [])
-    if len(single_props) < 10: 
-        return # Need enough data to grade Top 5 / Bottom 5
+    
+    # FIX 1: Remove the < 10 check. Just ensure there is at least something to grade.
+    if not single_props: 
+        return 
 
-    # Isolate the targets
-    top_5 = single_props[:5]
-    bottom_5 = single_props[-5:]
+    # Safely slice the top and bottom depending on how many props exist today
+    top_count = min(5, len(single_props))
+    top_5 = single_props[:top_count]
+    
+    # Ensure we don't overlap if there are fewer than 10 total props
+    bottom_count = min(5, len(single_props) - top_count)
+    bottom_5 = single_props[-bottom_count:] if bottom_count > 0 else []
     
     # Tag them for the history file
     for p in top_5: p['category'] = 'Top 5 (Target)'
@@ -111,15 +117,14 @@ def grade_previous_day():
             actual_val = stats.get(stat_key, 0)
             pick['actual'] = actual_val
             
-            # Did they go OVER the Sleeper line?
-            is_over = actual_val > pick['line']
-            
-            # Logic: If it's a Top 5 play, we WANT them to go Over.
-            # If it's a Bottom 5 play, the model predicted they would FAIL (Under).
-            if pick['category'] == 'Top 5 (Target)':
-                pick['result'] = 'Win' if is_over else 'Loss'
+            # FIX 2: Account for exact ties (Pushes)
+            if actual_val == pick['line']:
+                pick['result'] = 'Void'
+            elif pick['category'] == 'Top 5 (Target)':
+                pick['result'] = 'Win' if actual_val > pick['line'] else 'Loss'
             else:
-                pick['result'] = 'Win' if not is_over else 'Loss'
+                # For avoid plays, we want them to go under
+                pick['result'] = 'Win' if actual_val < pick['line'] else 'Loss'
                 
         pick['date'] = game_date
         history.append(pick)

@@ -153,20 +153,23 @@ export default function App() {
             <div className="bg-gray-900/50 p-4 border-b border-gray-700">
               <h3 className="text-white font-bold">Recent Graded Props</h3>
             </div>
-            <div className="p-4 overflow-x-auto">
+            
+            {/* FIX 1: Add max-h-96 and overflow-y-auto here to create a scrolling window */}
+            <div className="p-4 overflow-x-auto max-h-96 overflow-y-auto custom-scrollbar">
               <table className="w-full text-left text-sm text-gray-300">
                 <thead>
                   <tr className="border-b border-gray-700 text-gray-500">
-                    <th className="pb-3 font-medium">Date</th>
-                    <th className="pb-3 font-medium">Player</th>
-                    <th className="pb-3 font-medium">Prop</th>
-                    <th className="pb-3 font-medium">Line</th>
-                    <th className="pb-3 font-medium text-center">Actual</th>
-                    <th className="pb-3 font-medium text-right">Result</th>
+                    <th className="pb-3 font-medium sticky top-0 bg-gray-800">Date</th>
+                    <th className="pb-3 font-medium sticky top-0 bg-gray-800">Player</th>
+                    <th className="pb-3 font-medium sticky top-0 bg-gray-800">Prop</th>
+                    <th className="pb-3 font-medium sticky top-0 bg-gray-800">Line</th>
+                    <th className="pb-3 font-medium text-center sticky top-0 bg-gray-800">Actual</th>
+                    <th className="pb-3 font-medium text-right sticky top-0 bg-gray-800">Result</th>
                   </tr>
                 </thead>
                 <tbody>
-                  {history.slice().reverse().slice(0, 15).map((log, i) => (
+                  {/* FIX 2: Removed .slice(0, 15) so it maps all history */}
+                  {history.slice().reverse().map((log, i) => (
                     <tr key={i} className="border-b border-gray-700/50 hover:bg-gray-700/20">
                       <td className="py-3 font-mono">{log.date}</td>
                       <td className="py-3 font-bold text-white">{log.player_name}</td>
