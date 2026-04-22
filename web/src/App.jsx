@@ -73,6 +73,19 @@ export default function App() {
         </div>
       </header>
 
+      {/* MISSING STRATEGY GUIDE BLOCK */}
+      {showInfo && (
+        <div className="p-4 bg-blue-900/30 border border-blue-800 rounded-xl text-blue-200 text-sm mb-6 animate-in fade-in duration-200">
+          <h3 className="font-bold text-blue-400 mb-2 text-base">How to Spot Value</h3>
+          <ul className="list-disc pl-5 space-y-2">
+            <li><strong>What is EV?</strong> Expected Value (EV) represents your average mathematical profit per bet over time. It identifies situations where the true probability is better than the sportsbook's payout odds.</li>
+            <li><strong>The Target (+EV):</strong> You should target the Top 5 props on the dashboard, ideally looking for anything above <strong>+3.00% EV</strong>. These provide enough of a mathematical edge to overcome variance.</li>
+            <li><strong>The Parlays:</strong> The algorithm automatically combines the highest +EV props into 2-leg pairs, filtering out players from the same game to ensure independent probabilities.</li>
+            <li><strong>The Avoid List (-EV):</strong> The Bottom 5 props represent the worst mathematical bets on the board. Avoid including these in any parlay or entry.</li>
+          </ul>
+        </div>
+      )}
+
       {/* RENDER PICKS TAB */}
       {activeTab === 'picks' && (
         <div className="animate-in fade-in duration-300">
