@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import PropCard from './components/PropCard';
 import ParlayCard from './components/ParlayCard';
 import { Info, BarChart3, Target } from 'lucide-react';
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 
 export default function App() {
   const [data, setData] = useState({ single_props: [], parlays: [] });
@@ -9,6 +10,7 @@ export default function App() {
   const [loading, setLoading] = useState(true);
   const [showInfo, setShowInfo] = useState(false);
   const [activeTab, setActiveTab] = useState('picks');
+  const [wallet, setWallet] = useState([]); // Add this line with your other states
 
   useEffect(() => {
     fetch('./predictions.json?t=' + new Date().getTime())
@@ -22,7 +24,18 @@ export default function App() {
       .then((res) => res.json())
       .then((historyData) => setHistory(historyData))
       .catch(() => console.log("No history data found."));
+
+    // NEW: Fetch Wallet Data
+    fetch('./wallet.json?t=' + new Date().getTime())
+      .then((res) => res.json())
+      .then((walletData) => setWallet(walletData))
+      .catch(() => console.log("No wallet data found."));
   }, []);
+
+  // Calculate Wallet Metrics
+  const currentBalance = wallet.length > 0 ? wallet[wallet.length - 1].balance : 1000;
+  const totalProfit = currentBalance - 1000;
+  const roiColor = totalProfit >= 0 ? 'text-emerald-400' : 'text-red-400';
 
   const topProps = data.single_props ? data.single_props.slice(0, 5) : [];
   const bottomProps = data.single_props && data.single_props.length > 5 ? data.single_props.slice(-5) : [];
@@ -142,6 +155,64 @@ export default function App() {
       {/* RENDER TRACKING TAB */}
       {activeTab === 'tracking' && (
         <div className="space-y-8">
+          
+          {/* NEW: PAPER WALLET SIMULATION CHART */}
+          <div className="bg-gray-800 rounded-xl border border-gray-700 overflow-hidden">
+            <div className="bg-gray-900/50 p-6 border-b border-gray-700 flex justify-between items-end">
+              <div>
+                <h3 className="text-gray-400 font-bold uppercase tracking-wider mb-1">Paper Wallet Simulation</h3>
+                <p className="text-sm text-gray-500">Walk-forward simulation betting $10 per Top 3 Parlay</p>
+              </div>
+              <div className="text-right">
+                <p className="text-sm text-gray-400 mb-1">Current Bankroll</p>
+                <p className={`text-4xl font-black ${roiColor}`}>
+                  ${currentBalance.toFixed(2)}
+                </p>
+              </div>
+            </div>
+            
+            <div className="p-6 h-80 w-full">
+              {wallet.length > 1 ? (
+                <ResponsiveContainer width="100%" height="100%">
+                  <LineChart data={wallet} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
+                    <CartesianGrid strokeDasharray="3 3" stroke="#374151" vertical={false} />
+                    <XAxis 
+                      dataKey="date" 
+                      stroke="#9CA3AF" 
+                      tick={{ fill: '#9CA3AF', fontSize: 12 }} 
+                      tickFormatter={(val) => val === "Start" ? "Start" : val.slice(5)} 
+                    />
+                    <YAxis 
+                      domain={['auto', 'auto']} 
+                      stroke="#9CA3AF" 
+                      tick={{ fill: '#9CA3AF', fontSize: 12 }} 
+                      tickFormatter={(val) => `$${val}`}
+                    />
+                    <Tooltip 
+                      contentStyle={{ backgroundColor: '#1F2937', borderColor: '#374151', color: '#F3F4F6' }}
+                      itemStyle={{ color: '#34D399', fontWeight: 'bold' }}
+                      formatter={(value) => [`$${value.toFixed(2)}`, 'Balance']}
+                      labelStyle={{ color: '#9CA3AF', marginBottom: '4px' }}
+                    />
+                    <Line 
+                      type="monotone" 
+                      dataKey="balance" 
+                      stroke="#10B981" 
+                      strokeWidth={3} 
+                      dot={{ r: 4, fill: '#10B981', strokeWidth: 0 }} 
+                      activeDot={{ r: 6, fill: '#34D399', stroke: '#064E3B', strokeWidth: 2 }}
+                    />
+                  </LineChart>
+                </ResponsiveContainer>
+              ) : (
+                <div className="h-full flex items-center justify-center text-gray-500 italic">
+                  Not enough data to graph yet. The simulation will begin after tonight's slate.
+                </div>
+              )}
+            </div>
+          </div>
+
+          {/* ACCURACY CARDS */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="bg-gray-800 rounded-xl p-6 border border-emerald-500/30 text-center">
               <h3 className="text-gray-400 font-bold uppercase tracking-wider mb-2">Model "Target" Accuracy</h3>
@@ -155,6 +226,7 @@ export default function App() {
             </div>
           </div>
 
+          {/* RECENT GRADED PROPS TABLE */}
           <div className="bg-gray-800 rounded-xl border border-gray-700 overflow-hidden">
             <div className="bg-gray-900/50 p-4 border-b border-gray-700">
               <h3 className="text-white font-bold">Recent Graded Props</h3>

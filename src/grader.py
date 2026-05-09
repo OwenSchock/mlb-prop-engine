@@ -142,5 +142,64 @@ def grade_previous_day():
     os.makedirs(os.path.dirname(HISTORY_JSON), exist_ok=True)
     with open(HISTORY_JSON, 'w') as f:
         json.dump(history, f, indent=4)
+
+
+    # ==========================================
+    # WALLET SIMULATOR: Grade Top 3 Parlays
+    # ==========================================
+    WALLET_JSON = os.path.join(os.path.dirname(OUTPUT_JSON), "wallet.json")
+    parlays = prev_data.get('parlays', [])[:3] 
+    
+    if parlays:
+        # Quick lookup table to see if the parlay legs won or lost
+        player_results = {p['player_name']: p['result'] for p in picks_to_grade}
+        
+        UNIT_SIZE = 10.0 # Bet $10 per parlay
+        daily_investment = 0.0
+        daily_return = 0.0
+        
+        for parlay in parlays:
+            leg1 = parlay['legs'][0]
+            leg2 = parlay['legs'][1]
+            
+            res1 = player_results.get(leg1, 'Void')
+            res2 = player_results.get(leg2, 'Void')
+            
+            daily_investment += UNIT_SIZE
+            
+            # A parlay only wins if BOTH legs hit
+            if res1 == 'Win' and res2 == 'Win':
+                daily_return += UNIT_SIZE * parlay['combined_multiplier']
+            elif res1 == 'Loss' or res2 == 'Loss':
+                daily_return += 0 # Lost the bet
+            else:
+                daily_return += UNIT_SIZE # Void/Push - stake refunded
+                
+        daily_profit = daily_return - daily_investment
+        
+        # Load the historic wallet
+        wallet_history = []
+        if os.path.exists(WALLET_JSON):
+            with open(WALLET_JSON, 'r') as f:
+                wallet_history = json.load(f)
+                
+        # Genesis block: Start with $1000
+        if not wallet_history:
+            wallet_history.append({"date": "Start", "balance": 1000.0, "profit": 0})
+            
+        last_balance = wallet_history[-1]['balance']
+        
+        # Append today's result (prevent double counting)
+        if not any(w.get('date') == game_date for w in wallet_history):
+            new_balance = last_balance + daily_profit
+            wallet_history.append({
+                "date": game_date,
+                "invested": daily_investment,
+                "profit": round(daily_profit, 2),
+                "balance": round(new_balance, 2)
+            })
+            
+            with open(WALLET_JSON, 'w') as f:
+                json.dump(wallet_history, f, indent=4)
         
     print(f"Grader complete. Logged {graded_count} resolved props to history.json.")
