@@ -9,5 +9,11 @@
         "invested": 30.0,
         "profit": 0.0,
         "balance": 1000.0
+    },
+    {
+        "date": "2026-05-10",
+        "invested": 30.0,
+        "profit": -30.0,
+        "balance": 970.0
     }
 ]
