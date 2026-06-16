@@ -10,7 +10,13 @@ export default function App() {
   const [loading, setLoading] = useState(true);
   const [showInfo, setShowInfo] = useState(false);
   const [activeTab, setActiveTab] = useState('picks');
-  const [wallet, setWallet] = useState([]); // Add this line with your other states
+  const [wallet, setWallet] = useState([]); 
+  
+  // Filter States
+  const [searchTerm, setSearchTerm] = useState("");
+  const [selectedStat, setSelectedStat] = useState("all");
+  const [minEv, setMinEv] = useState(0);
+  const [sortBy, setSortBy] = useState("ev_desc"); 
 
   useEffect(() => {
     fetch('./predictions.json?t=' + new Date().getTime())
@@ -25,7 +31,6 @@ export default function App() {
       .then((historyData) => setHistory(historyData))
       .catch(() => console.log("No history data found."));
 
-    // NEW: Fetch Wallet Data
     fetch('./wallet.json?t=' + new Date().getTime())
       .then((res) => res.json())
       .then((walletData) => setWallet(walletData))
@@ -37,8 +42,23 @@ export default function App() {
   const totalProfit = currentBalance - 1000;
   const roiColor = totalProfit >= 0 ? 'text-emerald-400' : 'text-red-400';
 
-  const topProps = data.single_props ? data.single_props.slice(0, 5) : [];
-  const bottomProps = data.single_props && data.single_props.length > 5 ? data.single_props.slice(-5) : [];
+  // --- FILTER & SORT LOGIC ---
+  const allProps = data.single_props || [];
+  
+  const filteredProps = allProps
+    .filter((item) => {
+      const matchesPlayer = item.player_name.toLowerCase().includes(searchTerm.toLowerCase());
+      const matchesStat = selectedStat === "all" || item.stat_type.toLowerCase().replace(" ", "_") === selectedStat;
+      const matchesEv = (item.expected_value * 100) >= minEv;
+      return matchesPlayer && matchesStat && matchesEv;
+    })
+    .sort((a, b) => {
+      if (sortBy === "ev_desc") return b.expected_value - a.expected_value;
+      if (sortBy === "kelly_desc") return (b.recommended_unit_size || 0) - (a.recommended_unit_size || 0);
+      if (sortBy === "prob_desc") return b.true_probability - a.true_probability;
+      return 0;
+    });
+
   const parlays = data.parlays || [];
   const freePicks = data.single_props ? data.single_props.filter(prop => prop.is_free_pick) : [];
 
@@ -102,6 +122,59 @@ export default function App() {
       {/* RENDER PICKS TAB */}
       {activeTab === 'picks' && (
         <div>
+          {/* THE NEW FILTER BAR IS PLACED SAFELY INSIDE THE TAB */}
+          <div className="bg-gray-800 p-4 rounded-xl mb-6 grid grid-cols-1 md:grid-cols-4 gap-4 items-center shadow-lg border border-gray-700">
+            <div>
+              <label className="text-xs font-semibold uppercase tracking-wider text-gray-400 block mb-1">Search Player</label>
+              <input
+                type="text"
+                placeholder="e.g. Bobby Witt"
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                className="w-full bg-gray-900 border border-gray-600 rounded-lg px-3 py-2 text-white placeholder-gray-500 focus:outline-none focus:border-emerald-500 transition-colors"
+              />
+            </div>
+            <div>
+              <label className="text-xs font-semibold uppercase tracking-wider text-gray-400 block mb-1">Stat Category</label>
+              <select
+                value={selectedStat}
+                onChange={(e) => setSelectedStat(e.target.value)}
+                className="w-full bg-gray-900 border border-gray-600 rounded-lg px-3 py-2 text-white focus:outline-none focus:border-emerald-500 transition-colors"
+              >
+                <option value="all">All Categories</option>
+                <option value="hits">Hits</option>
+                <option value="total_bases">Total Bases</option>
+              </select>
+            </div>
+            <div>
+              <div className="flex justify-between items-center mb-1">
+                <label className="text-xs font-semibold uppercase tracking-wider text-gray-400">Min Expected Value</label>
+                <span className="text-xs font-bold text-emerald-400">{minEv}% EV</span>
+              </div>
+              <input
+                type="range"
+                min="-10"
+                max="25"
+                step="1"
+                value={minEv}
+                onChange={(e) => setMinEv(Number(e.target.value))}
+                className="w-full h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer accent-emerald-500"
+              />
+            </div>
+            <div>
+              <label className="text-xs font-semibold uppercase tracking-wider text-gray-400 block mb-1">Sort Market By</label>
+              <select
+                value={sortBy}
+                onChange={(e) => setSortBy(e.target.value)}
+                className="w-full bg-gray-900 border border-gray-600 rounded-lg px-3 py-2 text-white focus:outline-none focus:border-emerald-500 transition-colors"
+              >
+                <option value="ev_desc">Highest Expected Value</option>
+                <option value="kelly_desc">Recommended Unit Size</option>
+                <option value="prob_desc">True Probability</option>
+              </select>
+            </div>
+          </div>
+
           {freePicks.length > 0 && (
             <div className="mb-8 bg-gradient-to-r from-yellow-500/20 to-orange-500/20 border border-yellow-500/50 rounded-xl p-4 shadow-[0_0_15px_rgba(234,179,8,0.2)]">
               <div className="flex items-center gap-3 mb-2">
@@ -123,13 +196,8 @@ export default function App() {
             <p className="text-gray-400">Running Monte Carlo Simulations...</p>
           ) : (
             <div className="space-y-10">
-              <section>
-                <h2 className="text-2xl font-bold text-white mb-4 border-l-4 border-emerald-500 pl-3">Top 5 Value Bets (Target)</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                  {topProps.map((prop, index) => <PropCard key={'top-'+index} data={prop} />)}
-                </div>
-              </section>
-
+              
+              {/* PARLAYS SECTION */}
               {parlays.length > 0 && (
                 <section>
                   <h2 className="text-2xl font-bold text-white mb-4 border-l-4 border-purple-500 pl-3">Top +EV Parlay Suggestions</h2>
@@ -139,14 +207,26 @@ export default function App() {
                 </section>
               )}
 
-              {bottomProps.length > 0 && (
-                <section>
-                  <h2 className="text-2xl font-bold text-white mb-4 border-l-4 border-red-500 pl-3">Bottom 5 Plays (Avoid)</h2>
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 opacity-75">
-                    {bottomProps.map((prop, index) => <PropCard key={'bottom-'+index} data={prop} />)}
+              {/* DYNAMIC PROPS BOARD */}
+              <section>
+                <div className="flex justify-between items-end mb-4">
+                  <h2 className="text-2xl font-bold text-white border-l-4 border-emerald-500 pl-3">Projected Opportunities</h2>
+                  <span className="text-sm text-gray-400 font-mono bg-gray-800 px-2 py-1 rounded border border-gray-700">
+                    {filteredProps.length} Matches
+                  </span>
+                </div>
+                
+                {filteredProps.length > 0 ? (
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    {filteredProps.map((prop, index) => <PropCard key={'prop-'+index} data={prop} />)}
                   </div>
-                </section>
-              )}
+                ) : (
+                  <div className="text-center py-12 bg-gray-800/50 rounded-xl border border-gray-700 border-dashed">
+                    <p className="text-gray-400">No props match your current filter criteria.</p>
+                  </div>
+                )}
+              </section>
+
             </div>
           )}
         </div>
@@ -156,7 +236,6 @@ export default function App() {
       {activeTab === 'tracking' && (
         <div className="space-y-8">
           
-          {/* NEW: PAPER WALLET SIMULATION CHART */}
           <div className="bg-gray-800 rounded-xl border border-gray-700 overflow-hidden">
             <div className="bg-gray-900/50 p-6 border-b border-gray-700 flex justify-between items-end">
               <div>
@@ -212,7 +291,6 @@ export default function App() {
             </div>
           </div>
 
-          {/* ACCURACY CARDS */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="bg-gray-800 rounded-xl p-6 border border-emerald-500/30 text-center">
               <h3 className="text-gray-400 font-bold uppercase tracking-wider mb-2">Model "Target" Accuracy</h3>
@@ -226,7 +304,6 @@ export default function App() {
             </div>
           </div>
 
-          {/* RECENT GRADED PROPS TABLE */}
           <div className="bg-gray-800 rounded-xl border border-gray-700 overflow-hidden">
             <div className="bg-gray-900/50 p-4 border-b border-gray-700">
               <h3 className="text-white font-bold">Recent Graded Props</h3>

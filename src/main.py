@@ -10,6 +10,13 @@ from src.model import generate_predictions, calculate_nbinom_prob
 from src.scraper import scrape_sleeper_lines
 from src.config import OUTPUT_JSON, BALLDONTLIE_KEY
 from src.grader import grade_previous_day
+import math
+
+def get_ordinal_suffix(n):
+    """Returns the correct ordinal suffix for a given line-up position."""
+    if 11 <= (n % 100) <= 13:
+        return f"{n}th"
+    return f"{n}{ {1: 'st', 2: 'nd', 3: 'rd'}.get(n % 10, 'th') }"
 
 LEAGUE_AVG_HIT_RATE = 0.240
 LEAGUE_AVG_SLG_RATE = 0.400
@@ -73,6 +80,17 @@ STADIUM_COORDS = {
     "TEX": (32.737, -97.084, True),   "TOR": (43.641, -79.389, True),   "WSH": (38.873, -77.007, False),
     "WAS": (38.873, -77.007, False)
 }
+
+# Format: "TEAM_ABBR": Degrees (0 = North, 90 = East, 180 = South, 270 = West)
+# This represents the angle from Home Plate directly to Center Field.
+STADIUM_ORIENTATIONS = {
+    "ARI": 0, "ATL": 135, "BAL": 45, "BOS": 45, "CHC": 45, "CWS": 135, "CHW": 135,
+    "CIN": 135, "CLE": 0, "COL": 0, "DET": 135, "HOU": 315, "KC": 45, "KCR": 45,
+    "LAA": 45, "LAD": 45, "MIA": 90, "MIL": 135, "MIN": 45, "NYM": 45, "NYY": 45,
+    "OAK": 45, "ATH": 45, "PHI": 0, "PIT": 135, "SD": 0, "SDP": 0, "SF": 90, "SFG": 90,
+    "SEA": 45, "STL": 90, "TB": 45, "TBR": 45, "TEX": 135, "TOR": 0, "WSH": 45, "WAS": 45
+}
+
 
 def calculate_ev(true_prob, multiplier):
     if multiplier is None:
@@ -197,35 +215,44 @@ def calculate_log5_adjustment(pitcher_rate, league_rate):
 WEATHER_CACHE = dict()
 
 def get_weather_multiplier(venue_abbr):
-    """Returns a multiplier based on local temperature, ignoring domed stadiums (with caching)."""
+    """Returns separate Hit and TB multipliers based on temp and wind vectors."""
     coords = STADIUM_COORDS.get(venue_abbr)
     if not coords:
-        return 1.0, 72.0 # Default neutral
+        return 1.0, 1.0, 72.0, 0.0 # Hit Multi, TB Multi, Temp, Wind Vector
         
     lat, lon, is_dome = coords
     
-    # If the stadium has a roof, weather doesn't affect the ball
     if is_dome:
-        return 1.0, 72.0
+        return 1.0, 1.0, 72.0, 0.0
         
     # --- CACHE CHECK ---
-    # If we already looked up this stadium's weather today, use the saved value!
     if venue_abbr in WEATHER_CACHE:
-        temp_f = WEATHER_CACHE[venue_abbr]
+        temp_f, wind_spd, wind_dir = WEATHER_CACHE[venue_abbr]
     else:
-        # Otherwise, fetch it from the API and save it to the cache
         from src.ingestion import fetch_weather_forecast
-        temp_f = fetch_weather_forecast(lat, lon)
-        WEATHER_CACHE[venue_abbr] = temp_f
+        temp_f, wind_spd, wind_dir = fetch_weather_forecast(lat, lon)
+        WEATHER_CACHE[venue_abbr] = (temp_f, wind_spd, wind_dir)
     
-    # Calculate difference from baseline (72 degrees)
+    # 1. Temperature baseline (Air Density)
     temp_diff = temp_f - 72.0
-    multiplier = 1.0 + (temp_diff * 0.0025)
+    base_multiplier = 1.0 + (temp_diff * 0.0025)
     
-    # Cap the extreme weather impacts just in case of data spikes
-    multiplier = max(0.90, min(1.10, multiplier))
+    # 2. Vector Math (Cosine of the angle difference)
+    stadium_angle = STADIUM_ORIENTATIONS.get(venue_abbr, 45)
+    wind_angle_diff = math.radians(wind_dir - stadium_angle)
     
-    return round(multiplier, 3), temp_f
+    # Wind Vector: Positive = Tailwind (Blowing Out), Negative = Headwind (Blowing In)
+    wind_vector = math.cos(wind_angle_diff) * wind_spd
+    
+    # Wind affects Total Bases (fly balls) heavily, but Hits (grounders/line drives) less so
+    tb_weather_adj = base_multiplier + (wind_vector * 0.005) 
+    hit_weather_adj = base_multiplier + (wind_vector * 0.002) 
+    
+    # Cap the extreme weather impacts just in case of hurricane-level data spikes
+    tb_multiplier = max(0.85, min(1.15, tb_weather_adj))
+    hit_multiplier = max(0.90, min(1.10, hit_weather_adj))
+    
+    return hit_multiplier, tb_multiplier, temp_f, round(wind_vector, 1)
 
 def run_pipeline():
 
@@ -284,8 +311,15 @@ def run_pipeline():
                 if not p_match_df.empty:
                     p_match = p_match_df.iloc[0].to_dict()
                     pitcher_arm = p_match.get('throw_arm', 'R')
-                    pitcher_hit_allowed = float(p_match.get('p_xba', LEAGUE_AVG_HIT_RATE))
-                    pitcher_tb_allowed = float(p_match.get('p_xslg', LEAGUE_AVG_SLG_RATE))
+                    
+                    # Get the raw starter metrics
+                    starter_hit_allowed = float(p_match.get('p_xba', LEAGUE_AVG_HIT_RATE))
+                    starter_tb_allowed = float(p_match.get('p_xslg', LEAGUE_AVG_SLG_RATE))
+                    
+                    # --- NEW: THE BULLPEN TAX (65% Starter / 35% League Average Bullpen) ---
+                    # Regresses extreme starter matchups toward the mean for late-game at-bats
+                    pitcher_hit_allowed = (starter_hit_allowed * 0.65) + (LEAGUE_AVG_HIT_RATE * 0.35)
+                    pitcher_tb_allowed = (starter_tb_allowed * 0.65) + (LEAGUE_AVG_SLG_RATE * 0.35)
 
             # --- 2. Match Batter against Specific Arm Split ---
             model_data = None
@@ -300,25 +334,30 @@ def run_pipeline():
             if model_data is not None:
                 matched_count += 1
                 
-                # Baseline Matchup Math
+                # --- 1. Gather Environment & Matchup Modifiers ---
                 hit_adj = calculate_log5_adjustment(pitcher_hit_allowed, LEAGUE_AVG_HIT_RATE)
                 tb_adj = calculate_log5_adjustment(pitcher_tb_allowed, LEAGUE_AVG_SLG_RATE)
                 
-                # Volume Math
-                lineup_spot = batting_orders.get(market_player, 5)
-                expected_pa = PA_EXPECTATIONS.get(lineup_spot, 4.22)
-                volume_multiplier = expected_pa / 4.22 
-                
-                # Environmental Math
                 park_hit_factor = PARK_FACTORS.get(venue, {}).get("HIT", 1.0)
                 park_tb_factor = PARK_FACTORS.get(venue, {}).get("TB", 1.0)
                 
-                weather_multi, game_temp = get_weather_multiplier(venue)
-                tb_weather_adj = weather_multi
-                hit_weather_adj = 1.0 + ((weather_multi - 1.0) * 0.5) 
+                # UPDATED: Catching all 4 outputs
+                hit_weather_adj, tb_weather_adj, game_temp, wind_vector = get_weather_multiplier(venue)
                 
-                # --- NEW: MATHEMATICAL GOVERNOR ---
-                # 1. Calculate Deltas
+                # --- 2. NEW: DYNAMIC PLATE APPEARANCES ---
+                # Blend Pitcher Quality, Park, and Weather to estimate lineup turnover
+                # The 0.4 dampener prevents extreme exaggerations in PA projections
+                env_score = 1.0 + ((hit_adj - 1.0) + (park_hit_factor - 1.0) + (hit_weather_adj - 1.0)) * 0.4 
+                env_score = max(0.85, min(1.15, env_score)) # Cap the PA swing at +/- 15%
+                
+                lineup_spot = batting_orders.get(market_player, 5)
+                base_pa = PA_EXPECTATIONS.get(lineup_spot, 4.22)
+                
+                # Scale the baseline PA by the game environment score
+                expected_pa = base_pa * env_score
+                volume_multiplier = expected_pa / 4.22 
+                
+                # --- 3. MATHEMATICAL GOVERNOR (Apply final deltas to the stats) ---
                 hit_delta = hit_adj - 1.0
                 tb_delta = tb_adj - 1.0
                 park_hit_delta = park_hit_factor - 1.0
@@ -326,20 +365,20 @@ def run_pipeline():
                 weather_hit_delta = hit_weather_adj - 1.0
                 weather_tb_delta = tb_weather_adj - 1.0
 
-                # 2. Prevent Double Counting Home Parks
+                # Prevent Double Counting Home Parks
                 if player_teams.get(market_player) == venue:
                     park_hit_delta *= 0.25 
                     park_tb_delta *= 0.25
 
-                # 3. Sum Deltas
+                # Sum Deltas
                 combined_hit_modifier = 1.0 + hit_delta + park_hit_delta + weather_hit_delta
                 combined_tb_modifier = 1.0 + tb_delta + park_tb_delta + weather_tb_delta
 
-                # 4. Cap Extremes (+/- 25%)
+                # Cap Extremes (+/- 25%)
                 combined_hit_modifier = max(0.75, min(1.25, combined_hit_modifier))
                 combined_tb_modifier = max(0.75, min(1.25, combined_tb_modifier))
 
-                # Apply final modifiers to the mean (Volume multiplier remains absolute)
+                # Apply final modifiers to the mean (Volume multiplier is now dynamic!)
                 adj_mean_hits = float(model_data.get('mean_hits', 0.0)) * combined_hit_modifier * volume_multiplier
                 adj_mean_tb = float(model_data.get('mean_tb', 0.0)) * combined_tb_modifier * volume_multiplier
                 
@@ -364,18 +403,38 @@ def run_pipeline():
                         
                     multiplier = float(raw_mult)
                     ev = calculate_ev(true_prob, multiplier)
+
+                    # --- NEW: Kelly Criterion Math ---
+                    # Formula: f* = (p * b - q) / b
+                    p = true_prob
+                    q = 1.0 - p
+                    b = multiplier - 1.0
+                    
+                    kelly_fraction = 0.0
+                    if b > 0:
+                        kelly_fraction = ((p * b) - q) / b
+                    
+                    # Using 1/4 Fractional Kelly to manage bankroll variance safely
+                    fractional_kelly = max(0.0, kelly_fraction * 0.25)
+                    # ---------------------------------
                     
                     # Build Insight Text
-                    insight_text = "Projects for " + str(round(expected_pa, 2)) + " PA based on batting " + str(lineup_spot) + "th. "
+                    # AFTER:
+                    batting_pos_str = get_ordinal_suffix(int(lineup_spot))
+                    insight_text = f"Projects for {round(expected_pa, 2)} PA based on batting {batting_pos_str}. "
                     if opponent_pitcher != "unknown":
-                        insight_text = "Log5 adjusted vs " + str(pitcher_arm) + "HP " + str(opponent_pitcher).title() + ". " + insight_text
+                        # UPDATED: Added "& Bullpen" to the UI text
+                        insight_text = "Log5 adjusted vs " + str(pitcher_arm) + "HP " + str(opponent_pitcher).title() + " & Bullpen. " + insight_text
                         
                     if float(model_data.get('xwoba', 0)) > 0.350:
                         insight_text = "Elite xwOBA (" + str(model_data.get('xwoba')) + ") vs " + str(pitcher_arm) + "HP + " + insight_text
                         
                     # Append Weather Insight
                     if STADIUM_COORDS.get(venue, (0,0,True))[2] == False:
-                        insight_text += f" Forecast: {round(game_temp)}°F."
+                        wind_str = f"Blowing OUT at {abs(wind_vector)}mph" if wind_vector > 0 else f"Blowing IN at {abs(wind_vector)}mph"
+                        if abs(wind_vector) < 3.0:
+                            wind_str = "Minimal wind impact"
+                        insight_text += f" Forecast: {round(game_temp)}°F, {wind_str}."
                     else:
                         insight_text += " Playing in a controlled dome."
                         
@@ -389,6 +448,7 @@ def run_pipeline():
                         market_popularity=market.get('pick_popularity'),
                         true_probability=true_prob,
                         expected_value=ev,
+                        recommended_unit_size=round(fractional_kelly * 100, 2), # EXPORT TO JSON
                         insight=insight_text,
                         is_free_pick=bool(market.get('is_free_pick', False))
                     ))

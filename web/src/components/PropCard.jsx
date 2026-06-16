@@ -1,12 +1,9 @@
 import React from 'react';
-import { TrendingUp, Info, Swords } from 'lucide-react';
+import { TrendingUp, Info, Swords, Coins } from 'lucide-react'; // Added Coins icon
 
 export default function PropCard({ data }) {
   const evPercentage = (data.expected_value * 100).toFixed(2);
-  let isPositiveEV = false;
-  if (data.expected_value > 0) {
-      isPositiveEV = true;
-  }
+  const isPositiveEV = data.expected_value > 0;
 
   let matchupElement = null;
   if (data.opposing_pitcher && data.opposing_pitcher !== 'N/A' && data.opposing_pitcher !== 'TBD') {
@@ -18,22 +15,16 @@ export default function PropCard({ data }) {
       );
   }
 
-  let evColorClass = 'bg-red-500/20 text-red-400';
-  if (isPositiveEV) {
-      evColorClass = 'bg-emerald-500/20 text-emerald-400';
-  }
-
-  // Clean up the team abbreviation for display
+  const evColorClass = isPositiveEV ? 'bg-emerald-500/20 text-emerald-400' : 'bg-red-500/20 text-red-400';
   const displayTeam = data.team && data.team.toUpperCase() !== 'NONE' ? data.team.toUpperCase() : null;
 
   return (
-    <div className="bg-gray-800 rounded-xl p-5 shadow-lg border border-gray-700 transition hover:border-emerald-500">
+    <div className={`bg-gray-800 rounded-xl p-5 shadow-lg border transition ${isPositiveEV ? 'border-emerald-500/30 hover:border-emerald-500' : 'border-gray-700'}`}>
       <div className="flex justify-between items-start mb-3">
         <div className="flex items-center gap-3">
           <div>
             <div className="flex items-center gap-2 mb-1">
               <h2 className="text-xl font-bold text-white">{data.player_name}</h2>
-              {/* Conditional Team Badge */}
               {displayTeam && (
                 <span className="px-2 py-0.5 bg-gray-700 text-gray-300 text-xs font-bold rounded border border-gray-600 tracking-wider">
                   {displayTeam}
@@ -51,14 +42,23 @@ export default function PropCard({ data }) {
 
       {matchupElement}
 
-      <div className="grid grid-cols-2 gap-4 mb-4">
-        <div className="bg-gray-900 rounded-lg p-3">
-          <p className="text-xs text-gray-500 uppercase">True Prob</p>
-          <p className="text-lg font-mono text-blue-400">{(data.true_probability * 100).toFixed(1)}%</p>
+      {/* UPDATED GRID WITH KELLY SIZING */}
+      <div className="grid grid-cols-3 gap-3 mb-4">
+        <div className="bg-gray-900 rounded-lg p-3 border border-gray-700/50">
+          <p className="text-[10px] text-gray-500 uppercase tracking-wider mb-1">True Prob</p>
+          <p className="text-base font-mono text-blue-400">{(data.true_probability * 100).toFixed(1)}%</p>
         </div>
-        <div className="bg-gray-900 rounded-lg p-3">
-          <p className="text-xs text-gray-500 uppercase">Sleeper Multiplier</p>
-          <p className="text-lg font-mono text-purple-400">{data.sportsbook_multiplier}x</p>
+        <div className="bg-gray-900 rounded-lg p-3 border border-gray-700/50">
+          <p className="text-[10px] text-gray-500 uppercase tracking-wider mb-1">Multiplier</p>
+          <p className="text-base font-mono text-purple-400">{data.sportsbook_multiplier}x</p>
+        </div>
+        <div className={`rounded-lg p-3 border ${isPositiveEV ? 'bg-emerald-900/20 border-emerald-500/30' : 'bg-gray-900 border-gray-700/50'}`}>
+          <p className="text-[10px] text-gray-500 uppercase tracking-wider mb-1 flex items-center gap-1">
+            <Coins size={10}/> Bet Size
+          </p>
+          <p className={`text-base font-mono ${isPositiveEV ? 'text-emerald-400' : 'text-gray-500'}`}>
+            {isPositiveEV ? `${data.recommended_unit_size}%` : 'Skip'}
+          </p>
         </div>
       </div>
 
