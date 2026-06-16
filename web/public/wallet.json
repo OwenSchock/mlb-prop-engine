@@ -5,9 +5,232 @@
         "profit": 0
     },
     {
+<<<<<<< HEAD
         "date": "2026-06-15",
         "invested": 30.0,
         "profit": 0.0,
         "balance": 1000.0
+=======
+        "date": "2026-05-09",
+        "invested": 30.0,
+        "profit": 0.0,
+        "balance": 1000.0
+    },
+    {
+        "date": "2026-05-10",
+        "invested": 30.0,
+        "profit": -30.0,
+        "balance": 970.0
+    },
+    {
+        "date": "2026-05-11",
+        "invested": 30.0,
+        "profit": -30.0,
+        "balance": 940.0
+    },
+    {
+        "date": "2026-05-12",
+        "invested": 30.0,
+        "profit": 46.2,
+        "balance": 986.2
+    },
+    {
+        "date": "2026-05-13",
+        "invested": 30.0,
+        "profit": -30.0,
+        "balance": 956.2
+    },
+    {
+        "date": "2026-05-14",
+        "invested": 30.0,
+        "profit": 29.8,
+        "balance": 986.0
+    },
+    {
+        "date": "2026-05-15",
+        "invested": 30.0,
+        "profit": -30.0,
+        "balance": 956.0
+    },
+    {
+        "date": "2026-05-16",
+        "invested": 30.0,
+        "profit": 40.9,
+        "balance": 996.9
+    },
+    {
+        "date": "2026-05-17",
+        "invested": 30.0,
+        "profit": -30.0,
+        "balance": 966.9
+    },
+    {
+        "date": "2026-05-18",
+        "invested": 30.0,
+        "profit": -30.0,
+        "balance": 936.9
+    },
+    {
+        "date": "2026-05-19",
+        "invested": 30.0,
+        "profit": -7.5,
+        "balance": 929.4
+    },
+    {
+        "date": "2026-05-20",
+        "invested": 30.0,
+        "profit": -20.0,
+        "balance": 909.4
+    },
+    {
+        "date": "2026-05-21",
+        "invested": 30.0,
+        "profit": 13.2,
+        "balance": 922.6
+    },
+    {
+        "date": "2026-05-22",
+        "invested": 30.0,
+        "profit": -30.0,
+        "balance": 892.6
+    },
+    {
+        "date": "2026-05-23",
+        "invested": 30.0,
+        "profit": -30.0,
+        "balance": 862.6
+    },
+    {
+        "date": "2026-05-24",
+        "invested": 30.0,
+        "profit": -20.0,
+        "balance": 842.6
+    },
+    {
+        "date": "2026-05-25",
+        "invested": 30.0,
+        "profit": -30.0,
+        "balance": 812.6
+    },
+    {
+        "date": "2026-05-26",
+        "invested": 30.0,
+        "profit": 43.7,
+        "balance": 856.3
+    },
+    {
+        "date": "2026-05-27",
+        "invested": 30.0,
+        "profit": -30.0,
+        "balance": 826.3
+    },
+    {
+        "date": "2026-05-28",
+        "invested": 30.0,
+        "profit": -20.0,
+        "balance": 806.3
+    },
+    {
+        "date": "2026-05-29",
+        "invested": 30.0,
+        "profit": -30.0,
+        "balance": 776.3
+    },
+    {
+        "date": "2026-05-30",
+        "invested": 30.0,
+        "profit": 46.3,
+        "balance": 822.6
+    },
+    {
+        "date": "2026-05-31",
+        "invested": 30.0,
+        "profit": 46.6,
+        "balance": 869.2
+    },
+    {
+        "date": "2026-06-01",
+        "invested": 30.0,
+        "profit": -30.0,
+        "balance": 839.2
+    },
+    {
+        "date": "2026-06-02",
+        "invested": 30.0,
+        "profit": -30.0,
+        "balance": 809.2
+    },
+    {
+        "date": "2026-06-03",
+        "invested": 30.0,
+        "profit": -10.0,
+        "balance": 799.2
+    },
+    {
+        "date": "2026-06-04",
+        "invested": 30.0,
+        "profit": 49.1,
+        "balance": 848.3
+    },
+    {
+        "date": "2026-06-05",
+        "invested": 30.0,
+        "profit": -30.0,
+        "balance": 818.3
+    },
+    {
+        "date": "2026-06-06",
+        "invested": 30.0,
+        "profit": -30.0,
+        "balance": 788.3
+    },
+    {
+        "date": "2026-06-07",
+        "invested": 30.0,
+        "profit": -30.0,
+        "balance": 758.3
+    },
+    {
+        "date": "2026-06-08",
+        "invested": 30.0,
+        "profit": -4.3,
+        "balance": 754.0
+    },
+    {
+        "date": "2026-06-09",
+        "invested": 30.0,
+        "profit": 1.7,
+        "balance": 755.7
+    },
+    {
+        "date": "2026-06-10",
+        "invested": 30.0,
+        "profit": 43.6,
+        "balance": 799.3
+    },
+    {
+        "date": "2026-06-11",
+        "invested": 30.0,
+        "profit": -30.0,
+        "balance": 769.3
+    },
+    {
+        "date": "2026-06-12",
+        "invested": 30.0,
+        "profit": -30.0,
+        "balance": 739.3
+    },
+    {
+        "date": "2026-06-13",
+        "invested": 30.0,
+        "profit": -30.0,
+        "balance": 709.3
+    },
+    {
+        "date": "2026-06-14",
+        "invested": 30.0,
+        "profit": -10.0,
+        "balance": 699.3
+>>>>>>> 81f918613779527dcfd8cccb84660808b141e492
     }
 ]
