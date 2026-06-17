@@ -1,1 +1,13 @@
-[]
+[
+    {
+        "date": "Start",
+        "balance": 1000.0,
+        "profit": 0
+    },
+    {
+        "date": "2026-06-16",
+        "invested": 30.0,
+        "profit": 56.0,
+        "balance": 1056.0
+    }
+]
