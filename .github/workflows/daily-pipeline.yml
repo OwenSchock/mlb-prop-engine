@@ -22,6 +22,7 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
+    timeout-minutes: 15 # NEW: Kills the job if an external API hangs to prevent timeout errors
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
@@ -61,7 +62,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '24' # UPDATED: Resolves the Node 20 deprecation warning
 
       - name: Build Web App
         run: cd web && npm install && npm run build
