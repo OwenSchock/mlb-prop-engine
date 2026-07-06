@@ -117,5 +117,11 @@
         "invested": 30.0,
         "profit": -30.0,
         "balance": 1041.1
+    },
+    {
+        "date": "2026-07-05",
+        "invested": 30.0,
+        "profit": -30.0,
+        "balance": 1011.1
     }
 ]
