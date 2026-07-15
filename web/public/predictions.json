@@ -1,17 +1,143 @@
 {
     "single_props": [
         {
-            "player_name": "Debug Report",
-            "team": "MLB",
-            "opposing_pitcher": "N/A",
-            "stat_type": "system_status",
-            "line": 0.0,
-            "sportsbook_multiplier": 1.0,
-            "market_popularity": 0.0,
-            "true_probability": 0.0,
-            "expected_value": 0.0,
-            "insight": "Matches found: 0"
+            "player_name": "Bryce Harper",
+            "team": "PHI",
+            "opposing_pitcher": "TBD",
+            "stat_type": "total_bases",
+            "line": 1.5,
+            "sportsbook_multiplier": 1.93,
+            "market_popularity": 0.5694444444444444,
+            "true_probability": 0.434,
+            "expected_value": -0.1624,
+            "recommended_unit_size": 0.0,
+            "insight": "Elite xwOBA (0.416) vs RHP + Projects for 4.52 PA based on batting 3rd.  Forecast: 103\u00b0F, Blowing IN at 9.1mph.",
+            "is_free_pick": false
+        },
+        {
+            "player_name": "Kyle Schwarber",
+            "team": "PHI",
+            "opposing_pitcher": "TBD",
+            "stat_type": "total_bases",
+            "line": 1.5,
+            "sportsbook_multiplier": 1.89,
+            "market_popularity": 0.9166666666666666,
+            "true_probability": 0.4206,
+            "expected_value": -0.2051,
+            "recommended_unit_size": 0.0,
+            "insight": "Projects for 4.74 PA based on batting 1st.  Forecast: 103\u00b0F, Blowing IN at 9.1mph.",
+            "is_free_pick": false
+        },
+        {
+            "player_name": "Justin Crawford",
+            "team": "0",
+            "opposing_pitcher": "TBD",
+            "stat_type": "hits",
+            "line": 0.5,
+            "sportsbook_multiplier": 1.67,
+            "market_popularity": 0.8333333333333334,
+            "true_probability": 0.4672,
+            "expected_value": -0.2198,
+            "recommended_unit_size": 0.0,
+            "insight": "Projects for 4.22 PA based on batting 5th.  Playing in a controlled dome.",
+            "is_free_pick": false
+        },
+        {
+            "player_name": "Trea Turner",
+            "team": "PHI",
+            "opposing_pitcher": "TBD",
+            "stat_type": "total_bases",
+            "line": 1.5,
+            "sportsbook_multiplier": 1.92,
+            "market_popularity": 0.9722222222222222,
+            "true_probability": 0.3903,
+            "expected_value": -0.2506,
+            "recommended_unit_size": 0.0,
+            "insight": "Projects for 4.74 PA based on batting 1st.  Forecast: 103\u00b0F, Blowing IN at 9.1mph.",
+            "is_free_pick": false
+        },
+        {
+            "player_name": "Brett Baty",
+            "team": "NYM",
+            "opposing_pitcher": "TBD",
+            "stat_type": "hits",
+            "line": 0.5,
+            "sportsbook_multiplier": 1.77,
+            "market_popularity": 0.9027777777777778,
+            "true_probability": 0.3948,
+            "expected_value": -0.3012,
+            "recommended_unit_size": 0.0,
+            "insight": "Projects for 3.96 PA based on batting 8th.  Forecast: 102\u00b0F, Blowing IN at 10.4mph.",
+            "is_free_pick": false
+        },
+        {
+            "player_name": "Gabriel Rincones",
+            "team": "PHI",
+            "opposing_pitcher": "TBD",
+            "stat_type": "hits",
+            "line": 0.5,
+            "sportsbook_multiplier": 1.78,
+            "market_popularity": 0.6527777777777778,
+            "true_probability": 0.3675,
+            "expected_value": -0.3458,
+            "recommended_unit_size": 0.0,
+            "insight": "Projects for 3.97 PA based on batting 8th.  Forecast: 103\u00b0F, Blowing IN at 9.1mph.",
+            "is_free_pick": false
+        },
+        {
+            "player_name": "Bo Bichette",
+            "team": "0",
+            "opposing_pitcher": "TBD",
+            "stat_type": "total_bases",
+            "line": 1.5,
+            "sportsbook_multiplier": 1.83,
+            "market_popularity": 0.7916666666666666,
+            "true_probability": 0.3371,
+            "expected_value": -0.3831,
+            "recommended_unit_size": 0.0,
+            "insight": "Projects for 4.22 PA based on batting 5th.  Playing in a controlled dome.",
+            "is_free_pick": false
         }
     ],
-    "parlays": []
+    "parlays": [
+        {
+            "legs": [
+                "Bryce Harper",
+                "Justin Crawford"
+            ],
+            "teams": [
+                "PHI",
+                "0"
+            ],
+            "combined_true_prob": 0.2028,
+            "combined_multiplier": 3.22,
+            "expected_value": -0.3465
+        },
+        {
+            "legs": [
+                "Kyle Schwarber",
+                "Justin Crawford"
+            ],
+            "teams": [
+                "PHI",
+                "0"
+            ],
+            "combined_true_prob": 0.1965,
+            "combined_multiplier": 3.16,
+            "expected_value": -0.3798
+        },
+        {
+            "legs": [
+                "Bryce Harper",
+                "Brett Baty"
+            ],
+            "teams": [
+                "PHI",
+                "NYM"
+            ],
+            "combined_true_prob": 0.1713,
+            "combined_multiplier": 3.42,
+            "expected_value": -0.4147
+        }
+    ]
 }
