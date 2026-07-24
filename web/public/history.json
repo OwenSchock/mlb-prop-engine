@@ -1,23 +1,5 @@
 [
     {
-        "player_name": "Ryan Ward",
-        "team": "LAD",
-        "opposing_pitcher": "Trey Gibson",
-        "stat_type": "total_bases",
-        "line": 0.5,
-        "sportsbook_multiplier": 1.6,
-        "market_popularity": 0.27582644628099173,
-        "true_probability": 0.6882,
-        "expected_value": 0.1011,
-        "recommended_unit_size": 4.21,
-        "insight": "Elite xwOBA (0.36) vs RHP + Log5 adjusted vs RHP Trey Gibson & Bullpen. Projects for 3.94 PA based on batting 7th.  Forecast: 73\u00b0F, Blowing IN at 9.4mph.",
-        "is_free_pick": false,
-        "category": "Top 5 (Target)",
-        "actual": 0,
-        "result": "Loss",
-        "date": "2026-06-19"
-    },
-    {
         "player_name": "Rodolfo Dur\u00e1n",
         "team": "SD",
         "opposing_pitcher": "Jacob Degrom",
@@ -5394,5 +5376,21 @@
         "result": "Void",
         "actual": 0,
         "date": "2026-07-22"
+    },
+    {
+        "player_name": "Debug Report",
+        "team": "MLB",
+        "opposing_pitcher": "N/A",
+        "stat_type": "system_status",
+        "line": 0.0,
+        "sportsbook_multiplier": 1.0,
+        "market_popularity": 0.0,
+        "true_probability": 0.0,
+        "expected_value": 0.0,
+        "insight": "Matches found: 0",
+        "category": "Top 5 (Target)",
+        "result": "Void",
+        "actual": 0,
+        "date": "2026-07-23"
     }
 ]
