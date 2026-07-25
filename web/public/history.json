@@ -1,23 +1,5 @@
 [
     {
-        "player_name": "Rodolfo Dur\u00e1n",
-        "team": "SD",
-        "opposing_pitcher": "Jacob Degrom",
-        "stat_type": "total_bases",
-        "line": 0.5,
-        "sportsbook_multiplier": 2.01,
-        "market_popularity": 0.0,
-        "true_probability": 0.5327,
-        "expected_value": 0.0707,
-        "recommended_unit_size": 1.75,
-        "insight": "Log5 adjusted vs RHP Jacob Degrom & Bullpen. Projects for 3.72 PA based on batting 9th.  Forecast: 86\u00b0F, Blowing IN at 5.3mph.",
-        "is_free_pick": false,
-        "category": "Top 5 (Target)",
-        "actual": 0,
-        "result": "Loss",
-        "date": "2026-06-19"
-    },
-    {
         "player_name": "Samad Taylor",
         "team": "SD",
         "opposing_pitcher": "Jacob Degrom",
@@ -5392,5 +5374,21 @@
         "result": "Void",
         "actual": 0,
         "date": "2026-07-23"
+    },
+    {
+        "player_name": "Debug Report",
+        "team": "MLB",
+        "opposing_pitcher": "N/A",
+        "stat_type": "system_status",
+        "line": 0.0,
+        "sportsbook_multiplier": 1.0,
+        "market_popularity": 0.0,
+        "true_probability": 0.0,
+        "expected_value": 0.0,
+        "insight": "Matches found: 0",
+        "category": "Top 5 (Target)",
+        "result": "Void",
+        "actual": 0,
+        "date": "2026-07-24"
     }
 ]
