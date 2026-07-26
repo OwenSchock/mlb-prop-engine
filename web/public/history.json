@@ -1,23 +1,5 @@
 [
     {
-        "player_name": "Samad Taylor",
-        "team": "SD",
-        "opposing_pitcher": "Jacob Degrom",
-        "stat_type": "total_bases",
-        "line": 0.5,
-        "sportsbook_multiplier": 1.63,
-        "market_popularity": 0.4111570247933885,
-        "true_probability": 0.6453,
-        "expected_value": 0.0518,
-        "recommended_unit_size": 2.06,
-        "insight": "Log5 adjusted vs RHP Jacob Degrom & Bullpen. Projects for 4.49 PA based on batting 2nd.  Forecast: 86\u00b0F, Blowing IN at 5.3mph.",
-        "is_free_pick": false,
-        "category": "Top 5 (Target)",
-        "actual": 3,
-        "result": "Win",
-        "date": "2026-06-19"
-    },
-    {
         "player_name": "Billy Cook",
         "team": "0",
         "opposing_pitcher": "TBD",
@@ -5390,5 +5372,21 @@
         "result": "Void",
         "actual": 0,
         "date": "2026-07-24"
+    },
+    {
+        "player_name": "Debug Report",
+        "team": "MLB",
+        "opposing_pitcher": "N/A",
+        "stat_type": "system_status",
+        "line": 0.0,
+        "sportsbook_multiplier": 1.0,
+        "market_popularity": 0.0,
+        "true_probability": 0.0,
+        "expected_value": 0.0,
+        "insight": "Matches found: 0",
+        "category": "Top 5 (Target)",
+        "result": "Void",
+        "actual": 0,
+        "date": "2026-07-25"
     }
 ]
