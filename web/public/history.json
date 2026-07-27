@@ -1,23 +1,5 @@
 [
     {
-        "player_name": "Billy Cook",
-        "team": "0",
-        "opposing_pitcher": "TBD",
-        "stat_type": "total_bases",
-        "line": 1.5,
-        "sportsbook_multiplier": 2.16,
-        "market_popularity": 0.6616735537190083,
-        "true_probability": 0.0786,
-        "expected_value": -0.8302,
-        "recommended_unit_size": 0.0,
-        "insight": "Projects for 4.22 PA based on batting 5th.  Playing in a controlled dome.",
-        "is_free_pick": false,
-        "category": "Bottom 5 (Avoid)",
-        "actual": 0,
-        "result": "Win",
-        "date": "2026-06-19"
-    },
-    {
         "player_name": "Sam Antonacci",
         "team": "CWS",
         "opposing_pitcher": "Tarik Skubal",
@@ -5388,5 +5370,21 @@
         "result": "Void",
         "actual": 0,
         "date": "2026-07-25"
+    },
+    {
+        "player_name": "Debug Report",
+        "team": "MLB",
+        "opposing_pitcher": "N/A",
+        "stat_type": "system_status",
+        "line": 0.0,
+        "sportsbook_multiplier": 1.0,
+        "market_popularity": 0.0,
+        "true_probability": 0.0,
+        "expected_value": 0.0,
+        "insight": "Matches found: 0",
+        "category": "Top 5 (Target)",
+        "result": "Void",
+        "actual": 0,
+        "date": "2026-07-26"
     }
 ]
