@@ -3,24 +3,6 @@
         "player_name": "Sam Antonacci",
         "team": "CWS",
         "opposing_pitcher": "Tarik Skubal",
-        "stat_type": "hits",
-        "line": 0.5,
-        "sportsbook_multiplier": 1.59,
-        "market_popularity": 0.7541322314049587,
-        "true_probability": 0.1063,
-        "expected_value": -0.831,
-        "recommended_unit_size": 0.0,
-        "insight": "Log5 adjusted vs LHP Tarik Skubal & Bullpen. Projects for 3.63 PA based on batting 9th.  Forecast: 85\u00b0F, Blowing IN at 10.9mph.",
-        "is_free_pick": false,
-        "category": "Bottom 5 (Avoid)",
-        "actual": 2,
-        "result": "Loss",
-        "date": "2026-06-19"
-    },
-    {
-        "player_name": "Sam Antonacci",
-        "team": "CWS",
-        "opposing_pitcher": "Tarik Skubal",
         "stat_type": "total_bases",
         "line": 0.5,
         "sportsbook_multiplier": 1.64,
@@ -5386,5 +5368,21 @@
         "result": "Void",
         "actual": 0,
         "date": "2026-07-26"
+    },
+    {
+        "player_name": "Debug Report",
+        "team": "MLB",
+        "opposing_pitcher": "N/A",
+        "stat_type": "system_status",
+        "line": 0.0,
+        "sportsbook_multiplier": 1.0,
+        "market_popularity": 0.0,
+        "true_probability": 0.0,
+        "expected_value": 0.0,
+        "insight": "Matches found: 0",
+        "category": "Top 5 (Target)",
+        "result": "Void",
+        "actual": 0,
+        "date": "2026-07-27"
     }
 ]
