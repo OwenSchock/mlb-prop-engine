@@ -3,24 +3,6 @@
         "player_name": "Nick Madrigal",
         "team": "LAA",
         "opposing_pitcher": "Jeffrey Springs",
-        "stat_type": "hits",
-        "line": 1.5,
-        "sportsbook_multiplier": 2.56,
-        "market_popularity": 0.5965909090909091,
-        "true_probability": 0.0393,
-        "expected_value": -0.8994,
-        "recommended_unit_size": 0.0,
-        "insight": "Log5 adjusted vs LHP Jeffrey Springs & Bullpen. Projects for 4.43 PA based on batting 2nd.  Playing in a controlled dome.",
-        "is_free_pick": false,
-        "category": "Bottom 5 (Avoid)",
-        "result": "Void",
-        "actual": 0,
-        "date": "2026-06-19"
-    },
-    {
-        "player_name": "Nick Madrigal",
-        "team": "LAA",
-        "opposing_pitcher": "Jeffrey Springs",
         "stat_type": "total_bases",
         "line": 1.5,
         "sportsbook_multiplier": 2.13,
@@ -5382,5 +5364,21 @@
         "result": "Void",
         "actual": 0,
         "date": "2026-07-28"
+    },
+    {
+        "player_name": "Debug Report",
+        "team": "MLB",
+        "opposing_pitcher": "N/A",
+        "stat_type": "system_status",
+        "line": 0.0,
+        "sportsbook_multiplier": 1.0,
+        "market_popularity": 0.0,
+        "true_probability": 0.0,
+        "expected_value": 0.0,
+        "insight": "Matches found: 0",
+        "category": "Top 5 (Target)",
+        "result": "Void",
+        "actual": 0,
+        "date": "2026-07-29"
     }
 ]
