@@ -3,24 +3,6 @@
         "player_name": "Joey Bart",
         "team": "0",
         "opposing_pitcher": "TBD",
-        "stat_type": "total_bases",
-        "line": 0.5,
-        "sportsbook_multiplier": 1.78,
-        "market_popularity": 0.25131995776135163,
-        "true_probability": 0.6725,
-        "expected_value": 0.197,
-        "recommended_unit_size": 6.32,
-        "insight": "Projects for 4.22 PA based on batting 5th.  Playing in a controlled dome.",
-        "is_free_pick": false,
-        "category": "Top 5 (Target)",
-        "actual": 0,
-        "result": "Loss",
-        "date": "2026-06-20"
-    },
-    {
-        "player_name": "Joey Bart",
-        "team": "0",
-        "opposing_pitcher": "TBD",
         "stat_type": "hits",
         "line": 0.5,
         "sportsbook_multiplier": 1.91,
@@ -5378,5 +5360,21 @@
         "result": "Void",
         "actual": 0,
         "date": "2026-07-30"
+    },
+    {
+        "player_name": "Debug Report",
+        "team": "MLB",
+        "opposing_pitcher": "N/A",
+        "stat_type": "system_status",
+        "line": 0.0,
+        "sportsbook_multiplier": 1.0,
+        "market_popularity": 0.0,
+        "true_probability": 0.0,
+        "expected_value": 0.0,
+        "insight": "Matches found: 0",
+        "category": "Top 5 (Target)",
+        "result": "Void",
+        "actual": 0,
+        "date": "2026-07-31"
     }
 ]
