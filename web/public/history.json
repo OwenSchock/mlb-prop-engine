@@ -1,23 +1,5 @@
 [
     {
-        "player_name": "Byron Buxton",
-        "team": "MIN",
-        "opposing_pitcher": "Zac Gallen",
-        "stat_type": "total_bases",
-        "line": 1.5,
-        "sportsbook_multiplier": 1.76,
-        "market_popularity": 0.8474128827877508,
-        "true_probability": 0.5737,
-        "expected_value": 0.0097,
-        "recommended_unit_size": 0.32,
-        "insight": "Elite xwOBA (0.355) vs RHP + Log5 adjusted vs RHP Zac Gallen & Bullpen. Projects for 4.64 PA based on batting 2nd.  Playing in a controlled dome.",
-        "is_free_pick": false,
-        "category": "Top 5 (Target)",
-        "actual": 4,
-        "result": "Win",
-        "date": "2026-06-20"
-    },
-    {
         "player_name": "Samad Taylor",
         "team": "SD",
         "opposing_pitcher": "Nathan Eovaldi",
@@ -5374,5 +5356,21 @@
         "result": "Void",
         "actual": 0,
         "date": "2026-08-01"
+    },
+    {
+        "player_name": "Debug Report",
+        "team": "MLB",
+        "opposing_pitcher": "N/A",
+        "stat_type": "system_status",
+        "line": 0.0,
+        "sportsbook_multiplier": 1.0,
+        "market_popularity": 0.0,
+        "true_probability": 0.0,
+        "expected_value": 0.0,
+        "insight": "Matches found: 0",
+        "category": "Top 5 (Target)",
+        "result": "Void",
+        "actual": 0,
+        "date": "2026-08-02"
     }
 ]
