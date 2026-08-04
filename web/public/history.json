@@ -1,23 +1,5 @@
 [
     {
-        "player_name": "Samad Taylor",
-        "team": "SD",
-        "opposing_pitcher": "Nathan Eovaldi",
-        "stat_type": "total_bases",
-        "line": 0.5,
-        "sportsbook_multiplier": 1.52,
-        "market_popularity": 0.7418162618796198,
-        "true_probability": 0.6643,
-        "expected_value": 0.0097,
-        "recommended_unit_size": 0.47,
-        "insight": "Log5 adjusted vs RHP Nathan Eovaldi & Bullpen. Projects for 4.45 PA based on batting 2nd.  Playing in a controlled dome.",
-        "is_free_pick": false,
-        "category": "Top 5 (Target)",
-        "actual": 1,
-        "result": "Win",
-        "date": "2026-06-20"
-    },
-    {
         "player_name": "Pete Alonso",
         "team": "BAL",
         "opposing_pitcher": "Yoshinobu Yamamoto",
@@ -5372,5 +5354,21 @@
         "result": "Void",
         "actual": 0,
         "date": "2026-08-02"
+    },
+    {
+        "player_name": "Debug Report",
+        "team": "MLB",
+        "opposing_pitcher": "N/A",
+        "stat_type": "system_status",
+        "line": 0.0,
+        "sportsbook_multiplier": 1.0,
+        "market_popularity": 0.0,
+        "true_probability": 0.0,
+        "expected_value": 0.0,
+        "insight": "Matches found: 0",
+        "category": "Top 5 (Target)",
+        "result": "Void",
+        "actual": 0,
+        "date": "2026-08-03"
     }
 ]
