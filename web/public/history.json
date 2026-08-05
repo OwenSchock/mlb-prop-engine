@@ -1,23 +1,5 @@
 [
     {
-        "player_name": "Pete Alonso",
-        "team": "BAL",
-        "opposing_pitcher": "Yoshinobu Yamamoto",
-        "stat_type": "total_bases",
-        "line": 0.5,
-        "sportsbook_multiplier": 1.53,
-        "market_popularity": 0.2412882787750792,
-        "true_probability": 0.6422,
-        "expected_value": -0.0174,
-        "recommended_unit_size": 0.0,
-        "insight": "Elite xwOBA (0.371) vs RHP + Log5 adjusted vs RHP Yoshinobu Yamamoto & Bullpen. Projects for 4.25 PA based on batting 3rd.  Forecast: 75\u00b0F, Blowing IN at 10.3mph.",
-        "is_free_pick": false,
-        "category": "Top 5 (Target)",
-        "actual": 0,
-        "result": "Loss",
-        "date": "2026-06-20"
-    },
-    {
         "player_name": "Drew Millas",
         "team": "WSH",
         "opposing_pitcher": "Ian Seymour",
@@ -5370,5 +5352,21 @@
         "result": "Void",
         "actual": 0,
         "date": "2026-08-03"
+    },
+    {
+        "player_name": "Debug Report",
+        "team": "MLB",
+        "opposing_pitcher": "N/A",
+        "stat_type": "system_status",
+        "line": 0.0,
+        "sportsbook_multiplier": 1.0,
+        "market_popularity": 0.0,
+        "true_probability": 0.0,
+        "expected_value": 0.0,
+        "insight": "Matches found: 0",
+        "category": "Top 5 (Target)",
+        "result": "Void",
+        "actual": 0,
+        "date": "2026-08-04"
     }
 ]
