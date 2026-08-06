@@ -1,23 +1,5 @@
 [
     {
-        "player_name": "Drew Millas",
-        "team": "WSH",
-        "opposing_pitcher": "Ian Seymour",
-        "stat_type": "hits",
-        "line": 0.5,
-        "sportsbook_multiplier": 1.8,
-        "market_popularity": 0.23970432946145723,
-        "true_probability": 0.0905,
-        "expected_value": -0.8371,
-        "recommended_unit_size": 0.0,
-        "insight": "Elite xwOBA (0.367) vs LHP + Log5 adjusted vs LHP Ian Seymour & Bullpen. Projects for 3.53 PA based on batting 8th.  Forecast: 89\u00b0F, Blowing IN at 10.3mph.",
-        "is_free_pick": false,
-        "category": "Bottom 5 (Avoid)",
-        "result": "Void",
-        "actual": 0,
-        "date": "2026-06-20"
-    },
-    {
         "player_name": "Zach McKinstry",
         "team": "DET",
         "opposing_pitcher": "Sean Newcomb",
@@ -5368,5 +5350,21 @@
         "result": "Void",
         "actual": 0,
         "date": "2026-08-04"
+    },
+    {
+        "player_name": "Debug Report",
+        "team": "MLB",
+        "opposing_pitcher": "N/A",
+        "stat_type": "system_status",
+        "line": 0.0,
+        "sportsbook_multiplier": 1.0,
+        "market_popularity": 0.0,
+        "true_probability": 0.0,
+        "expected_value": 0.0,
+        "insight": "Matches found: 0",
+        "category": "Top 5 (Target)",
+        "result": "Void",
+        "actual": 0,
+        "date": "2026-08-05"
     }
 ]
