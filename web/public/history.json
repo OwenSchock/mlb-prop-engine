@@ -3,24 +3,6 @@
         "player_name": "Zach McKinstry",
         "team": "DET",
         "opposing_pitcher": "Sean Newcomb",
-        "stat_type": "hits",
-        "line": 0.5,
-        "sportsbook_multiplier": 1.69,
-        "market_popularity": 0.40021119324181625,
-        "true_probability": 0.0482,
-        "expected_value": -0.9185,
-        "recommended_unit_size": 0.0,
-        "insight": "Log5 adjusted vs LHP Sean Newcomb & Bullpen. Projects for 3.67 PA based on batting 9th.  Forecast: 78\u00b0F, Blowing IN at 9.6mph.",
-        "is_free_pick": false,
-        "category": "Bottom 5 (Avoid)",
-        "actual": 0,
-        "result": "Win",
-        "date": "2026-06-20"
-    },
-    {
-        "player_name": "Zach McKinstry",
-        "team": "DET",
-        "opposing_pitcher": "Sean Newcomb",
         "stat_type": "total_bases",
         "line": 0.5,
         "sportsbook_multiplier": 1.72,
@@ -5366,5 +5348,21 @@
         "result": "Void",
         "actual": 0,
         "date": "2026-08-05"
+    },
+    {
+        "player_name": "Debug Report",
+        "team": "MLB",
+        "opposing_pitcher": "N/A",
+        "stat_type": "system_status",
+        "line": 0.0,
+        "sportsbook_multiplier": 1.0,
+        "market_popularity": 0.0,
+        "true_probability": 0.0,
+        "expected_value": 0.0,
+        "insight": "Matches found: 0",
+        "category": "Top 5 (Target)",
+        "result": "Void",
+        "actual": 0,
+        "date": "2026-08-06"
     }
 ]
