@@ -3,24 +3,6 @@
         "player_name": "Tommy Edman",
         "team": "LAD",
         "opposing_pitcher": "Trevor Rogers",
-        "stat_type": "total_bases",
-        "line": 1.5,
-        "sportsbook_multiplier": 1.91,
-        "market_popularity": 0.2877507919746568,
-        "true_probability": 0.0307,
-        "expected_value": -0.9414,
-        "recommended_unit_size": 0.0,
-        "insight": "Elite xwOBA (0.366) vs LHP + Log5 adjusted vs LHP Trevor Rogers & Bullpen. Projects for 4.05 PA based on batting 6th.  Forecast: 75\u00b0F, Blowing IN at 10.3mph.",
-        "is_free_pick": false,
-        "category": "Bottom 5 (Avoid)",
-        "actual": 2,
-        "result": "Loss",
-        "date": "2026-06-20"
-    },
-    {
-        "player_name": "Tommy Edman",
-        "team": "LAD",
-        "opposing_pitcher": "Trevor Rogers",
         "stat_type": "hits",
         "line": 1.5,
         "sportsbook_multiplier": 2.56,
@@ -5362,5 +5344,21 @@
         "result": "Void",
         "actual": 0,
         "date": "2026-08-07"
+    },
+    {
+        "player_name": "Debug Report",
+        "team": "MLB",
+        "opposing_pitcher": "N/A",
+        "stat_type": "system_status",
+        "line": 0.0,
+        "sportsbook_multiplier": 1.0,
+        "market_popularity": 0.0,
+        "true_probability": 0.0,
+        "expected_value": 0.0,
+        "insight": "Matches found: 0",
+        "category": "Top 5 (Target)",
+        "result": "Void",
+        "actual": 0,
+        "date": "2026-08-08"
     }
 ]
