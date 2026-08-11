@@ -1,23 +1,5 @@
 [
     {
-        "player_name": "Ian Happ",
-        "team": "CHC",
-        "opposing_pitcher": "Dylan Cease",
-        "stat_type": "total_bases",
-        "line": 0.5,
-        "sportsbook_multiplier": 1.81,
-        "market_popularity": 0.08876025084418716,
-        "true_probability": 0.5814,
-        "expected_value": 0.0523,
-        "recommended_unit_size": 1.62,
-        "insight": "Log5 adjusted vs RHP Dylan Cease & Bullpen. Projects for 3.95 PA based on batting 5th.  Forecast: 72\u00b0F, Blowing OUT at 12.4mph.",
-        "is_free_pick": false,
-        "category": "Top 5 (Target)",
-        "result": "Void",
-        "actual": 0,
-        "date": "2026-06-21"
-    },
-    {
         "player_name": "Willy Adames",
         "team": "SF",
         "opposing_pitcher": "Ryan Gusto",
@@ -5358,5 +5340,21 @@
         "result": "Void",
         "actual": 0,
         "date": "2026-08-09"
+    },
+    {
+        "player_name": "Debug Report",
+        "team": "MLB",
+        "opposing_pitcher": "N/A",
+        "stat_type": "system_status",
+        "line": 0.0,
+        "sportsbook_multiplier": 1.0,
+        "market_popularity": 0.0,
+        "true_probability": 0.0,
+        "expected_value": 0.0,
+        "insight": "Matches found: 0",
+        "category": "Top 5 (Target)",
+        "result": "Void",
+        "actual": 0,
+        "date": "2026-08-10"
     }
 ]
