@@ -1,23 +1,5 @@
 [
     {
-        "player_name": "Willy Adames",
-        "team": "SF",
-        "opposing_pitcher": "Ryan Gusto",
-        "stat_type": "total_bases",
-        "line": 0.5,
-        "sportsbook_multiplier": 1.48,
-        "market_popularity": 0.0,
-        "true_probability": 0.694,
-        "expected_value": 0.0271,
-        "recommended_unit_size": 1.41,
-        "insight": "Log5 adjusted vs RHP Ryan Gusto & Bullpen. Projects for 4.26 PA based on batting 6th.  Playing in a controlled dome.",
-        "is_free_pick": false,
-        "category": "Top 5 (Target)",
-        "actual": 0,
-        "result": "Loss",
-        "date": "2026-06-21"
-    },
-    {
         "player_name": "TJ Rumfield",
         "team": "COL",
         "opposing_pitcher": "Jared Jones",
@@ -5356,5 +5338,21 @@
         "result": "Void",
         "actual": 0,
         "date": "2026-08-10"
+    },
+    {
+        "player_name": "Debug Report",
+        "team": "MLB",
+        "opposing_pitcher": "N/A",
+        "stat_type": "system_status",
+        "line": 0.0,
+        "sportsbook_multiplier": 1.0,
+        "market_popularity": 0.0,
+        "true_probability": 0.0,
+        "expected_value": 0.0,
+        "insight": "Matches found: 0",
+        "category": "Top 5 (Target)",
+        "result": "Void",
+        "actual": 0,
+        "date": "2026-08-11"
     }
 ]
