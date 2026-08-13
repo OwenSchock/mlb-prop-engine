@@ -1,23 +1,5 @@
 [
     {
-        "player_name": "TJ Rumfield",
-        "team": "COL",
-        "opposing_pitcher": "Jared Jones",
-        "stat_type": "total_bases",
-        "line": 1.5,
-        "sportsbook_multiplier": 1.84,
-        "market_popularity": 0.4230583695127834,
-        "true_probability": 0.5492,
-        "expected_value": 0.0105,
-        "recommended_unit_size": 0.31,
-        "insight": "Log5 adjusted vs RHP Jared Jones & Bullpen. Projects for 4.86 PA based on batting 3rd.  Forecast: 92\u00b0F, Blowing OUT at 19.3mph.",
-        "is_free_pick": false,
-        "category": "Top 5 (Target)",
-        "actual": 4,
-        "result": "Win",
-        "date": "2026-06-21"
-    },
-    {
         "player_name": "Hunter Goodman",
         "team": "COL",
         "opposing_pitcher": "Jared Jones",
@@ -5354,5 +5336,21 @@
         "result": "Void",
         "actual": 0,
         "date": "2026-08-11"
+    },
+    {
+        "player_name": "Debug Report",
+        "team": "MLB",
+        "opposing_pitcher": "N/A",
+        "stat_type": "system_status",
+        "line": 0.0,
+        "sportsbook_multiplier": 1.0,
+        "market_popularity": 0.0,
+        "true_probability": 0.0,
+        "expected_value": 0.0,
+        "insight": "Matches found: 0",
+        "category": "Top 5 (Target)",
+        "result": "Void",
+        "actual": 0,
+        "date": "2026-08-12"
     }
 ]
