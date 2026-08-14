@@ -1,23 +1,5 @@
 [
     {
-        "player_name": "Hunter Goodman",
-        "team": "COL",
-        "opposing_pitcher": "Jared Jones",
-        "stat_type": "total_bases",
-        "line": 1.5,
-        "sportsbook_multiplier": 1.74,
-        "market_popularity": 0.6049204052098408,
-        "true_probability": 0.579,
-        "expected_value": 0.0075,
-        "recommended_unit_size": 0.25,
-        "insight": "Log5 adjusted vs RHP Jared Jones & Bullpen. Projects for 4.75 PA based on batting 4th.  Forecast: 92\u00b0F, Blowing OUT at 19.3mph.",
-        "is_free_pick": false,
-        "category": "Top 5 (Target)",
-        "actual": 0,
-        "result": "Loss",
-        "date": "2026-06-21"
-    },
-    {
         "player_name": "Samad Taylor",
         "team": "SD",
         "opposing_pitcher": "Nathan Eovaldi",
@@ -5352,5 +5334,21 @@
         "result": "Void",
         "actual": 0,
         "date": "2026-08-12"
+    },
+    {
+        "player_name": "Debug Report",
+        "team": "MLB",
+        "opposing_pitcher": "N/A",
+        "stat_type": "system_status",
+        "line": 0.0,
+        "sportsbook_multiplier": 1.0,
+        "market_popularity": 0.0,
+        "true_probability": 0.0,
+        "expected_value": 0.0,
+        "insight": "Matches found: 0",
+        "category": "Top 5 (Target)",
+        "result": "Void",
+        "actual": 0,
+        "date": "2026-08-13"
     }
 ]
