@@ -1,23 +1,5 @@
 [
     {
-        "player_name": "Samad Taylor",
-        "team": "SD",
-        "opposing_pitcher": "Nathan Eovaldi",
-        "stat_type": "total_bases",
-        "line": 0.5,
-        "sportsbook_multiplier": 1.57,
-        "market_popularity": 0.7226242161119151,
-        "true_probability": 0.6406,
-        "expected_value": 0.0057,
-        "recommended_unit_size": 0.25,
-        "insight": "Log5 adjusted vs RHP Nathan Eovaldi & Bullpen. Projects for 4.56 PA based on batting 1st.  Playing in a controlled dome.",
-        "is_free_pick": false,
-        "category": "Top 5 (Target)",
-        "actual": 1,
-        "result": "Win",
-        "date": "2026-06-21"
-    },
-    {
         "player_name": "Ha-Seong Kim",
         "team": "ATL",
         "opposing_pitcher": "Robert Gasser",
@@ -5350,5 +5332,21 @@
         "result": "Void",
         "actual": 0,
         "date": "2026-08-13"
+    },
+    {
+        "player_name": "Debug Report",
+        "team": "MLB",
+        "opposing_pitcher": "N/A",
+        "stat_type": "system_status",
+        "line": 0.0,
+        "sportsbook_multiplier": 1.0,
+        "market_popularity": 0.0,
+        "true_probability": 0.0,
+        "expected_value": 0.0,
+        "insight": "Matches found: 0",
+        "category": "Top 5 (Target)",
+        "result": "Void",
+        "actual": 0,
+        "date": "2026-08-14"
     }
 ]
