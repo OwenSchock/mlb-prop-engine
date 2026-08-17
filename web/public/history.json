@@ -1,23 +1,5 @@
 [
     {
-        "player_name": "Ha-Seong Kim",
-        "team": "ATL",
-        "opposing_pitcher": "Robert Gasser",
-        "stat_type": "total_bases",
-        "line": 0.5,
-        "sportsbook_multiplier": 1.6,
-        "market_popularity": 0.509090909090909,
-        "true_probability": 0.096,
-        "expected_value": -0.8464,
-        "recommended_unit_size": 0.0,
-        "insight": "Log5 adjusted vs LHP Robert Gasser & Bullpen. Projects for 3.44 PA based on batting 9th.  Forecast: 86\u00b0F, Minimal wind impact.",
-        "is_free_pick": false,
-        "category": "Bottom 5 (Avoid)",
-        "actual": 0,
-        "result": "Win",
-        "date": "2026-06-21"
-    },
-    {
         "player_name": "Chandler Simpson",
         "team": "TB",
         "opposing_pitcher": "Andrew Alvarez",
@@ -5346,5 +5328,21 @@
         "result": "Void",
         "actual": 0,
         "date": "2026-08-15"
+    },
+    {
+        "player_name": "Debug Report",
+        "team": "MLB",
+        "opposing_pitcher": "N/A",
+        "stat_type": "system_status",
+        "line": 0.0,
+        "sportsbook_multiplier": 1.0,
+        "market_popularity": 0.0,
+        "true_probability": 0.0,
+        "expected_value": 0.0,
+        "insight": "Matches found: 0",
+        "category": "Top 5 (Target)",
+        "result": "Void",
+        "actual": 0,
+        "date": "2026-08-16"
     }
 ]
