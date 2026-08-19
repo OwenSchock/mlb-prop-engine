@@ -1,23 +1,5 @@
 [
     {
-        "player_name": "Joey Bart",
-        "team": "ATL",
-        "opposing_pitcher": "Robert Gasser",
-        "stat_type": "hits",
-        "line": 0.5,
-        "sportsbook_multiplier": 1.49,
-        "market_popularity": 0.5866028708133971,
-        "true_probability": 0.0891,
-        "expected_value": -0.8672,
-        "recommended_unit_size": 0.0,
-        "insight": "Log5 adjusted vs LHP Robert Gasser & Bullpen. Projects for 3.66 PA based on batting 7th.  Forecast: 86\u00b0F, Minimal wind impact.",
-        "is_free_pick": false,
-        "category": "Bottom 5 (Avoid)",
-        "actual": 0,
-        "result": "Win",
-        "date": "2026-06-21"
-    },
-    {
         "player_name": "Nate Eaton",
         "team": "BOS",
         "opposing_pitcher": "Logan Gilbert",
@@ -5342,5 +5324,21 @@
         "result": "Void",
         "actual": 0,
         "date": "2026-08-17"
+    },
+    {
+        "player_name": "Debug Report",
+        "team": "MLB",
+        "opposing_pitcher": "N/A",
+        "stat_type": "system_status",
+        "line": 0.0,
+        "sportsbook_multiplier": 1.0,
+        "market_popularity": 0.0,
+        "true_probability": 0.0,
+        "expected_value": 0.0,
+        "insight": "Matches found: 0",
+        "category": "Top 5 (Target)",
+        "result": "Void",
+        "actual": 0,
+        "date": "2026-08-18"
     }
 ]
