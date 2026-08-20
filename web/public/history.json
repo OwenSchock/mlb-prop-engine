@@ -1,23 +1,5 @@
 [
     {
-        "player_name": "Nate Eaton",
-        "team": "BOS",
-        "opposing_pitcher": "Logan Gilbert",
-        "stat_type": "hits",
-        "line": 0.5,
-        "sportsbook_multiplier": 1.78,
-        "market_popularity": 0.3215311004784689,
-        "true_probability": 0.0572,
-        "expected_value": -0.8982,
-        "recommended_unit_size": 0.0,
-        "insight": "Log5 adjusted vs RHP Logan Gilbert & Bullpen. Projects for 3.56 PA based on batting 9th.  Playing in a controlled dome.",
-        "is_free_pick": false,
-        "category": "Bottom 5 (Avoid)",
-        "actual": 1,
-        "result": "Loss",
-        "date": "2026-06-21"
-    },
-    {
         "player_name": "John Rave",
         "team": "KC",
         "opposing_pitcher": "Drew Rasmussen",
@@ -5340,5 +5322,21 @@
         "result": "Void",
         "actual": 0,
         "date": "2026-08-18"
+    },
+    {
+        "player_name": "Debug Report",
+        "team": "MLB",
+        "opposing_pitcher": "N/A",
+        "stat_type": "system_status",
+        "line": 0.0,
+        "sportsbook_multiplier": 1.0,
+        "market_popularity": 0.0,
+        "true_probability": 0.0,
+        "expected_value": 0.0,
+        "insight": "Matches found: 0",
+        "category": "Top 5 (Target)",
+        "result": "Void",
+        "actual": 0,
+        "date": "2026-08-19"
     }
 ]
