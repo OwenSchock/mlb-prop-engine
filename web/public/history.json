@@ -1,23 +1,5 @@
 [
     {
-        "player_name": "John Rave",
-        "team": "KC",
-        "opposing_pitcher": "Drew Rasmussen",
-        "stat_type": "total_bases",
-        "line": 0.5,
-        "sportsbook_multiplier": 1.83,
-        "market_popularity": 0.17425025853154086,
-        "true_probability": 0.6697,
-        "expected_value": 0.2256,
-        "recommended_unit_size": 6.79,
-        "insight": "Elite xwOBA (0.406) vs RHP + Log5 adjusted vs RHP Drew Rasmussen & Bullpen. Projects for 3.96 PA based on batting 7th.  Forecast: 77\u00b0F, Blowing OUT at 11.2mph.",
-        "is_free_pick": false,
-        "category": "Top 5 (Target)",
-        "actual": 0,
-        "result": "Loss",
-        "date": "2026-06-22"
-    },
-    {
         "player_name": "Alec Burleson",
         "team": "STL",
         "opposing_pitcher": "Merrill Kelly",
@@ -5338,5 +5320,21 @@
         "result": "Void",
         "actual": 0,
         "date": "2026-08-19"
+    },
+    {
+        "player_name": "Debug Report",
+        "team": "MLB",
+        "opposing_pitcher": "N/A",
+        "stat_type": "system_status",
+        "line": 0.0,
+        "sportsbook_multiplier": 1.0,
+        "market_popularity": 0.0,
+        "true_probability": 0.0,
+        "expected_value": 0.0,
+        "insight": "Matches found: 0",
+        "category": "Top 5 (Target)",
+        "result": "Void",
+        "actual": 0,
+        "date": "2026-08-20"
     }
 ]
