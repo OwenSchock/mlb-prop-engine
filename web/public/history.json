@@ -1,23 +1,5 @@
 [
     {
-        "player_name": "Alec Burleson",
-        "team": "STL",
-        "opposing_pitcher": "Merrill Kelly",
-        "stat_type": "total_bases",
-        "line": 1.5,
-        "sportsbook_multiplier": 1.88,
-        "market_popularity": 0.7104446742502585,
-        "true_probability": 0.6241,
-        "expected_value": 0.1733,
-        "recommended_unit_size": 4.92,
-        "insight": "Elite xwOBA (0.414) vs RHP + Log5 adjusted vs RHP Merrill Kelly & Bullpen. Projects for 4.66 PA based on batting 3rd.  Forecast: 77\u00b0F, Blowing OUT at 11.2mph.",
-        "is_free_pick": false,
-        "category": "Top 5 (Target)",
-        "actual": 1,
-        "result": "Loss",
-        "date": "2026-06-22"
-    },
-    {
         "player_name": "Nathaniel Lowe",
         "team": "CIN",
         "opposing_pitcher": "TBD",
@@ -5336,5 +5318,21 @@
         "result": "Void",
         "actual": 0,
         "date": "2026-08-20"
+    },
+    {
+        "player_name": "Debug Report",
+        "team": "MLB",
+        "opposing_pitcher": "N/A",
+        "stat_type": "system_status",
+        "line": 0.0,
+        "sportsbook_multiplier": 1.0,
+        "market_popularity": 0.0,
+        "true_probability": 0.0,
+        "expected_value": 0.0,
+        "insight": "Matches found: 0",
+        "category": "Top 5 (Target)",
+        "result": "Void",
+        "actual": 0,
+        "date": "2026-08-21"
     }
 ]
