@@ -1,23 +1,5 @@
 [
     {
-        "player_name": "Nathaniel Lowe",
-        "team": "CIN",
-        "opposing_pitcher": "TBD",
-        "stat_type": "total_bases",
-        "line": 0.5,
-        "sportsbook_multiplier": 1.54,
-        "market_popularity": 0.1778697001034126,
-        "true_probability": 0.6893,
-        "expected_value": 0.0615,
-        "recommended_unit_size": 2.85,
-        "insight": "Elite xwOBA (0.363) vs RHP + Projects for 4.32 PA based on batting 4th.  Forecast: 76\u00b0F, Blowing OUT at 4.8mph.",
-        "is_free_pick": false,
-        "category": "Top 5 (Target)",
-        "actual": 0,
-        "result": "Loss",
-        "date": "2026-06-22"
-    },
-    {
         "player_name": "Mike Yastrzemski",
         "team": "ATL",
         "opposing_pitcher": "Michael King",
@@ -5334,5 +5316,21 @@
         "result": "Void",
         "actual": 0,
         "date": "2026-08-21"
+    },
+    {
+        "player_name": "Debug Report",
+        "team": "MLB",
+        "opposing_pitcher": "N/A",
+        "stat_type": "system_status",
+        "line": 0.0,
+        "sportsbook_multiplier": 1.0,
+        "market_popularity": 0.0,
+        "true_probability": 0.0,
+        "expected_value": 0.0,
+        "insight": "Matches found: 0",
+        "category": "Top 5 (Target)",
+        "result": "Void",
+        "actual": 0,
+        "date": "2026-08-22"
     }
 ]
