@@ -1,23 +1,5 @@
 [
     {
-        "player_name": "Mike Yastrzemski",
-        "team": "ATL",
-        "opposing_pitcher": "Michael King",
-        "stat_type": "total_bases",
-        "line": 0.5,
-        "sportsbook_multiplier": 1.78,
-        "market_popularity": 0.0,
-        "true_probability": 0.5937,
-        "expected_value": 0.0568,
-        "recommended_unit_size": 1.82,
-        "insight": "Log5 adjusted vs RHP Michael King & Bullpen. Projects for 4.06 PA based on batting 7th.  Forecast: 89\u00b0F, Minimal wind impact.",
-        "is_free_pick": false,
-        "category": "Top 5 (Target)",
-        "actual": 1,
-        "result": "Win",
-        "date": "2026-06-22"
-    },
-    {
         "player_name": "Andrew Benintendi",
         "team": "CWS",
         "opposing_pitcher": "Gavin Williams",
@@ -5332,5 +5314,21 @@
         "result": "Void",
         "actual": 0,
         "date": "2026-08-22"
+    },
+    {
+        "player_name": "Debug Report",
+        "team": "MLB",
+        "opposing_pitcher": "N/A",
+        "stat_type": "system_status",
+        "line": 0.0,
+        "sportsbook_multiplier": 1.0,
+        "market_popularity": 0.0,
+        "true_probability": 0.0,
+        "expected_value": 0.0,
+        "insight": "Matches found: 0",
+        "category": "Top 5 (Target)",
+        "result": "Void",
+        "actual": 0,
+        "date": "2026-08-23"
     }
 ]
