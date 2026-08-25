@@ -1,23 +1,5 @@
 [
     {
-        "player_name": "Andrew Benintendi",
-        "team": "CWS",
-        "opposing_pitcher": "Gavin Williams",
-        "stat_type": "total_bases",
-        "line": 0.5,
-        "sportsbook_multiplier": 1.55,
-        "market_popularity": 0.34126163391933817,
-        "true_probability": 0.6812,
-        "expected_value": 0.0559,
-        "recommended_unit_size": 2.54,
-        "insight": "Log5 adjusted vs RHP Gavin Williams & Bullpen. Projects for 4.42 PA based on batting 2nd.  Forecast: 72\u00b0F, Minimal wind impact.",
-        "is_free_pick": false,
-        "category": "Top 5 (Target)",
-        "actual": 1,
-        "result": "Win",
-        "date": "2026-06-22"
-    },
-    {
         "player_name": "Carlos Narv\u00e1ez",
         "team": "BOS",
         "opposing_pitcher": "Ryan Feltner",
@@ -5330,5 +5312,21 @@
         "result": "Void",
         "actual": 0,
         "date": "2026-08-23"
+    },
+    {
+        "player_name": "Debug Report",
+        "team": "MLB",
+        "opposing_pitcher": "N/A",
+        "stat_type": "system_status",
+        "line": 0.0,
+        "sportsbook_multiplier": 1.0,
+        "market_popularity": 0.0,
+        "true_probability": 0.0,
+        "expected_value": 0.0,
+        "insight": "Matches found: 0",
+        "category": "Top 5 (Target)",
+        "result": "Void",
+        "actual": 0,
+        "date": "2026-08-24"
     }
 ]
