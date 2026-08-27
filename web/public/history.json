@@ -1,23 +1,5 @@
 [
     {
-        "player_name": "Austin Wells",
-        "team": "NYY",
-        "opposing_pitcher": "Framber Valdez",
-        "stat_type": "hits",
-        "line": 0.5,
-        "sportsbook_multiplier": 1.74,
-        "market_popularity": 0.4963805584281282,
-        "true_probability": 0.1147,
-        "expected_value": -0.8004,
-        "recommended_unit_size": 0.0,
-        "insight": "Log5 adjusted vs LHP Framber Valdez & Bullpen. Projects for 3.76 PA based on batting 8th.  Forecast: 76\u00b0F, Blowing OUT at 4.8mph.",
-        "is_free_pick": false,
-        "category": "Bottom 5 (Avoid)",
-        "actual": 0,
-        "result": "Win",
-        "date": "2026-06-22"
-    },
-    {
         "player_name": "Kyle Stowers",
         "team": "MIA",
         "opposing_pitcher": "Tyler Alexander",
@@ -5326,5 +5308,21 @@
         "result": "Void",
         "actual": 0,
         "date": "2026-08-25"
+    },
+    {
+        "player_name": "Debug Report",
+        "team": "MLB",
+        "opposing_pitcher": "N/A",
+        "stat_type": "system_status",
+        "line": 0.0,
+        "sportsbook_multiplier": 1.0,
+        "market_popularity": 0.0,
+        "true_probability": 0.0,
+        "expected_value": 0.0,
+        "insight": "Matches found: 0",
+        "category": "Top 5 (Target)",
+        "result": "Void",
+        "actual": 0,
+        "date": "2026-08-26"
     }
 ]
