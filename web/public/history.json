@@ -1,23 +1,5 @@
 [
     {
-        "player_name": "Kyle Stowers",
-        "team": "MIA",
-        "opposing_pitcher": "Tyler Alexander",
-        "stat_type": "total_bases",
-        "line": 1.5,
-        "sportsbook_multiplier": 2.12,
-        "market_popularity": 0.37900723888314375,
-        "true_probability": 0.089,
-        "expected_value": -0.8113,
-        "recommended_unit_size": 0.0,
-        "insight": "Log5 adjusted vs LHP Tyler Alexander & Bullpen. Projects for 4.15 PA based on batting 4th.  Playing in a controlled dome.",
-        "is_free_pick": false,
-        "category": "Bottom 5 (Avoid)",
-        "actual": 2,
-        "result": "Loss",
-        "date": "2026-06-22"
-    },
-    {
         "player_name": "Jeremiah Jackson",
         "team": "BAL",
         "opposing_pitcher": "Sam Aldegheri",
@@ -5324,5 +5306,21 @@
         "result": "Void",
         "actual": 0,
         "date": "2026-08-26"
+    },
+    {
+        "player_name": "Debug Report",
+        "team": "MLB",
+        "opposing_pitcher": "N/A",
+        "stat_type": "system_status",
+        "line": 0.0,
+        "sportsbook_multiplier": 1.0,
+        "market_popularity": 0.0,
+        "true_probability": 0.0,
+        "expected_value": 0.0,
+        "insight": "Matches found: 0",
+        "category": "Top 5 (Target)",
+        "result": "Void",
+        "actual": 0,
+        "date": "2026-08-27"
     }
 ]
