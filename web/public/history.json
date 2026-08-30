@@ -1,23 +1,5 @@
 [
     {
-        "player_name": "Samuel Basallo",
-        "team": "BAL",
-        "opposing_pitcher": "Sam Aldegheri",
-        "stat_type": "total_bases",
-        "line": 1.5,
-        "sportsbook_multiplier": 2.16,
-        "market_popularity": 0.2781799379524302,
-        "true_probability": 0.0526,
-        "expected_value": -0.8864,
-        "recommended_unit_size": 0.0,
-        "insight": "Log5 adjusted vs LHP Sam Aldegheri & Bullpen. Projects for 4.12 PA based on batting 4th.  Forecast: 80\u00b0F, Blowing IN at 9.3mph.",
-        "is_free_pick": false,
-        "category": "Bottom 5 (Avoid)",
-        "result": "Void",
-        "actual": 0,
-        "date": "2026-06-22"
-    },
-    {
         "player_name": "Spencer Horwitz",
         "team": "PIT",
         "opposing_pitcher": "George Kirby",
@@ -5320,5 +5302,21 @@
         "result": "Void",
         "actual": 0,
         "date": "2026-08-28"
+    },
+    {
+        "player_name": "Debug Report",
+        "team": "MLB",
+        "opposing_pitcher": "N/A",
+        "stat_type": "system_status",
+        "line": 0.0,
+        "sportsbook_multiplier": 1.0,
+        "market_popularity": 0.0,
+        "true_probability": 0.0,
+        "expected_value": 0.0,
+        "insight": "Matches found: 0",
+        "category": "Top 5 (Target)",
+        "result": "Void",
+        "actual": 0,
+        "date": "2026-08-29"
     }
 ]
