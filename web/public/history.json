@@ -1,23 +1,5 @@
 [
     {
-        "player_name": "Spencer Horwitz",
-        "team": "PIT",
-        "opposing_pitcher": "George Kirby",
-        "stat_type": "total_bases",
-        "line": 1.5,
-        "sportsbook_multiplier": 2.15,
-        "market_popularity": 0.5102577590741715,
-        "true_probability": 0.5339,
-        "expected_value": 0.1479,
-        "recommended_unit_size": 3.21,
-        "insight": "Elite xwOBA (0.353) vs RHP + Log5 adjusted vs RHP George Kirby & Bullpen. Projects for 4.97 PA based on batting 1st.  Forecast: 86\u00b0F, Blowing OUT at 7.8mph.",
-        "is_free_pick": false,
-        "category": "Top 5 (Target)",
-        "actual": 1,
-        "result": "Loss",
-        "date": "2026-06-23"
-    },
-    {
         "player_name": "Nick Kurtz",
         "team": "0",
         "opposing_pitcher": "TBD",
@@ -5318,5 +5300,21 @@
         "result": "Void",
         "actual": 0,
         "date": "2026-08-29"
+    },
+    {
+        "player_name": "Debug Report",
+        "team": "MLB",
+        "opposing_pitcher": "N/A",
+        "stat_type": "system_status",
+        "line": 0.0,
+        "sportsbook_multiplier": 1.0,
+        "market_popularity": 0.0,
+        "true_probability": 0.0,
+        "expected_value": 0.0,
+        "insight": "Matches found: 0",
+        "category": "Top 5 (Target)",
+        "result": "Void",
+        "actual": 0,
+        "date": "2026-08-30"
     }
 ]
