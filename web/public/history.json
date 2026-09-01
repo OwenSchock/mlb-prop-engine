@@ -1,23 +1,5 @@
 [
     {
-        "player_name": "Nick Kurtz",
-        "team": "0",
-        "opposing_pitcher": "TBD",
-        "stat_type": "total_bases",
-        "line": 0.5,
-        "sportsbook_multiplier": 1.54,
-        "market_popularity": 0.8327196212519726,
-        "true_probability": 0.7374,
-        "expected_value": 0.1356,
-        "recommended_unit_size": 6.28,
-        "insight": "Elite xwOBA (0.402) vs RHP + Projects for 4.52 PA based on batting 2nd.  Playing in a controlled dome.",
-        "is_free_pick": false,
-        "category": "Top 5 (Target)",
-        "actual": 0,
-        "result": "Loss",
-        "date": "2026-06-23"
-    },
-    {
         "player_name": "Brandon Lowe",
         "team": "PIT",
         "opposing_pitcher": "George Kirby",
@@ -5316,5 +5298,21 @@
         "result": "Void",
         "actual": 0,
         "date": "2026-08-30"
+    },
+    {
+        "player_name": "Debug Report",
+        "team": "MLB",
+        "opposing_pitcher": "N/A",
+        "stat_type": "system_status",
+        "line": 0.0,
+        "sportsbook_multiplier": 1.0,
+        "market_popularity": 0.0,
+        "true_probability": 0.0,
+        "expected_value": 0.0,
+        "insight": "Matches found: 0",
+        "category": "Top 5 (Target)",
+        "result": "Void",
+        "actual": 0,
+        "date": "2026-08-31"
     }
 ]
