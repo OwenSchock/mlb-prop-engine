@@ -1,23 +1,5 @@
 [
     {
-        "player_name": "Brice Turang",
-        "team": "MIL",
-        "opposing_pitcher": "Nick Lodolo",
-        "stat_type": "hits",
-        "line": 1.5,
-        "sportsbook_multiplier": 2.58,
-        "market_popularity": 0.3645449763282483,
-        "true_probability": 0.0518,
-        "expected_value": -0.8664,
-        "recommended_unit_size": 0.0,
-        "insight": "Log5 adjusted vs LHP Nick Lodolo & Bullpen. Projects for 4.46 PA based on batting 3rd.  Forecast: 80\u00b0F, Blowing IN at 7.0mph.",
-        "is_free_pick": false,
-        "category": "Bottom 5 (Avoid)",
-        "actual": 2,
-        "result": "Loss",
-        "date": "2026-06-23"
-    },
-    {
         "player_name": "Tommy Edman",
         "team": "LAD",
         "opposing_pitcher": "Kendry Rojas",
@@ -5308,5 +5290,21 @@
         "result": "Void",
         "actual": 0,
         "date": "2026-09-03"
+    },
+    {
+        "player_name": "Debug Report",
+        "team": "MLB",
+        "opposing_pitcher": "N/A",
+        "stat_type": "system_status",
+        "line": 0.0,
+        "sportsbook_multiplier": 1.0,
+        "market_popularity": 0.0,
+        "true_probability": 0.0,
+        "expected_value": 0.0,
+        "insight": "Matches found: 0",
+        "category": "Top 5 (Target)",
+        "result": "Void",
+        "actual": 0,
+        "date": "2026-09-04"
     }
 ]
