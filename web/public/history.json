@@ -1,23 +1,5 @@
 [
     {
-        "player_name": "Andrew Benintendi",
-        "team": "CWS",
-        "opposing_pitcher": "Tanner Bibee",
-        "stat_type": "total_bases",
-        "line": 0.5,
-        "sportsbook_multiplier": 1.5,
-        "market_popularity": 0.5394803871625063,
-        "true_probability": 0.6799,
-        "expected_value": 0.0198,
-        "recommended_unit_size": 0.99,
-        "insight": "Log5 adjusted vs RHP Tanner Bibee & Bullpen. Projects for 4.34 PA based on batting 3rd.  Forecast: 72\u00b0F, Blowing OUT at 6.5mph.",
-        "is_free_pick": false,
-        "category": "Top 5 (Target)",
-        "actual": 0,
-        "result": "Loss",
-        "date": "2026-06-24"
-    },
-    {
         "player_name": "Mike Yastrzemski",
         "team": "ATL",
         "opposing_pitcher": "Jp Sears",
@@ -5290,5 +5272,21 @@
         "result": "Void",
         "actual": 0,
         "date": "2026-09-12"
+    },
+    {
+        "player_name": "Debug Report",
+        "team": "MLB",
+        "opposing_pitcher": "N/A",
+        "stat_type": "system_status",
+        "line": 0.0,
+        "sportsbook_multiplier": 1.0,
+        "market_popularity": 0.0,
+        "true_probability": 0.0,
+        "expected_value": 0.0,
+        "insight": "Matches found: 0",
+        "category": "Top 5 (Target)",
+        "result": "Void",
+        "actual": 0,
+        "date": "2026-09-13"
     }
 ]
