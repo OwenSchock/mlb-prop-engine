@@ -1,23 +1,5 @@
 [
     {
-        "player_name": "Drew Gilbert",
-        "team": "SF",
-        "opposing_pitcher": "Gage Jump",
-        "stat_type": "hits",
-        "line": 0.5,
-        "sportsbook_multiplier": 1.81,
-        "market_popularity": 0.0,
-        "true_probability": 0.0016,
-        "expected_value": -0.9971,
-        "recommended_unit_size": 0.0,
-        "insight": "Log5 adjusted vs LHP Gage Jump & Bullpen. Projects for 3.64 PA based on batting 8th.  Forecast: 66\u00b0F, Blowing IN at 14.7mph.",
-        "is_free_pick": false,
-        "category": "Bottom 5 (Avoid)",
-        "actual": 0,
-        "result": "Win",
-        "date": "2026-06-24"
-    },
-    {
         "player_name": "Willson Contreras",
         "team": "BOS",
         "opposing_pitcher": "Cam Schlittler",
@@ -5280,5 +5262,21 @@
         "result": "Void",
         "actual": 0,
         "date": "2026-09-18"
+    },
+    {
+        "player_name": "Debug Report",
+        "team": "MLB",
+        "opposing_pitcher": "N/A",
+        "stat_type": "system_status",
+        "line": 0.0,
+        "sportsbook_multiplier": 1.0,
+        "market_popularity": 0.0,
+        "true_probability": 0.0,
+        "expected_value": 0.0,
+        "insight": "Matches found: 0",
+        "category": "Top 5 (Target)",
+        "result": "Void",
+        "actual": 0,
+        "date": "2026-09-19"
     }
 ]
