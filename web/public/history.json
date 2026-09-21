@@ -1,23 +1,5 @@
 [
     {
-        "player_name": "Willson Contreras",
-        "team": "BOS",
-        "opposing_pitcher": "Cam Schlittler",
-        "stat_type": "total_bases",
-        "line": 0.5,
-        "sportsbook_multiplier": 1.46,
-        "market_popularity": 0.24818959842001315,
-        "true_probability": 0.7367,
-        "expected_value": 0.0756,
-        "recommended_unit_size": 4.11,
-        "insight": "Log5 adjusted vs RHP Cam Schlittler & Bullpen. Projects for 4.44 PA based on batting 4th.  Forecast: 77\u00b0F, Blowing OUT at 7.3mph.",
-        "is_free_pick": false,
-        "category": "Top 5 (Target)",
-        "actual": 0,
-        "result": "Loss",
-        "date": "2026-06-25"
-    },
-    {
         "player_name": "Jarren Duran",
         "team": "BOS",
         "opposing_pitcher": "Cam Schlittler",
@@ -5278,5 +5260,21 @@
         "result": "Void",
         "actual": 0,
         "date": "2026-09-19"
+    },
+    {
+        "player_name": "Debug Report",
+        "team": "MLB",
+        "opposing_pitcher": "N/A",
+        "stat_type": "system_status",
+        "line": 0.0,
+        "sportsbook_multiplier": 1.0,
+        "market_popularity": 0.0,
+        "true_probability": 0.0,
+        "expected_value": 0.0,
+        "insight": "Matches found: 0",
+        "category": "Top 5 (Target)",
+        "result": "Void",
+        "actual": 0,
+        "date": "2026-09-20"
     }
 ]
