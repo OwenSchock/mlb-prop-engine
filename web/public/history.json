@@ -1,23 +1,5 @@
 [
     {
-        "player_name": "Jarren Duran",
-        "team": "BOS",
-        "opposing_pitcher": "Cam Schlittler",
-        "stat_type": "total_bases",
-        "line": 0.5,
-        "sportsbook_multiplier": 1.51,
-        "market_popularity": 0.5134957208689928,
-        "true_probability": 0.6612,
-        "expected_value": -0.0016,
-        "recommended_unit_size": 0.0,
-        "insight": "Log5 adjusted vs RHP Cam Schlittler & Bullpen. Projects for 4.33 PA based on batting 5th.  Forecast: 77\u00b0F, Blowing OUT at 7.3mph.",
-        "is_free_pick": false,
-        "category": "Top 5 (Target)",
-        "actual": 1,
-        "result": "Win",
-        "date": "2026-06-25"
-    },
-    {
         "player_name": "Carson Benge",
         "team": "NYM",
         "opposing_pitcher": "Matthew Boyd",
@@ -5276,5 +5258,21 @@
         "result": "Void",
         "actual": 0,
         "date": "2026-09-20"
+    },
+    {
+        "player_name": "Debug Report",
+        "team": "MLB",
+        "opposing_pitcher": "N/A",
+        "stat_type": "system_status",
+        "line": 0.0,
+        "sportsbook_multiplier": 1.0,
+        "market_popularity": 0.0,
+        "true_probability": 0.0,
+        "expected_value": 0.0,
+        "insight": "Matches found: 0",
+        "category": "Top 5 (Target)",
+        "result": "Void",
+        "actual": 0,
+        "date": "2026-09-21"
     }
 ]
