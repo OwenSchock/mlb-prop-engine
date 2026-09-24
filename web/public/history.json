@@ -1,23 +1,5 @@
 [
     {
-        "player_name": "Ian Happ",
-        "team": "CHC",
-        "opposing_pitcher": "Freddy Peralta",
-        "stat_type": "total_bases",
-        "line": 0.5,
-        "sportsbook_multiplier": 1.59,
-        "market_popularity": 0.4167215273206057,
-        "true_probability": 0.6219,
-        "expected_value": -0.0112,
-        "recommended_unit_size": 0.0,
-        "insight": "Log5 adjusted vs RHP Freddy Peralta & Bullpen. Projects for 4.13 PA based on batting 5th.  Forecast: 85\u00b0F, Blowing IN at 6.4mph.",
-        "is_free_pick": false,
-        "category": "Top 5 (Target)",
-        "actual": 1,
-        "result": "Win",
-        "date": "2026-06-25"
-    },
-    {
         "player_name": "Caleb Durbin",
         "team": "BOS",
         "opposing_pitcher": "Cam Schlittler",
@@ -5272,5 +5254,21 @@
         "result": "Void",
         "actual": 0,
         "date": "2026-09-22"
+    },
+    {
+        "player_name": "Debug Report",
+        "team": "MLB",
+        "opposing_pitcher": "N/A",
+        "stat_type": "system_status",
+        "line": 0.0,
+        "sportsbook_multiplier": 1.0,
+        "market_popularity": 0.0,
+        "true_probability": 0.0,
+        "expected_value": 0.0,
+        "insight": "Matches found: 0",
+        "category": "Top 5 (Target)",
+        "result": "Void",
+        "actual": 0,
+        "date": "2026-09-23"
     }
 ]
