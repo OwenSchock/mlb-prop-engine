@@ -1,23 +1,5 @@
 [
     {
-        "player_name": "Caleb Durbin",
-        "team": "BOS",
-        "opposing_pitcher": "Cam Schlittler",
-        "stat_type": "total_bases",
-        "line": 0.5,
-        "sportsbook_multiplier": 1.54,
-        "market_popularity": 0.4338380513495721,
-        "true_probability": 0.6406,
-        "expected_value": -0.0135,
-        "recommended_unit_size": 0.0,
-        "insight": "Log5 adjusted vs RHP Cam Schlittler & Bullpen. Projects for 4.33 PA based on batting 5th.  Forecast: 77\u00b0F, Blowing OUT at 7.3mph.",
-        "is_free_pick": false,
-        "category": "Top 5 (Target)",
-        "actual": 5,
-        "result": "Win",
-        "date": "2026-06-25"
-    },
-    {
         "player_name": "Davis Schneider",
         "team": "TOR",
         "opposing_pitcher": "Mackenzie Gore",
@@ -5270,5 +5252,21 @@
         "result": "Void",
         "actual": 0,
         "date": "2026-09-23"
+    },
+    {
+        "player_name": "Debug Report",
+        "team": "MLB",
+        "opposing_pitcher": "N/A",
+        "stat_type": "system_status",
+        "line": 0.0,
+        "sportsbook_multiplier": 1.0,
+        "market_popularity": 0.0,
+        "true_probability": 0.0,
+        "expected_value": 0.0,
+        "insight": "Matches found: 0",
+        "category": "Top 5 (Target)",
+        "result": "Void",
+        "actual": 0,
+        "date": "2026-09-24"
     }
 ]
