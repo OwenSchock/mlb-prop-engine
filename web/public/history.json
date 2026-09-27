@@ -1,23 +1,5 @@
 [
     {
-        "player_name": "Austin Wells",
-        "team": "NYY",
-        "opposing_pitcher": "Connelly Early",
-        "stat_type": "hits",
-        "line": 0.5,
-        "sportsbook_multiplier": 1.7,
-        "market_popularity": 0.4832126398946675,
-        "true_probability": 0.1333,
-        "expected_value": -0.7734,
-        "recommended_unit_size": 0.0,
-        "insight": "Log5 adjusted vs LHP Connelly Early & Bullpen. Projects for 3.71 PA based on batting 8th.  Forecast: 80\u00b0F, Minimal wind impact.",
-        "is_free_pick": false,
-        "category": "Bottom 5 (Avoid)",
-        "actual": 1,
-        "result": "Loss",
-        "date": "2026-06-25"
-    },
-    {
         "player_name": "Alejandro Kirk",
         "team": "TOR",
         "opposing_pitcher": "Mackenzie Gore",
@@ -5266,5 +5248,21 @@
         "result": "Void",
         "actual": 0,
         "date": "2026-09-25"
+    },
+    {
+        "player_name": "Debug Report",
+        "team": "MLB",
+        "opposing_pitcher": "N/A",
+        "stat_type": "system_status",
+        "line": 0.0,
+        "sportsbook_multiplier": 1.0,
+        "market_popularity": 0.0,
+        "true_probability": 0.0,
+        "expected_value": 0.0,
+        "insight": "Matches found: 0",
+        "category": "Top 5 (Target)",
+        "result": "Void",
+        "actual": 0,
+        "date": "2026-09-26"
     }
 ]
