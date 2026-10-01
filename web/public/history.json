@@ -1,23 +1,5 @@
 [
     {
-        "player_name": "Nathan Lukes",
-        "team": "TOR",
-        "opposing_pitcher": "Mackenzie Gore",
-        "stat_type": "total_bases",
-        "line": 0.5,
-        "sportsbook_multiplier": 1.49,
-        "market_popularity": 0.007899934167215274,
-        "true_probability": 0.1234,
-        "expected_value": -0.8161,
-        "recommended_unit_size": 0.0,
-        "insight": "Log5 adjusted vs LHP Mackenzie Gore & Bullpen. Projects for 4.37 PA based on batting 2nd.  Playing in a controlled dome.",
-        "is_free_pick": false,
-        "category": "Bottom 5 (Avoid)",
-        "actual": 0,
-        "result": "Win",
-        "date": "2026-06-25"
-    },
-    {
         "player_name": "Ryan Kreidler",
         "team": "MIN",
         "opposing_pitcher": "Tomoyuki Sugano",
@@ -5260,5 +5242,21 @@
         "result": "Void",
         "actual": 0,
         "date": "2026-09-29"
+    },
+    {
+        "player_name": "Debug Report",
+        "team": "MLB",
+        "opposing_pitcher": "N/A",
+        "stat_type": "system_status",
+        "line": 0.0,
+        "sportsbook_multiplier": 1.0,
+        "market_popularity": 0.0,
+        "true_probability": 0.0,
+        "expected_value": 0.0,
+        "insight": "Matches found: 0",
+        "category": "Top 5 (Target)",
+        "result": "Void",
+        "actual": 0,
+        "date": "2026-09-30"
     }
 ]
