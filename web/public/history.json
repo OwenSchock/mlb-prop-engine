@@ -1,23 +1,5 @@
 [
     {
-        "player_name": "Pete Crow-Armstrong",
-        "team": "CHC",
-        "opposing_pitcher": "Jacob Misiorowski",
-        "stat_type": "total_bases",
-        "line": 0.5,
-        "sportsbook_multiplier": 1.65,
-        "market_popularity": 0.8335917312661498,
-        "true_probability": 0.639,
-        "expected_value": 0.0543,
-        "recommended_unit_size": 2.09,
-        "insight": "Elite xwOBA (0.4) vs RHP + Log5 adjusted vs RHP Jacob Misiorowski & Bullpen. Projects for 4.23 PA based on batting 1st.  Forecast: 87\u00b0F, Blowing IN at 10.6mph.",
-        "is_free_pick": false,
-        "category": "Top 5 (Target)",
-        "actual": 0,
-        "result": "Loss",
-        "date": "2026-06-26"
-    },
-    {
         "player_name": "David Hamilton",
         "team": "MIL",
         "opposing_pitcher": "Colin Rea",
@@ -5252,5 +5234,21 @@
         "result": "Void",
         "actual": 0,
         "date": "2026-10-04"
+    },
+    {
+        "player_name": "Debug Report",
+        "team": "MLB",
+        "opposing_pitcher": "N/A",
+        "stat_type": "system_status",
+        "line": 0.0,
+        "sportsbook_multiplier": 1.0,
+        "market_popularity": 0.0,
+        "true_probability": 0.0,
+        "expected_value": 0.0,
+        "insight": "Matches found: 0",
+        "category": "Top 5 (Target)",
+        "result": "Void",
+        "actual": 0,
+        "date": "2026-10-05"
     }
 ]
