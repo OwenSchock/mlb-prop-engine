@@ -1,23 +1,5 @@
 [
     {
-        "player_name": "Isaac Paredes",
-        "team": "HOU",
-        "opposing_pitcher": "Framber Valdez",
-        "stat_type": "total_bases",
-        "line": 1.5,
-        "sportsbook_multiplier": 2.14,
-        "market_popularity": 0.4006640841173215,
-        "true_probability": 0.1183,
-        "expected_value": -0.7468,
-        "recommended_unit_size": 0.0,
-        "insight": "Elite xwOBA (0.364) vs LHP + Log5 adjusted vs LHP Framber Valdez & Bullpen. Projects for 4.36 PA based on batting 2nd.  Forecast: 72\u00b0F, Minimal wind impact.",
-        "is_free_pick": false,
-        "category": "Bottom 5 (Avoid)",
-        "actual": 3,
-        "result": "Loss",
-        "date": "2026-06-27"
-    },
-    {
         "player_name": "Jake Meyers",
         "team": "HOU",
         "opposing_pitcher": "Framber Valdez",
@@ -5246,5 +5228,21 @@
         "result": "Void",
         "actual": 0,
         "date": "2026-10-08"
+    },
+    {
+        "player_name": "Debug Report",
+        "team": "MLB",
+        "opposing_pitcher": "N/A",
+        "stat_type": "system_status",
+        "line": 0.0,
+        "sportsbook_multiplier": 1.0,
+        "market_popularity": 0.0,
+        "true_probability": 0.0,
+        "expected_value": 0.0,
+        "insight": "Matches found: 0",
+        "category": "Top 5 (Target)",
+        "result": "Void",
+        "actual": 0,
+        "date": "2026-10-10"
     }
 ]
