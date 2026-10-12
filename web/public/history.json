@@ -1,23 +1,5 @@
 [
     {
-        "player_name": "Jake Meyers",
-        "team": "HOU",
-        "opposing_pitcher": "Framber Valdez",
-        "stat_type": "hits",
-        "line": 0.5,
-        "sportsbook_multiplier": 1.53,
-        "market_popularity": 0.5312672938572219,
-        "true_probability": 0.1631,
-        "expected_value": -0.7505,
-        "recommended_unit_size": 0.0,
-        "insight": "Log5 adjusted vs LHP Framber Valdez & Bullpen. Projects for 3.85 PA based on batting 7th.  Forecast: 72\u00b0F, Minimal wind impact.",
-        "is_free_pick": false,
-        "category": "Bottom 5 (Avoid)",
-        "actual": 1,
-        "result": "Loss",
-        "date": "2026-06-27"
-    },
-    {
         "player_name": "Colton Cowser",
         "team": "BAL",
         "opposing_pitcher": "Foster Griffin",
@@ -5244,5 +5226,21 @@
         "result": "Void",
         "actual": 0,
         "date": "2026-10-10"
+    },
+    {
+        "player_name": "Debug Report",
+        "team": "MLB",
+        "opposing_pitcher": "N/A",
+        "stat_type": "system_status",
+        "line": 0.0,
+        "sportsbook_multiplier": 1.0,
+        "market_popularity": 0.0,
+        "true_probability": 0.0,
+        "expected_value": 0.0,
+        "insight": "Matches found: 0",
+        "category": "Top 5 (Target)",
+        "result": "Void",
+        "actual": 0,
+        "date": "2026-10-11"
     }
 ]
