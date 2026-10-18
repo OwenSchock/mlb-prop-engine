@@ -1,23 +1,5 @@
 [
     {
-        "player_name": "Jake Burger",
-        "team": "TEX",
-        "opposing_pitcher": "Shane Bieber",
-        "stat_type": "total_bases",
-        "line": 1.5,
-        "sportsbook_multiplier": 2.12,
-        "market_popularity": 0.046948356807511735,
-        "true_probability": 0.5103,
-        "expected_value": 0.0818,
-        "recommended_unit_size": 1.83,
-        "insight": "Log5 adjusted vs RHP Shane Bieber & Bullpen. Projects for 4.85 PA based on batting 5th.  Playing in a controlled dome.",
-        "is_free_pick": false,
-        "category": "Top 5 (Target)",
-        "actual": 0,
-        "result": "Loss",
-        "date": "2026-06-28"
-    },
-    {
         "player_name": "Ezequiel Duran",
         "team": "TEX",
         "opposing_pitcher": "Shane Bieber",
@@ -5234,5 +5216,21 @@
         "result": "Void",
         "actual": 0,
         "date": "2026-10-15"
+    },
+    {
+        "player_name": "Debug Report",
+        "team": "MLB",
+        "opposing_pitcher": "N/A",
+        "stat_type": "system_status",
+        "line": 0.0,
+        "sportsbook_multiplier": 1.0,
+        "market_popularity": 0.0,
+        "true_probability": 0.0,
+        "expected_value": 0.0,
+        "insight": "Matches found: 0",
+        "category": "Top 5 (Target)",
+        "result": "Void",
+        "actual": 0,
+        "date": "2026-10-17"
     }
 ]
