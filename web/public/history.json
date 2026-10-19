@@ -1,23 +1,5 @@
 [
     {
-        "player_name": "Ezequiel Duran",
-        "team": "TEX",
-        "opposing_pitcher": "Shane Bieber",
-        "stat_type": "total_bases",
-        "line": 0.5,
-        "sportsbook_multiplier": 1.47,
-        "market_popularity": 0.0,
-        "true_probability": 0.7145,
-        "expected_value": 0.0503,
-        "recommended_unit_size": 2.68,
-        "insight": "Log5 adjusted vs RHP Shane Bieber & Bullpen. Projects for 4.73 PA based on batting 6th.  Playing in a controlled dome.",
-        "is_free_pick": false,
-        "category": "Top 5 (Target)",
-        "actual": 2,
-        "result": "Win",
-        "date": "2026-06-28"
-    },
-    {
         "player_name": "Randy Arozarena",
         "team": "SEA",
         "opposing_pitcher": "Gavin Williams",
@@ -5232,5 +5214,21 @@
         "result": "Void",
         "actual": 0,
         "date": "2026-10-17"
+    },
+    {
+        "player_name": "Debug Report",
+        "team": "MLB",
+        "opposing_pitcher": "N/A",
+        "stat_type": "system_status",
+        "line": 0.0,
+        "sportsbook_multiplier": 1.0,
+        "market_popularity": 0.0,
+        "true_probability": 0.0,
+        "expected_value": 0.0,
+        "insight": "Matches found: 0",
+        "category": "Top 5 (Target)",
+        "result": "Void",
+        "actual": 0,
+        "date": "2026-10-18"
     }
 ]
