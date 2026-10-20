@@ -1,23 +1,5 @@
 [
     {
-        "player_name": "Randy Arozarena",
-        "team": "SEA",
-        "opposing_pitcher": "Gavin Williams",
-        "stat_type": "total_bases",
-        "line": 0.5,
-        "sportsbook_multiplier": 1.48,
-        "market_popularity": 0.5294731351069379,
-        "true_probability": 0.7025,
-        "expected_value": 0.0397,
-        "recommended_unit_size": 2.07,
-        "insight": "Log5 adjusted vs RHP Gavin Williams & Bullpen. Projects for 4.31 PA based on batting 4th.  Forecast: 81\u00b0F, Blowing OUT at 9.9mph.",
-        "is_free_pick": false,
-        "category": "Top 5 (Target)",
-        "actual": 0,
-        "result": "Loss",
-        "date": "2026-06-28"
-    },
-    {
         "player_name": "Garrett Mitchell",
         "team": "MIL",
         "opposing_pitcher": "Ryan Rolison",
@@ -5230,5 +5212,21 @@
         "result": "Void",
         "actual": 0,
         "date": "2026-10-18"
+    },
+    {
+        "player_name": "Debug Report",
+        "team": "MLB",
+        "opposing_pitcher": "N/A",
+        "stat_type": "system_status",
+        "line": 0.0,
+        "sportsbook_multiplier": 1.0,
+        "market_popularity": 0.0,
+        "true_probability": 0.0,
+        "expected_value": 0.0,
+        "insight": "Matches found: 0",
+        "category": "Top 5 (Target)",
+        "result": "Void",
+        "actual": 0,
+        "date": "2026-10-19"
     }
 ]
