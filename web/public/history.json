@@ -1,23 +1,5 @@
 [
     {
-        "player_name": "Brice Turang",
-        "team": "MIL",
-        "opposing_pitcher": "Ryan Rolison",
-        "stat_type": "total_bases",
-        "line": 1.5,
-        "sportsbook_multiplier": 2.23,
-        "market_popularity": 0.1011997913406364,
-        "true_probability": 0.0872,
-        "expected_value": -0.8055,
-        "recommended_unit_size": 0.0,
-        "insight": "Log5 adjusted vs LHP Ryan Rolison & Bullpen. Projects for 4.26 PA based on batting 2nd.  Playing in a controlled dome.",
-        "is_free_pick": false,
-        "category": "Bottom 5 (Avoid)",
-        "actual": 3,
-        "result": "Loss",
-        "date": "2026-06-28"
-    },
-    {
         "player_name": "Max Kepler",
         "team": "ARI",
         "opposing_pitcher": "Drew Rasmussen",
@@ -5226,5 +5208,21 @@
         "result": "Void",
         "actual": 0,
         "date": "2026-10-23"
+    },
+    {
+        "player_name": "Debug Report",
+        "team": "MLB",
+        "opposing_pitcher": "N/A",
+        "stat_type": "system_status",
+        "line": 0.0,
+        "sportsbook_multiplier": 1.0,
+        "market_popularity": 0.0,
+        "true_probability": 0.0,
+        "expected_value": 0.0,
+        "insight": "Matches found: 0",
+        "category": "Top 5 (Target)",
+        "result": "Void",
+        "actual": 0,
+        "date": "2026-10-24"
     }
 ]
