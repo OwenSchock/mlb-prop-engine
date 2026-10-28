@@ -3,24 +3,6 @@
         "player_name": "Ha-Seong Kim",
         "team": "ATL",
         "opposing_pitcher": "Robbie Ray",
-        "stat_type": "hits",
-        "line": 0.5,
-        "sportsbook_multiplier": 1.67,
-        "market_popularity": 0.6238914971309337,
-        "true_probability": 0.0759,
-        "expected_value": -0.8732,
-        "recommended_unit_size": 0.0,
-        "insight": "Log5 adjusted vs LHP Robbie Ray & Bullpen. Projects for 3.53 PA based on batting 9th.  Forecast: 74\u00b0F, Blowing IN at 15.7mph.",
-        "is_free_pick": false,
-        "category": "Bottom 5 (Avoid)",
-        "actual": 0,
-        "result": "Win",
-        "date": "2026-06-28"
-    },
-    {
-        "player_name": "Ha-Seong Kim",
-        "team": "ATL",
-        "opposing_pitcher": "Robbie Ray",
         "stat_type": "total_bases",
         "line": 0.5,
         "sportsbook_multiplier": 1.68,
@@ -5222,5 +5204,21 @@
         "result": "Void",
         "actual": 0,
         "date": "2026-10-26"
+    },
+    {
+        "player_name": "Debug Report",
+        "team": "MLB",
+        "opposing_pitcher": "N/A",
+        "stat_type": "system_status",
+        "line": 0.0,
+        "sportsbook_multiplier": 1.0,
+        "market_popularity": 0.0,
+        "true_probability": 0.0,
+        "expected_value": 0.0,
+        "insight": "Matches found: 0",
+        "category": "Top 5 (Target)",
+        "result": "Void",
+        "actual": 0,
+        "date": "2026-10-27"
     }
 ]
